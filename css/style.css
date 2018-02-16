@@ -1,0 +1,76 @@
+@font-face
+{
+	font-family: "Symbols";
+	src: url("../font/Symbols.ttf");
+}
+@font-face
+{
+	font-family: "Square";
+	src: url("../font/SquareNormal.ttf");
+}
+@font-face
+{
+	font-family: "Square Light";
+	src: url("../font/SquareLight.ttf");
+}
+@font-face
+{
+	font-family: "Verdana";
+	src: url("../font/verdana.ttf");
+}
+	@font-face
+	{
+		font-family: "Verdana";
+		src: url("../font/verdanab.ttf");
+		font-weight: bold;
+	}
+@font-face
+{
+	font-family: "Myriad Pro";
+	src: url("../font/MyriadPro-Regular.otf");
+}
+	@font-face
+	{
+		font-family: "Myriad Pro";
+		src: url("../font/MyriadPro-Bold.otf");
+		font-weight: bold;
+	}
+@font-face
+{
+	font-family: "Consolas";
+	src: url("../font/consola.ttf");
+}
+	@font-face
+	{
+		font-family: "Consolas";
+		src: url("../font/consolab.ttf");
+		font-weight: bold;
+	}
+
+
+
+html, body, header, main, footer
+{
+	margin: 0;
+	padding: 0;
+}
+
+nav
+{
+	text-align: right;
+}
+nav a
+{
+	display: block;
+}
+.nav-logo
+{
+	height: 50px;
+}
+
+
+.page-padding
+{
+	padding-left: 20%;
+	padding-right: 20%;
+}
