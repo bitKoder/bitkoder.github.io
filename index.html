@@ -7,39 +7,65 @@
 		<meta name="description" content="The official website of koder - Minecraft command block extraordinaire!">
 		<meta name="keywords" content="koder,Minecraft,command,youtube">
 		<meta name="author" content="bitKoder">
-		<link rel="icon" href="http://bitkoder.com/img/favicon.png">
+		<link rel="icon" href="favicon.png">
 		<link rel="stylesheet" href="css/style.css">
-		<script src="js/script.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"><link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet" type="text/css">
+		<script src="js/script.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet" type="text/css">
 	</head>
-	<body class="page-padding">
+	<body>
 		<header>
-			<nav class="nav-hide">
-			<a href="http://bitkoder.com/" class="topLink"><img class="nav-logo" src="http://bitkoder.com/img/koder.png" alt="koder logo"></a>
-				<button class="toggle-nav" onclick="toggleNav(this.parentNode, this)">☰</button
-				><a id="nav-commands" href="http://bitkoder.com/commands">Commands</a
-				><a id="nav-maps" href="http://bitkoder.com/maps">Maps</a
-				><a id="nav-resourcepacks" href="http://bitkoder.com/resourcepacks">Resource Packs</a
-				><a id="nav-tools" href="http://bitkoder.com/tools">Tools</a
-				><a id="nav-contact" href="http://bitkoder.com/contact">Contact</a>
+			<nav class="right-align">
+			<div class="nav-mobile-collapsed"><a href="http://bitkoder.com/" class="nav-logo"><img src="http://bitkoder.com/img/koder.png" alt="koder logo"></a>
+				<button class="nav-menu" onclick="toggleNav(this.parentNode, this)">☰</button
+				></div><a id="nav-commands" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/commands"><span>Commands</span></a
+				><a id="nav-maps" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/maps"><span>Maps</span></a
+				><a id="nav-resourcepacks" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/resourcepacks"><span>Resource Packs</span></a
+				><a id="nav-tools" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/tools"><span>Tools</span></a
+				><a id="nav-contact" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/contact"><span>Contact</span></a>
 			</nav>
+			<div class="landing">
+				<h1>koder</h1>
+				<hr>
+				<p>Yes the lowercase k is intentional</p>
+			</div>
 		</header>
-	
-	
-		<main>
-			<h2 id="intro">What's up, guys?</h2>
-			<section class="info">
-				<p>My name is koder, and I create technical contraptions in Minecraft using commands, a sort of programming language within the game. I also like to show the creations I make on <a href="https://youtube.com/koder">my YouTube channel</a>.<br>
-				The main purpose of this website is as a hub where you can find all my commands, maps and whatever else I create, and use them for yourself.</p>
-			</section>
-			<h2 id="featured"><a href="halfcraft">Featured Video: Halfcraft 2.0</a></h2>
-			<section class="info">
-				<div class="videoFrame">
-					<iframe id="videoPreview" src="https://www.youtube.com/embed/n_PIYc0PjN4" frameborder="0" allowfullscreen=""></iframe>
-				</div>
-				<p>
-					Halfcraft is a command block contraption that lets you to disconnect blocks from the grid, allowing them to be moved freely in between and through blocks. <a href="halfcraft">Click here</a> or click on the featured video header to be taken to the Halfcraft 2.0 webpage.
-				</p>
-			</section>
+		
+		<main class="page-padding">
+			<div class="content">
+				<h2 id="welcome">What's up, guys?</h2>
+				<section class="info">
+					<p>My name is koder, and I create technical contraptions in Minecraft using commands, a sort of programming language within the game. I also like to show the creations I make on <a href="https://youtube.com/koder">my YouTube channel</a>.<br>
+					The main purpose of this website is as a hub where you can find all my commands, maps and whatever else I create, and use them for yourself.</p>
+				</section>
+				<h2 id="featured" class="no-bottom-margin">Featured Videos</h2>
+				<section class="no-padding">
+					<table class="section-halves">
+						<tr>
+							<td>
+								<a href="halfcraft"><h4>Halfcraft [1.12]</h4></a>
+								<div class="video-frame">
+									<iframe src="https://www.youtube.com/embed/052Or-XV4D0" frameborder="0" allowfullscreen=""></iframe>
+								</div>
+								<p>
+									Halfcraft is a command block contraption that lets you disconnect blocks from the grid, allowing them to be moved freely in between and through blocks to create working slabs, stairs, and all sorts of intricate details.<br><a href="halfcraft">Click here</a> or on the header to be taken to the Halfcraft webpage.
+								</p>
+							</td>
+							<td>
+								<a href="commands/blockwaves"><h4>Blockwaves [1.11]</h4></a>
+								<div class="video-frame">
+									<iframe src="https://www.youtube.com/embed/WI8nKR2jSvU" frameborder="0" allowfullscreen=""></iframe>
+								</div>
+								<p>
+									Blockwaves are awesome shockwave effects that are created when a player lands on a certain block type.<br><a href="commands/blockwaves">Click here</a> or on the header to go to the Blockwaves webpage, where you can customize which block you will create blockwaves with.
+								</p>
+							</td>
+						</tr>
+					</table>
+					<div class="section-half">
+					</div>
+				</section>
+			</div>
 		</main>
 		<footer>
 			<p></p>
