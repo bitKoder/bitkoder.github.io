@@ -9,6 +9,7 @@
 		<meta name="author" content="bitKoder">
 		<link rel="icon" href="favicon.png">
 		<link rel="stylesheet" href="css/style.css">
+		<script src="js/splashes.js"></script>
 		<script src="js/script.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet" type="text/css">
@@ -17,17 +18,18 @@
 		<header>
 			<nav class="right-align">
 			<div class="nav-mobile-collapsed"><a href="http://bitkoder.com/" class="nav-logo"><img src="http://bitkoder.com/img/koder.png" alt="koder logo"></a>
-				<button class="nav-menu" onclick="toggleNav(this.parentNode, this)">☰</button
+				<button id="nav-menu" class="nav-menu">☰</button
 				></div><a id="nav-commands" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/commands"><span>Commands</span></a
-				><a id="nav-maps" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/maps"><span>Maps</span></a
-				><a id="nav-resourcepacks" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/resourcepacks"><span>Resource Packs</span></a
-				><a id="nav-tools" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/tools"><span>Tools</span></a
-				><a id="nav-contact" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/contact"><span>Contact</span></a>
+				><!-- <a id="nav-maps" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/maps"><span>Maps</span></a
+				> --><a id="nav-resourcepacks" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/resourcepacks"><span>Resource Packs</span></a
+				><!-- <a id="nav-tools" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/tools"><span>Tools</span></a
+				> --><a id="nav-contact" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/contact"><span>Contact</span></a>
 			</nav>
+			<div id="nav-close"></div>
 			<div class="landing">
 				<h1>koder</h1>
 				<hr>
-				<p>Yes the lowercase k is intentional</p>
+				<p id="splash-text"></p>
 			</div>
 		</header>
 		
@@ -57,7 +59,7 @@
 									<iframe src="https://www.youtube.com/embed/WI8nKR2jSvU" frameborder="0" allowfullscreen=""></iframe>
 								</div>
 								<p>
-									Blockwaves are awesome shockwave effects that are created when a player lands on a certain block type.<br><a href="commands/blockwaves">Click here</a> or on the header to go to the Blockwaves webpage, where you can customize which block you will create blockwaves with.
+									Blockwaves are powerful shockwave effects that are created when a player lands on a certain block type.<br><a href="commands/blockwaves">Click here</a> or on the header to go to the Blockwaves webpage, where you can customize which block you will create blockwaves with.
 								</p>
 							</td>
 						</tr>
@@ -68,8 +70,9 @@
 			</div>
 		</main>
 		<footer>
-			<p></p>
 		</footer>
 	
+
+		<script>init();</script>
 	</body>
 </html>

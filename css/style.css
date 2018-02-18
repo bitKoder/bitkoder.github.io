@@ -67,7 +67,12 @@ html, body, header, main, footer, .landing
 {
 	text-align: center;
 }
-.page-padding, .nav-mobile-collapsed, .nav-link
+.page-padding
+{
+	padding-left: 0;
+	padding-right: 0;
+}
+.nav-mobile-collapsed, .nav-link
 {
 	padding-left: 5%;
 	padding-right: 5%;
@@ -106,7 +111,7 @@ nav
 	position: fixed;
 	top: 0px;
 	left: 0px;
-	z-index: 2;
+	z-index: 4;
 	width: 100%;
 	height: 80px;
 	box-sizing: border-box;
@@ -141,8 +146,6 @@ nav
 .nav-menu, .nav-link
 {
 	color: inherit;
-
-	transition-duration: 0.3s;
 }
 .nav-menu
 {
@@ -154,6 +157,8 @@ nav
 	font-size: 150%;
 
 	cursor: pointer;
+
+	transition-duration: 0.2s;
 }
 .nav-menu:hover
 {
@@ -169,7 +174,8 @@ nav a:hover
 }
 .nav-link
 {
-	display: block;
+	display: none;
+	opacity: 0;
 	padding-top: 10px;
 	padding-bottom: 10px;
 
@@ -178,9 +184,15 @@ nav a:hover
 	font-family: "Segoe UI Light";
 	font-size: 125%;
 
-	transition-property: background-color;
+	transition-property: background-color, opacity;
+	transition-duration: 0.3s;
 }
-.nav-link:hover:not(.nav-link-active)
+.nav-link-show
+{
+	display: block;
+	opacity: 1;
+}
+.nav-link:hover:not(.nav-link-selected)
 {
 	background-color: #333;
 }
@@ -192,13 +204,23 @@ nav a:hover
 
 	transition-duration: 0.1s;
 }
-.nav-link:hover:not(.nav-link-active) span
+.nav-link:hover:not(.nav-link-selected) span
 {
 	padding-right: 10px;
 }
-.nav-link-active span
+.nav-link-selected span
 {
 	border-color: #FFF;
+}
+#nav-close
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	display: none;
+	width: 100vw;
+	height: 100vh;
 }
 
 .landing
@@ -222,9 +244,9 @@ nav a:hover
 	content: "";
 	position: absolute;
 	bottom: -60px;
-	left: 180px;
+	left: 40px;
 	display: inline-block;
-	width: calc(100% - 400px);
+	width: calc(100% - 120px);
 	height: 0;
 
 	border: 30px solid #CC4141;
@@ -236,12 +258,12 @@ nav a:hover
 	margin: 0;
 
 	font-family: "Segoe UI Light";
-	font-size: 1000%;
+	font-size: 700%;
 	font-weight: normal;
 }
 .landing hr
 {
-	width: 300px;
+	width: 200px;
 	margin-top: -10px;
 
 	border: none;
@@ -249,7 +271,9 @@ nav a:hover
 }
 .landing p
 {
-	font-size: 125%;
+	padding: 0px 5%;
+
+	font-size: 85%;
 	font-style: italic;
 
 	cursor: default;
@@ -276,10 +300,10 @@ a:not(.nav-link):hover
 h2#welcome
 {
 	margin: 0;
-	padding: 100px 0px 0px 0px;
+	padding: 100px 5% 0px 5%;
 
 	font-family: "Verdana";
-	font-size: 275%;
+	font-size: 175%;
 	font-weight: normal;
 	font-style: italic;
 	color: #CC4141;
@@ -288,10 +312,9 @@ h2#welcome
 h2:not(#welcome)
 {
 	position: relative;
-	width: calc(100% + 80px);
 	height: 100px;
-	margin-left: -40px;
-	padding: 25px 0px 25px calc(2% + 40px);
+	margin: 30px 0px 20px 0px;
+	padding: 25px 0px 25px 5%;
 	box-sizing: border-box;
 
 	background-color: #CC4141;
@@ -307,7 +330,7 @@ h2:not(#welcome)
 		position: absolute;
 		top: 100%;
 		z-index: -1;
-		display: inline-block;
+		display: none;
 		width: 0;
 		height: 0;
 
@@ -324,6 +347,10 @@ h2:not(#welcome)
 	{
 		border-left-color: #933A3A;
 		right: -40px;
+	}
+	h2:not(#welcome).no-bottom-margin
+	{
+		margin-bottom: 0;
 	}
 
 section
@@ -345,18 +372,15 @@ section
 }
 .section-halves td
 {
-	width: 50%;
-	height: 100%;
+	display: block;
+
+	border-bottom: 1px solid #CCC;
 
 	vertical-align: top;
 }
-.section-halves td:nth-child(odd)
+.section-halves td:last-child
 {
-	border-right: 1px solid #CCC;
-}
-.section-halves td:nth-child(even)
-{
-	border-left: 1px solid #CCC;
+	border-bottom: none;
 }
 .section-halves h4
 {
@@ -397,12 +421,44 @@ section
 
 
 
-@media screen and (min-width: 1350px)
+/*
+@media screen and (max-width: 1049px)
+{
+	.mobile-padding
+	{
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+*/
+@media screen and (min-width: 700px)
+{
+	.landing h1
+	{
+		font-size: 1000%;
+	}
+	.landing hr
+	{
+		width: 300px;
+	}
+	.landing p
+	{
+		font-size: 125%;
+	}
+
+	h2#welcome
+	{
+		font-size: 275%;
+	}
+}
+
+
+@media screen and (min-width: 1000px)
 {
 	.page-padding, nav
 	{
-		padding-left: 20%;
-		padding-right: 20%;
+		padding-left: 10%;
+		padding-right: 10%;
 	}
 	
 	.nav-logo
@@ -431,8 +487,9 @@ section
 		box-sizing: border-box;
 
 		background-color: transparent;
+		opacity: 1;
 	}
-	.nav-link:hover:not(.nav-link-active)
+	.nav-link:hover:not(.nav-link-selected)
 	{
 		background-color: #444;
 	}
@@ -441,9 +498,62 @@ section
 		display: inline-block;
 		padding-right: 0px;
 	}
-	.nav-link:hover:not(.nav-link-active) span
+	.nav-link:hover:not(.nav-link-selected) span
 	{
 		padding-right: 0px;
 		transform: translateY(-5px);
+	}
+	.nav-link-selected
+	{
+		border-right: none;
+	}
+
+	.landing::after
+	{
+		left: 80px;
+		width: calc(100% - 200px);
+	}
+
+	h2:not(#welcome)
+	{
+		width: calc(100% + 80px);
+		margin: 30px 0px 20px -40px;
+		padding: 25px 0px 25px calc(2% + 40px);
+	}
+	h2:not(#welcome):before, h2:not(#welcome):after
+	{
+		display: inline-block;
+	}
+
+	.section-halves td
+	{
+		display: table-cell;
+		width: 50%;
+		height: 100%;
+
+		border-bottom: none;
+	}
+	.section-halves td:nth-child(odd)
+	{
+		border-right: 1px solid #CCC;
+	}
+	.section-halves td:nth-child(even)
+	{
+		border-left: 1px solid #CCC;
+	}
+}
+
+@media screen and (min-width: 1350px)
+{
+	.page-padding, nav
+	{
+		padding-left: 20%;
+		padding-right: 20%;
+	}
+
+	.landing::after
+	{
+		left: 180px;
+		width: calc(100% - 400px);
 	}
 }
