@@ -1,3 +1,4 @@
+/*
 @font-face
 {
 	font-family: "Symbols";
@@ -13,6 +14,7 @@
 	font-family: "Square Light";
 	src: url("../font/SquareLight.ttf");
 }
+*/
 @font-face
 {
 	font-family: "Verdana";
@@ -23,6 +25,19 @@
 		font-family: "Verdana";
 		src: url("../font/verdanab.ttf");
 		font-weight: bold;
+	}
+	@font-face
+	{
+		font-family: "Verdana";
+		src: url("../font/verdanai.ttf");
+		font-style: italic;
+	}
+	@font-face
+	{
+		font-family: "Verdana";
+		src: url("../font/verdanaz.ttf");
+		font-weight: bold;
+		font-style: italic;
 	}
 @font-face
 {
@@ -37,6 +52,18 @@
 	}
 @font-face
 {
+	font-family: "Segoe UI Light";
+	src: url("../font/segoeuil.ttf");
+}
+	@font-face
+	{
+		font-family: "Segoe UI Light";
+		src: url("../font/seguili.ttf");
+		font-style: italic;
+	}
+/*
+@font-face
+{
 	font-family: "Consolas";
 	src: url("../font/consola.ttf");
 }
@@ -46,6 +73,7 @@
 		src: url("../font/consolab.ttf");
 		font-weight: bold;
 	}
+*/
 
 
 
