@@ -95,7 +95,7 @@ html, body, header, main, footer, .landing
 {
 	text-align: center;
 }
-.page-padding
+.page-padding, main
 {
 	padding-left: 0;
 	padding-right: 0;
@@ -108,6 +108,10 @@ html, body, header, main, footer, .landing
 .no-padding
 {
 	padding: 0;
+}
+.no-top-margin
+{
+	margin-top: 0;
 }
 .no-bottom-margin
 {
@@ -127,6 +131,10 @@ body
 	margin-bottom: -20px;
 
 	background-color: #EEE;
+}
+body.nav-margin
+{
+	margin-top: 80px;
 }
 
 h1, h2
@@ -267,7 +275,7 @@ nav a:hover
 	text-align: center;
 	vertical-align: middle;
 }
-.landing::after
+.landing::after, .banner::after
 {
 	content: "";
 	position: absolute;
@@ -305,6 +313,32 @@ nav a:hover
 	font-style: italic;
 
 	cursor: default;
+}
+
+.banner
+{
+	position: relative;
+	display: table-cell;
+
+	width: 100vw;
+	height: 20.5vw;
+
+	background-position: center;
+	background-size: cover;
+	border-bottom: 60px solid #933A3A;
+
+	color:#FFF;
+	text-align: center;
+	vertical-align: middle;
+}
+.banner h1
+{
+	margin: 0;
+
+	font-family: "Segoe UI Light";
+	font-size: 400%;
+	font-weight: normal;
+	text-transform: uppercase;
 }
 
 .content
@@ -376,6 +410,10 @@ h2:not(#welcome)
 		border-left-color: #933A3A;
 		right: -40px;
 	}
+	h2:not(#welcome).no-top-margin
+	{
+		margin-top: 0;
+	}
 	h2:not(#welcome).no-bottom-margin
 	{
 		margin-bottom: 0;
@@ -385,23 +423,32 @@ section
 {
 	padding: 10px 5%;
 }
-.section-halves, .section-halves tbody, .section-halves tr, .section-halves td
+
+span.colour
+{
+	color: #CC4141;
+}
+
+table, tbody, tr, td
 {
 	margin: 0;
 	padding: 0;
 	border: none;
 	box-sizing: border-box;
 }
-.section-halves
+table
 {
 	width: 100%;
 	border-spacing: 0;
 	border-collapse: collapse;
 }
-.section-halves td
+td
 {
 	display: block;
+}
 
+.section-halves td
+{
 	border-bottom: 1px solid #CCC;
 
 	vertical-align: top;
@@ -414,7 +461,7 @@ section
 {
 	height: 35px;
 	margin: 0;
-	padding: 20px 0px 5px 0px;
+	padding: 20px 0px 10px 0px;
 
 	font-size: 125%;
 	font-weight: normal;
@@ -424,9 +471,53 @@ section
 {
 	color: #CC4141;
 }
-.section-halves p
+.section-halves p, .section-thirds p
 {
 	padding: 10px 5%;
+}
+
+.section-thirds td
+{
+	border: none;
+
+	vertical-align: middle;
+
+	padding: 15px 0px;
+}
+.section-thirds td.bottom-align
+{
+	vertical-align: bottom;
+}
+.section-thirds td:nth-child(1), .section-thirds td:nth-child(2)
+{
+	padding-bottom: 8px;
+}
+.section-thirds td:nth-child(2), .section-thirds td:nth-child(3)
+{
+	padding-top: 8px;
+}
+.section-thirds h6
+{
+	margin: 0px 0px 20px 0px;
+
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: normal;
+}
+
+.command-box-small
+{
+	width: 100%;
+	height: 60px;
+	box-sizing: border-box;
+	overflow-x: hidden;
+
+	font-family: "Consolas";
+	font-size: 75%;
+	color: #888888;
+	border: 1px solid #000000;
+	word-wrap: break-word;
+	word-break: break-all;
 }
 
 .video-frame
@@ -435,8 +526,9 @@ section
 	position: relative;
 	width: 100%;
 	height: 0;
+	margin: 0;
+	margin-bottom: -4px;
 	padding-bottom: 56.25%;
-	margin-top: 5px;
 }
 .video-frame iframe
 {
@@ -483,7 +575,7 @@ section
 
 @media screen and (min-width: 1000px)
 {
-	.page-padding, nav
+	.page-padding, nav, main
 	{
 		padding-left: 10%;
 		padding-right: 10%;
@@ -531,15 +623,30 @@ section
 		padding-right: 0px;
 		transform: translateY(-5px);
 	}
-	.nav-link-selected
+	.nav-link-selected span
 	{
+		position: relative;
+
 		border-right: none;
 	}
+	.nav-link-selected span::after
+	{
+		content: "";
+		position: absolute;
+		top: -30px;
+		right: -10px;
+		border-right: 100px solid rgba(255, 255, 255, 0.15);
+		border-bottom: 80px solid transparent;
+	}
 
-	.landing::after
+	.landing::after, .banner::after
 	{
 		left: 80px;
 		width: calc(100% - 200px);
+	}
+	.banner h1
+	{
+		font-size: 700%;
 	}
 
 	h2:not(#welcome)
@@ -561,27 +668,76 @@ section
 
 		border-bottom: none;
 	}
-	.section-halves td:nth-child(odd)
+	.section-halves td:nth-child(1)
 	{
 		border-right: 1px solid #CCC;
 	}
-	.section-halves td:nth-child(even)
+	.section-halves td:nth-child(2)
 	{
 		border-left: 1px solid #CCC;
+	}
+
+	.section-thirds td
+	{
+		display: table-cell;
+		width: calc(100% / 3);
+		height: 100%;
+
+		border-bottom: none;
+	}
+	.section-thirds td:nth-child(1), .section-thirds td:nth-child(2), .section-thirds td:nth-child(3)
+	{
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	.section-thirds td:nth-child(1)
+	{
+		padding-right: 4%;
+	}
+	.section-thirds td:nth-child(2)
+	{
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+	.section-thirds td:nth-child(3)
+	{
+		padding-left: 4%;
+	}
+	.section-thirds h6
+	{
+		text-align: center;
 	}
 }
 
 @media screen and (min-width: 1350px)
 {
-	.page-padding, nav
+	.page-padding, nav, main
 	{
 		padding-left: 20%;
 		padding-right: 20%;
 	}
 
-	.landing::after
+	.landing::after, .banner::after
 	{
 		left: 180px;
 		width: calc(100% - 400px);
+	}
+	.banner h1
+	{
+		font-size: 1000%;
+	}
+
+	.section-thirds td:nth-child(1)
+	{
+		padding-right: 6%;
+	}
+	.section-thirds td:nth-child(2)
+	{
+		padding-left: 3%;
+		padding-right: 3%;
+	}
+	.section-thirds td:nth-child(3)
+	{
+		padding-left: 6%;
 	}
 }

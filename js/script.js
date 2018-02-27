@@ -2,12 +2,12 @@ var navLinks, navClose;
 
 var navExpanded = false;
 
-function init()
+function init(sp)
 {
 	navLinks = document.getElementsByClassName("nav-link");
 	navClose = document.getElementById("nav-close");
 
-	randomSplash();
+	if (sp) randomSplash();
 
 	window.addEventListener("resize", window_onResize);
 	document.getElementById("nav-menu").addEventListener("click", navMenu_onClick);	
