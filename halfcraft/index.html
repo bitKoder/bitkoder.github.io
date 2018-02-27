@@ -31,8 +31,7 @@
 		<main>
 			<div class="content">
 				<section>
-					<p>
-					Halfcraft is a Minecraft command block module created by <a href = "https://www.youtube.com/koder" target="_blank">koder</a>.<br><br></p>
+					<p class="center-align">Halfcraft is a Minecraft command block module created by <a href = "https://www.youtube.com/koder" target="_blank">koder</a>.<br><br></p>
 					<table class="section-thirds">
 						<tr>
 							<td>Halfcraft allows you to <span class="colour">free any block</span> from the grid, then move the free blocks around the world <span class="colour">pixel by pixel</span>.</td>
@@ -40,9 +39,7 @@
 							<td>Halfcraft can be used to create <span class="colour">working slabs, stairs and all kinds of shapes</span> using any block you like.</td>
 						</tr>
 					</table><br>
-					<p>
-					All commands, videos and resources related to Halfcraft can be found on this page.
-					</p>
+					<p class="center-align">All commands, videos and resources related to Halfcraft can be found on this page.</p>
 				</section>
 				<h2 id="video" class="no-top-margin no-bottom-margin">Watch the Video</h2>
 				<section class="no-padding">
@@ -51,7 +48,7 @@
 					</div>
 				</section>
 				<h2 id="install" class="no-top-margin">Installation</h2>
-				<section style="min-height: 320px">
+				<section>
 					<table class="section-thirds">
 						<tr>
 							<td class="bottom-align">
@@ -68,14 +65,26 @@
 							</td>
 						</tr>
 					</table><br>
-					Open your Mineraft world, make sure "Allow Cheats" is set to "ON", then get a command block by typing <span class="cmd" onclick="window.getSelection().selectAllChildren(this)">/give @s command_block</span> into the chat.<br>
-					Now find a good place to set up the module. It's fairly big (7x13x6 blocks) so you'll want plenty of room. <strong>It absolutely must be in the spawn chunks or other permanently loaded chunks.</strong> Place down the command block on the north side of your chosen area, as the module will generate south of where you put the command block.<br>
-					Click the text box labeled "Command 1" and copy the command. Paste it into the command block with ctrl+v/cmd+v and click the "Needs Redstone" button so it changes to "Always Active". <strong>Make sure there is nothing on top of the commmand block!</strong><br>
-					Click "Done", and the module will be partly set up. Now click the text box labeled "Command 2" and copy it, and paste it into the command block you placed earlier. Set it to "Always Active" and click "Done" again, and the module is now fully set up!</p>
-					<p>At this point Halfcraft is fully functional, but it doesn't support many blocks. To fix this, install the extension module.<br>
-					Click the text box labeled "Extension Command" and copy it, and paste it into a new command block. Set it to "Always Active" and click "Done". Make sure not to overwrite the main Halfcraft module!<br>
-					Once the extension is set up, you can free most of the more common blocks from the grid. You can also use the extension generator below to create your own custom extensions.
-					</p>
+				</section>
+				<section class="no-padding">
+					<table class="unresponsive">
+						<tr>
+							<td class="prev-page"></td>
+							<td>
+								<p>Open your Mineraft world, make sure "Allow Cheats" is set to "ON", then get a command block by typing <span class="cmd" onclick="window.getSelection().selectAllChildren(this)">/give @s command_block</span> into the chat.<br>
+								Now find a good place to set up the module. It's fairly big (7x13x6 blocks) so you'll want plenty of room. <strong>It absolutely must be in the spawn chunks or other permanently loaded chunks.</strong> Place down the command block on the north side of your chosen area, as the module will generate south of where you put the command block.<br>
+								Click the text box labeled "Command 1" and copy the command. Paste it into the command block with ctrl+v/cmd+v and click the "Needs Redstone" button so it changes to "Always Active". <strong>Make sure there is nothing on top of the commmand block!</strong><br>
+								Click "Done", and the module will be partly set up. Now click the text box labeled "Command 2" and copy it, and paste it into the command block you placed earlier. Set it to "Always Active" and click "Done" again, and the module is now fully set up!
+								At this point Halfcraft is fully functional, but it doesn't support many blocks. To fix this, install the extension module.<br>
+								Click the text box labeled "Extension Command" and copy it, and paste it into a new command block. Set it to "Always Active" and click "Done". Make sure not to overwrite the main Halfcraft module!<br>
+								Once the extension is set up, you can free most of the more common blocks from the grid. You can also use the extension generator below to create your own custom extensions.
+								</p>
+							</td>
+							<td class="next-page"></td>
+						</tr>
+					</table>
+				</section>
+				<section>
 					<hr>
 					<p class="center-text clickable" onclick="toggleSupportedBlocks(this)">Show supported blocks</p>
 					<div id="supported-blocks" class="expandable expandable-hide">
@@ -142,7 +151,7 @@
 						<div class="inline-block">Block Name: <input class="" id="block-type" value="bookshelf" oninput="GenerateExtCustom()"></input></div>
 						<div class="inline-block">Block Data: <input class="" id="block-data" value="0" oninput="GenerateExtCustom()"></input></div>
 					</section>
-					<textarea class="output output-top-border" id="output" spellcheck="false" readonly onclick="this.setSelectionRange(0, this.value.length)"></textarea>
+					<textarea class="command-box" id="output" spellcheck="false" readonly onclick="this.setSelectionRange(0, this.value.length)"></textarea>
 					<p class="smallText">Not working? Contact me on <a href="https://www.youtube.com/koder">YouTube</a> or <a href="https://twitter.com/bitKoder">Twitter</a> and I'll fix it for you!</p>
 				</div>
 				
