@@ -428,6 +428,29 @@ span.colour
 {
 	color: #CC4141;
 }
+span.cmd
+{
+	display:inline-block;
+	padding: 2px 5px;
+	
+	background: #303038;
+	border: 2px solid #040408;
+	border-radius: 4px;
+	
+	font-family: "Segoe UI Light";
+	color: #DDDDEE;
+}
+
+hr
+{
+	border: none;
+	border-bottom: 1px solid #888;
+}
+hr.separator
+{
+	width: 100px;
+	margin: 50px auto;
+}
 
 table, tbody, tr, td
 {
@@ -514,7 +537,7 @@ table.unresponsive td
 	width: 100px;
 
 	font-family: "Segoe UI Light";
-	font-size: 500%;
+	font-size: 400%;
 	text-align: center;
 	vertical-align: center;
 
@@ -535,6 +558,33 @@ table.unresponsive td
 .next-page::after
 {
 	content: ">";
+}
+
+.page-content
+{
+	position: relative;
+	overflow: hidden;
+}
+.page-content .page
+{
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+
+	transition-duration: 0.5s;
+}
+.page-left
+{
+	opacity: 0;
+	transform: translateX(-100%) scale(0.75, 0.75);
+}
+.page-right
+{
+	opacity: 0;
+	transform: translateX(100%) scale(0.75, 0.75);
 }
 
 .command-box, .command-box-small

@@ -12,6 +12,18 @@ function init(sp)
 	window.addEventListener("resize", window_onResize);
 	document.getElementById("nav-menu").addEventListener("click", navMenu_onClick);	
 	navClose.addEventListener("click", closeNav)
+
+	initPages();
+	var pagePrevButtons = document.getElementsByClassName("prev-page");
+	for (var i = 0; i < pagePrevButtons.length; i++)
+	{
+		pagePrevButtons[i].addEventListener("click", function() {changePage(this);});
+	}
+	var pageNextButtons = document.getElementsByClassName("next-page");
+	for (var i = 0; i < pagePrevButtons.length; i++)
+	{
+		pageNextButtons[i].addEventListener("click", function() {changePage(this);});
+	}
 }
 
 function randomSplash()
@@ -62,4 +74,57 @@ function navMenu_onClick()
 		}
 	}
 	else closeNav();
+}
+
+function changePage(elem)
+{
+	var index = 0;
+	var parent = elem.parentElement;
+	for (var i = 0; i < parent.children.length; i++)
+	{
+		if (parent.children[1].children[i].classList.contains("page-middle"))
+		{
+			index = i;
+			break;
+		}
+	}
+	if (elem.classList.contains("prev-page"))
+	{
+		if (index <= 0) return;
+
+		parent.children[1].children[index].classList.remove("page-middle");
+		parent.children[1].children[index].classList.add("page-right");
+		parent.children[1].children[index - 1].classList.remove("page-left");
+		parent.children[1].children[index - 1].classList.add("page-middle");
+
+		parent.children[1].style.height = parent.children[1].children[index].clientHeight + "px";
+	}
+	else if (elem.classList.contains("next-page"))
+	{
+		if (index >= parent.children.length - 1) return;
+
+		parent.children[1].children[index].classList.remove("page-middle");
+		parent.children[1].children[index].classList.add("page-left");
+		parent.children[1].children[index + 1].classList.remove("page-right");
+		parent.children[1].children[index + 1].classList.add("page-middle");
+
+		parent.children[1].style.height = parent.children[1].children[index].clientHeight + "px";
+	}
+}
+
+
+function initPages()
+{
+	var pageContainers = document.getElementsByClassName("page-content");
+	for (var i = 0; i < pageContainers.length; i++)
+	{
+		for (var j = 0; j < pageContainers[i].children.length; i++)
+		{
+			if (pageContainers[i].children[j].classList.contains("page-middle"))
+			{
+				pageContainers[i].style.height = pageContainers[i].children[j].clientHeight + "px";
+				break;
+			}
+		}
+	}
 }
