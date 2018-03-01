@@ -2,18 +2,17 @@ var navLinks, navClose;
 
 var navExpanded = false;
 
-function init(sp)
+function init()
 {
 	navLinks = document.getElementsByClassName("nav-link");
 	navClose = document.getElementById("nav-close");
 
-	if (sp) randomSplash();
+	if (document.getElementById("splash-text")) randomSplash();
 
 	window.addEventListener("resize", window_onResize);
 	document.getElementById("nav-menu").addEventListener("click", navMenu_onClick);	
 	navClose.addEventListener("click", closeNav)
 
-	initPages();
 	var pagePrevButtons = document.getElementsByClassName("prev-page");
 	for (var i = 0; i < pagePrevButtons.length; i++)
 	{
@@ -24,6 +23,7 @@ function init(sp)
 	{
 		pageNextButtons[i].addEventListener("click", function() {changePage(this);});
 	}
+	if (pagePrevButtons.length > 0 || pageNextButtons.length > 0) initPages();
 }
 
 function randomSplash()
@@ -97,7 +97,7 @@ function changePage(elem)
 		parent.children[1].children[index - 1].classList.remove("page-left");
 		parent.children[1].children[index - 1].classList.add("page-middle");
 
-		parent.children[1].style.height = parent.children[1].children[index].clientHeight + "px";
+		parent.children[1].style.height = parent.children[1].children[index - 1].clientHeight + "px";
 	}
 	else if (elem.classList.contains("next-page"))
 	{
@@ -108,7 +108,7 @@ function changePage(elem)
 		parent.children[1].children[index + 1].classList.remove("page-right");
 		parent.children[1].children[index + 1].classList.add("page-middle");
 
-		parent.children[1].style.height = parent.children[1].children[index].clientHeight + "px";
+		parent.children[1].style.height = parent.children[1].children[index + 1].clientHeight + "px";
 	}
 }
 

@@ -134,7 +134,7 @@ body
 }
 body.nav-margin
 {
-	margin-top: 80px;
+	margin-top: 60px;
 }
 
 h1, h2
@@ -149,7 +149,7 @@ nav
 	left: 0px;
 	z-index: 4;
 	width: 100%;
-	height: 80px;
+	height: 60px;
 	box-sizing: border-box;
 
 	background-color: #333;
@@ -165,7 +165,7 @@ nav
 	display: inline-block;
 	float: left;
 	height: 100%;
-	padding: 15px 20px 0px 20px;
+	padding: 10px 20px;
 	box-sizing: border-box;
 
 	opacity: 0.9;
@@ -176,7 +176,7 @@ nav
 }
 .nav-logo img
 {
-	height: 50px;
+	height: 40px;
 	margin-bottom: -4px;
 }
 .nav-menu, .nav-link
@@ -185,7 +185,8 @@ nav
 }
 .nav-menu
 {
-	padding: 20px 10px 15px 10px;
+	height: 100%;
+	padding: 10px 10px 25px 10px;
 
 	background: none;
 	border: none;
@@ -431,14 +432,19 @@ span.colour
 span.cmd
 {
 	display:inline-block;
-	padding: 2px 5px;
+	padding: 2px 5px 5px 5px;
 	
 	background: #303038;
-	border: 2px solid #040408;
 	border-radius: 4px;
 	
 	font-family: "Segoe UI Light";
-	color: #DDDDEE;
+	color: #DDD;
+
+	cursor: pointer;
+}
+span.cmd:hover
+{
+	color: #FFF;
 }
 
 hr
@@ -450,6 +456,11 @@ hr.separator
 {
 	width: 100px;
 	margin: 50px auto;
+}
+
+img
+{
+	max-width: 100%;
 }
 
 table, tbody, tr, td
@@ -534,10 +545,10 @@ table.unresponsive td
 
 .prev-page, .next-page
 {
-	width: 100px;
+	width: 50px;
 
 	font-family: "Segoe UI Light";
-	font-size: 400%;
+	font-size: 200%;
 	text-align: center;
 	vertical-align: center;
 
@@ -702,7 +713,7 @@ table.unresponsive td
 	{
 		display: inline-block;
 		height: 100%;
-		padding: 30px 10px 0px 10px;
+		padding: 15px 10px 0px 10px;
 		box-sizing: border-box;
 
 		background-color: transparent;
@@ -730,12 +741,12 @@ table.unresponsive td
 	}
 	.nav-link-selected span::after
 	{
-		content: "";
+		/*content: "";
 		position: absolute;
 		top: -30px;
 		right: -10px;
 		border-right: 100px solid rgba(255, 255, 255, 0.15);
-		border-bottom: 80px solid transparent;
+		border-bottom: 80px solid transparent;*/
 	}
 
 	.landing::after, .banner::after
@@ -806,6 +817,13 @@ table.unresponsive td
 	{
 		text-align: center;
 	}
+
+	.prev-page, .next-page
+	{
+		width: 100px;
+
+		font-size: 400%;
+	}
 }
 
 @media screen and (min-width: 1350px)
@@ -814,6 +832,11 @@ table.unresponsive td
 	{
 		padding-left: 20%;
 		padding-right: 20%;
+	}
+
+	.nav-link
+	{
+		padding: 15px 20px 0px 20px;
 	}
 
 	.landing::after, .banner::after
