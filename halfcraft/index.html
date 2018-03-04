@@ -191,8 +191,24 @@
 						Input a block name and data value into the two text fields below, then click on the large text box underneath to select the generated command.<br>
 						Copy the command, then paste it into a command block in your Minecraft world. Activate that command block, and it will set up the custom extension.<br>
 						<hr class="extra-margin">
-						<div class="inline-block">Block Name: <input class="" id="block-type" value="bookshelf" oninput="GenerateExtCustom()"></input></div>
-						<div class="inline-block">Block Data: <input class="" id="block-data" value="0" oninput="GenerateExtCustom()"></input></div>
+						<table class="section-halves center-align">
+							<tr>
+								<td>
+									Block Name<br>
+									<br>
+									<input type="text" class="" id="block-type" value="bookshelf" oninput="GenerateExtCustom()"></input><br>
+									<br>
+								</td>
+								<td>
+									Block Data<br>
+									<br>
+									<input type="text"  class="" id="block-data" value="0" oninput="GenerateExtCustom()"></input><br>
+									<br>
+								</td>
+							</tr>
+						</table>
+						<div class="inline-block"></div>
+						<div class="inline-block"></div>
 					</section>
 					<textarea class="command-box" id="output" spellcheck="false" readonly onclick="this.setSelectionRange(0, this.value.length)"></textarea>
 					<p class="smallText">Not working? Contact me on <a href="https://www.youtube.com/koder">YouTube</a> or <a href="https://twitter.com/bitKoder">Twitter</a> and I'll fix it for you!</p>
