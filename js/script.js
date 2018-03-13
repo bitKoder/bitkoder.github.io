@@ -80,7 +80,7 @@ function changePage(elem)
 {
 	var index = 0;
 	var parent = elem.parentElement;
-	for (var i = 0; i < parent.children.length; i++)
+	for (var i = 0; i < parent.children[1].children.length; i++)
 	{
 		if (parent.children[1].children[i].classList.contains("page-middle"))
 		{
@@ -98,10 +98,11 @@ function changePage(elem)
 		parent.children[1].children[index - 1].classList.add("page-middle");
 
 		parent.children[1].style.height = parent.children[1].children[index - 1].clientHeight + "px";
+
 	}
 	else if (elem.classList.contains("next-page"))
 	{
-		if (index >= parent.children.length - 1) return;
+		if (index >= parent.children[1].children.length - 1) return;
 
 		parent.children[1].children[index].classList.remove("page-middle");
 		parent.children[1].children[index].classList.add("page-left");

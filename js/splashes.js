@@ -7,7 +7,7 @@ var splashes =
 	"I spent way too much time coming up with these splashes",
 	"Hey, remember that map I was making? Yeah me neither",
 	"Pretending to keep up with the latest mapmaking technologies",
-	"Probably copmplaining about my Rocket League teammates",
+	"Probably complaining about my Rocket League teammates",
 	"More subscribers than TheRedstoneScientist",
 	"Less subscribers than Sethbling",
 	"Remember the good old days when I uploaded monthly",
