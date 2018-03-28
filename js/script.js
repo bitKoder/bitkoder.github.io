@@ -98,6 +98,7 @@ function changePage(elem)
 		parent.children[1].children[index - 1].classList.add("page-middle");
 
 		parent.children[1].style.height = parent.children[1].children[index - 1].clientHeight + "px";
+		parent.children[1].children[index - 1].children[0].click();
 
 	}
 	else if (elem.classList.contains("next-page"))
@@ -110,6 +111,7 @@ function changePage(elem)
 		parent.children[1].children[index + 1].classList.add("page-middle");
 
 		parent.children[1].style.height = parent.children[1].children[index + 1].clientHeight + "px";
+		parent.children[1].children[index + 1].children[0].click();
 	}
 }
 

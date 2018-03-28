@@ -52,6 +52,22 @@
 	}
 @font-face
 {
+	font-family: "Consolas";
+	src: url("../font/consola.ttf");
+}
+@font-face
+{
+	font-family: "Segoe UI";
+	src: url("../font/segoeui.ttf");
+}
+	@font-face
+	{
+		font-family: "Segoe UI";
+		src: url("../font/seguii.ttf");
+		font-style: italic;
+	}
+@font-face
+{
 	font-family: "Segoe UI Light";
 	src: url("../font/segoeuil.ttf");
 }
@@ -121,8 +137,8 @@ html, body, header, main, footer, .landing
 
 html
 {	
-	font-family: "Verdana";
-	font-size: 20px;
+	font-family: "Segoe UI";
+	font-size: 22px;
 	color: #444;
 }
 
@@ -135,6 +151,21 @@ body
 body.nav-margin
 {
 	margin-top: 60px;
+}
+
+footer
+{
+	padding: 20px 0px 35px 0px;
+
+	background-color: #333;
+
+	color: #CCC;
+	text-align: center;
+}
+footer .copyright
+{
+	font-family: "Segoe UI Light";
+	font-size: 18px;
 }
 
 h1, h2
@@ -438,6 +469,8 @@ span.cmd
 	
 	font-family: "Segoe UI Light";
 	color: #DDD;
+	word-wrap: break-word;
+	word-break: break-all;
 
 	cursor: pointer;
 }
@@ -478,6 +511,10 @@ table
 	width: 100%;
 	border-spacing: 0;
 	border-collapse: collapse;
+}
+table.no-collapse
+{
+	border-collapse: separate;
 }
 td
 {
@@ -531,13 +568,9 @@ table.unresponsive td
 {
 	vertical-align: bottom;
 }
-.section-thirds td:nth-child(1), .section-thirds td:nth-child(2)
+.section-thirds td
 {
-	padding-bottom: 8px;
-}
-.section-thirds td:nth-child(2), .section-thirds td:nth-child(3)
-{
-	padding-top: 8px;
+	padding: 8px 0px;
 }
 .section-thirds h6
 {
@@ -602,12 +635,26 @@ table.unresponsive td
 	opacity: 0;
 	transform: translateX(100%) scale(0.75, 0.75);
 }
+.page-action
+{
+	display: none;
+}
+
+.cmd-container
+{
+	border: 2px solid transparent !important;
+}
+.cmd-highlight
+{
+	border-color: #CC4141 !important;
+}
 
 .command-box, .command-box-small
 {
 	width: 100%;
 	box-sizing: border-box;
 	overflow-x: hidden;
+	resize: vertical;
 
 	font-family: "Consolas";
 	font-size: 75%;
@@ -629,9 +676,21 @@ table.unresponsive td
 
 	border: 1px solid #000000;
 }
+.small-text
+{
+	margin: 0px 0px 15px 0px;
+
+	font-size: 18px;
+	text-align: center;
+}
 
 input[type="text"]
 {
+    max-width: 100%;
+	padding: 5px 10px;
+	box-sizing: border-box;
+
+	font-family: "Segoe UI";
 	font-size: 100%;
 }
 
@@ -642,7 +701,7 @@ input[type="text"]
 	width: 100%;
 	height: 0;
 	margin: 0;
-	margin-bottom: -4px;
+	margin-bottom: -6px;
 	padding-bottom: 56.25%;
 }
 .video-frame iframe
@@ -652,6 +711,13 @@ input[type="text"]
 	height: 100%;
 	top: 0px;
 	left: 0px;
+}
+
+.clickable
+{
+	color: #F33;
+
+	cursor: pointer;
 }
 
 .expandable-hide
@@ -783,7 +849,7 @@ input[type="text"]
 	.section-halves td
 	{
 		display: table-cell;
-		width: 50%;
+		width: 100vw;
 		height: 100%;
 
 		border-bottom: none;
@@ -797,31 +863,21 @@ input[type="text"]
 		border-left: 1px solid #CCC;
 	}
 
+	.section-thirds tr
+	{
+		padding: 0px 2%;
+	}
 	.section-thirds td
 	{
 		display: table-cell;
-		width: calc(100% / 3);
+		width: 100vw;
 		height: 100%;
 
 		border-bottom: none;
 	}
-	.section-thirds td:nth-child(1), .section-thirds td:nth-child(2), .section-thirds td:nth-child(3)
+	.section-thirds td
 	{
-		padding-top: 0;
-		padding-bottom: 0;
-	}
-	.section-thirds td:nth-child(1)
-	{
-		padding-right: 4%;
-	}
-	.section-thirds td:nth-child(2)
-	{
-		padding-left: 2%;
-		padding-right: 2%;
-	}
-	.section-thirds td:nth-child(3)
-	{
-		padding-left: 4%;
+		padding: 0px 2%;
 	}
 	.section-thirds h6
 	{
@@ -857,19 +913,5 @@ input[type="text"]
 	.banner h1
 	{
 		font-size: 1000%;
-	}
-
-	.section-thirds td:nth-child(1)
-	{
-		padding-right: 6%;
-	}
-	.section-thirds td:nth-child(2)
-	{
-		padding-left: 3%;
-		padding-right: 3%;
-	}
-	.section-thirds td:nth-child(3)
-	{
-		padding-left: 6%;
 	}
 }
