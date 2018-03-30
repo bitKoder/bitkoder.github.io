@@ -1,11 +1,6 @@
 /*
 @font-face
 {
-	font-family: "Symbols";
-	src: url("../font/Symbols.ttf");
-}
-@font-face
-{
 	font-family: "Square";
 	src: url("../font/SquareNormal.ttf");
 }
@@ -15,6 +10,11 @@
 	src: url("../font/SquareLight.ttf");
 }
 */
+@font-face
+{
+	font-family: "Symbols";
+	src: url("../font/Symbols.ttf");
+}
 @font-face
 {
 	font-family: "Verdana";
@@ -606,6 +606,46 @@ table.unresponsive td
 	font-size: inherit;
 	font-weight: normal;
 }
+
+a.download
+{
+	display: inline;
+	position: relative;
+	padding: 0px 5px;
+	float: right;
+	
+	font-family: "Symbols", "Verdana";
+	font-size: 100%;
+	color: #FFFFFF;
+	text-decoration: none;
+	text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+	text-align: center;
+	transform: scale(1.2,1.2);
+	
+	transition-duration: 0.2s;
+}
+	a.download:hover
+	{
+		text-decoration: none;
+		text-shadow: 0px 3px 1px rgba(0, 0, 0, 0.3);
+		transform: scale(1.5,1.5);
+	}
+	a.download:after, .download-symbol:after
+	{
+		content: "!";
+	}
+	.download-symbol
+	{
+		display: inline;
+		
+		font-family: "Symbols", "Verdana";
+		font-size: 100%;
+		font-weight: bold;
+		/*color: #FFFFFF;*/
+		text-decoration: none;
+		text-align: center;
+		transform: scale(1.2,1.2);
+	}
 
 .prev-page, .next-page
 {

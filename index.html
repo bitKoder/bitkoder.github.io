@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width">
 		<title>Home | bitKoder</title>
 		<meta name="description" content="The official website of koder - Minecraft command extraordinaire!">
@@ -9,19 +10,13 @@
 		<meta name="author" content="bitKoder">
 		<link rel="icon" href="favicon.png">
 		<link rel="stylesheet" href="css/style.css">
+		<script src="../js/w3-include.js"></script>
 		<script src="js/splashes.js"></script>
 		<script src="js/script.js"></script>
 	</head>
 	<body>
 		<header>
-			<nav class="right-align">
-			<div class="nav-mobile-collapsed"><a href="http://bitkoder.com/" class="nav-logo"><img src="http://bitkoder.com/img/koder.png" alt="koder logo"></a>
-				<button id="nav-menu" class="nav-menu">☰</button
-				></div><a id="nav-commands" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/commands"><span>Commands</span></a
-				><a id="nav-resourcepacks" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/resourcepacks"><span>Resource Packs</span></a
-				><a id="nav-contact" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/contact"><span>Contact</span></a>
-			</nav>
-			<div id="nav-close"></div>
+			<div w3-include-html="../static-html/nav.html"></div>
 			<div class="landing">
 				<h1>koder</h1>
 				<hr>
@@ -63,10 +58,13 @@
 				</section>
 			</div>
 		</main>
-		<footer>
-		</footer>
+		
+		<div w3-include-html="../static-html/footer.html"></div>
 	
 
-		<script>init(true);</script>
+		<script>
+			includeHTML();
+			init(true);
+		</script>
 	</body>
 </html>

@@ -2,6 +2,7 @@
 <html lang = "en">
 	<head>
 		<meta charset = "UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width">
 		<title>Resource Packs | bitKoder</title>
 		<meta name="description" content="Here you can find every resource pack I have released, including a video and description for each pack.">
@@ -9,19 +10,13 @@
 		<meta name="author" content="bitKoder">
 		<link rel="icon" href="../favicon.png">
 		<link rel="stylesheet" href="../css/style.css">
+		<script src="../js/w3-include.js"></script>
 		<script src="../js/script.js"></script>
 		<!-- <script src="js/script.js"></script> -->
 	</head>
 	<body class="nav-margin">
 		<header>
-			<nav class="right-align">
-			<div class="nav-mobile-collapsed"><a href="http://bitkoder.com/" class="nav-logo"><img src="http://bitkoder.com/img/koder.png" alt="koder logo"></a>
-				<button id="nav-menu" class="nav-menu">☰</button
-				></div><a id="nav-commands" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/commands"><span>Commands</span></a
-				><a id="nav-resourcepacks" class="nav-link nav-link-selected nav-mobile-expanded" href="http://bitkoder.com/resourcepacks"><span>Resource Packs</span></a
-				><a id="nav-contact" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/contact"><span>Contact</span></a>
-			</nav>
-			<div id="nav-close"></div>
+			<div w3-include-html="../static-html/nav.html"></div>
 		</header>
 			<main>
 			<div class="content">
@@ -31,7 +26,7 @@
 				
 				<section>
 					<p>
-					Below is a list of all the resource packs I have released to date. You can find the full video and a short description for each resource pack below the title. To the right of each title is a download (<span class="symbol bold-text">!</span>) button for that resource pack.
+					Below is a list of all the resource packs I have released to date. You can find the full video and a short description for each resource pack below the title. To the right of each title is a download <span class="download-symbol"></span> button for that resource pack.
 					</p>
 				</section>
 				<h2 id="basic-cb" class="no-bottom-margin">Basic Command Block Textures<a class="download" href="http://bitkoder.com/dl/rp/koder&#039;s%20Basic%20Command%20Blocks.zip"></a></h2>
@@ -80,7 +75,12 @@
 				</section>
 			</div>
 		</main>
+
+		<div w3-include-html="../static-html/footer.html"></div>
+
+		
 		<script>
+			includeHTML();
 			init(false);
 		</script>
 	</body>
