@@ -162,6 +162,32 @@ footer
 	color: #CCC;
 	text-align: center;
 }
+footer .social-tile
+{
+	display: inline-block;
+	width: 60px;
+	height: 50px;
+	padding: 10px;
+	box-sizing: border-box;
+
+	text-align: center;
+}
+footer .social-tile:hover
+{
+	background-color: rgba(255, 255, 255, 0.2);
+}
+footer .social-tile svg
+{
+	opacity: 0.8;
+}
+footer .social-tile:hover svg
+{
+	opacity: 0.9;
+}
+footer hr
+{
+	width: 100px;
+}
 footer .copyright
 {
 	font-family: "Segoe UI Light";
@@ -250,7 +276,7 @@ nav a:hover
 	background-color: #444;
 
 	font-family: "Segoe UI Light";
-	font-size: 125%;
+	font-size: 100%;
 
 	transition-property: background-color, opacity;
 	transition-duration: 0.3s;
