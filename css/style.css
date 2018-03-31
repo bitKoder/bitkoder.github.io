@@ -735,13 +735,9 @@ a.download
 	display: none;
 }
 
-.cmd-container
-{
-	border: 2px solid transparent !important;
-}
 .cmd-highlight
 {
-	border-color: #CC4141 !important;
+	background-color: #F88;
 }
 
 .command-box, .command-box-small
