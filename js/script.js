@@ -4,14 +4,9 @@ var navExpanded = false;
 
 function init()
 {
-	navLinks = document.getElementsByClassName("nav-link");
-	navClose = document.getElementById("nav-close");
-
 	if (document.getElementById("splash-text")) randomSplash();
 
 	window.addEventListener("resize", window_onResize);
-	document.getElementById("nav-menu").addEventListener("click", navMenu_onClick);	
-	navClose.addEventListener("click", closeNav)
 
 	var cmdSpans = document.getElementsByClassName("cmd");
 	for (var i = 0; i < cmdSpans.length; i++)
