@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width"/>
+		<title>Rotation Calculator | bitKoder</title>
+		<link rel="icon" href="http://bitkoder.com/img/favicon.png">
+		<link rel="stylesheet" href="../../css/style.css">
+		<script src="../../js/script.js"></script>
+		<script src="js/script.js"></script>
+	</head>
+	<body>
+		<main>
+			<header>
+				<h1>Rotation Calculator</h1>
+			</header>
+			
+			<h2 id="video">Watch the Video</h2>
+			<section class="info">
+				<div class="videoFrame">
+					<iframe id="videoPreview" src="https://www.youtube.com/embed/Yju4MEHkwJw" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</section>
+			<h2 id="intro">Description</h2>
+			<section class="info">
+				<p>
+				The Rotation calculator is a system built by <a href = "https://www.youtube.com/c/koder" target="_blank">koder</a>.<br>
+				Once set up in your world, it can be used to save any entity's horizontal and vertical rotation to scoreboard values with a simple function call.<br>
+				All commands, videos and resources related to the Rotation Calculator can be found on this page.
+				</p>
+			</section>
+			<h2 id="install">Installation & Usage</h2>
+			<section class="info">
+				<p>
+				Download the .zip file (link below) and extract it. Place the "koder" folder into your Minecraft world's "data\functions" folder. A quick way of finding your world folder is to select that world from Minecraft's world select menu, then click "Edit" and click "Open World Folder". If your world doesn't have a "data" or "functions" folder, just create them.<br>
+				Load up the world in Minecraft, and type <span class="cmd">/function koder:rot_calc/install</span> into the chat. This function creates the 2 scoreboards that the horizontal and vertical rotations of entities will be saved to.<br>
+				To calculate an entity's rotation, simply execute from that entity to run the "koder:rot_calc/tick" function, like this:<br>
+				<span class="cmd">/execute @e[entities you want to calculate] ~ ~ ~ function koder:rot_calc/tick</span><br>
+				The entities' horizontal rotations will be stored to the <span class="cmd">krc-rh</span> scoreboard, and the vertical rotations stored to the <span class="cmd">krc-rv</span> scoreboard.
+				</p>
+			</section>
+			
+			<h2 id="download" class="download-header"><a class="download-header" href="http://bitkoder.com/dl/func/Rotation%20Calculator.zip">Download <span class="download-symbol"></span></a></h2>
+			<section class="info">
+				<p>
+				The .zip download contains a "koder" folder, inside which is a "rot_calc" folder which holds the functions used by the Rotation Calculator.<br>
+				</p>
+			</section>
+			
+			<h2 id="how-it-works">How it Works</h2>
+			<section class="info">
+				<div id="simulator" class="sim-frame">
+					<div class="sim-player-shadow"></div>
+					<img class="sim-player" src="img/player_top.png" alt="player"/>
+					<div class="sim-aec-shadow" style="display:none;"></div>
+					<div class="sim-aec" style="display:none;"></div>
+					<p class="sim-rotation-score-label">&nbsp;<br>Player's Rotation: 0</p>
+					<p class="sim-command-label" style="display:none;"></p>
+					<button class="sim-prev-step" onclick="simStep(false)">&#10094;</button>
+					<button class="sim-next-step" onclick="simStep(true)">&#10095;</button>
+				</div>
+				<p id="sim-description">Above is a visual demonstration of how the system works. Click on the arrows to learn about each step.</p>
+			</section>
+			
+			<h2 id="compatibility">Compatibility</h2>
+			<section class="info">
+				<p>
+				The Rotation Calculator is compatible with Minecraft 1.12 and newer versions.<br>
+				It is both singleplayer and multiplayer compatible.
+				</p>
+			</section>
+		</main>
+		<footer>
+		</footer>
+		<script>
+			init();
+		</script>
+	</body>
+</html>

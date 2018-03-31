@@ -133,6 +133,10 @@ html, body, header, main, footer, .landing
 {
 	margin-bottom: 0;
 }
+.red
+{
+	background-color: #CC4141;
+}
 
 
 html
@@ -609,26 +613,26 @@ table.unresponsive td
 
 a.download
 {
-	display: inline;
+	display: inline-block;
 	position: relative;
-	padding: 0px 5px;
+	margin: 0px 10px 0px 0px;
+	padding: 0px 1%;
 	float: right;
 	
 	font-family: "Symbols", "Verdana";
 	font-size: 100%;
-	color: #FFFFFF;
+	color: #DDD;
 	text-decoration: none;
-	text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
 	text-align: center;
 	transform: scale(1.2,1.2);
 	
-	transition-duration: 0.2s;
+	//transition-duration: 0.2s;
 }
 	a.download:hover
 	{
+		color: #FFF;
 		text-decoration: none;
-		text-shadow: 0px 3px 1px rgba(0, 0, 0, 0.3);
-		transform: scale(1.5,1.5);
+		transform: scale(1.3,1.3);
 	}
 	a.download:after, .download-symbol:after
 	{
@@ -910,6 +914,11 @@ input[type="text"]
 	h2:not(#welcome):before, h2:not(#welcome):after
 	{
 		display: inline-block;
+	}
+
+	a.download
+	{
+		margin-right: 40px;
 	}
 
 	.section-halves td

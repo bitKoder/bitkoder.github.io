@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width"/>
+		<title>Sign-Based Command Toggle | bitKoder</title>
+		<meta name="description" content="Halfcraft is a command block contraption that allows you to free any block from the grid, then move the blocks around the world pixel by pixel. You can find all Halfcraft commands, videos and resources on this page.">
+		<meta name="keywords" content="koder,Minecraft,command,youtube,sign,toggle,switch,tool">
+		<meta name="author" content="bitKoder">
+		<link rel="icon" href="../favicon.png">
+		<link rel="stylesheet" href="../css/style.css">
+		<script src="../js/w3-include.js"></script>
+		<script src="../js/script.js"></script>
+	</head>
+	<body>
+		<main>
+			<header>
+				<h1>Sign Command Toggle</h1>
+			</header>
+			
+			<div class="box-shadow">
+				<section class="info no-shadow">
+					Command:
+				</section>
+				<textarea class="output output-top-border" id="output" spellcheck="false" readonly onclick="this.setSelectionRange(0, this.value.length)">summon FallingSand ~ ~.55 ~ {Time:1,DropItem:0,Block:redstone_block,Passengers:[{id:FallingSand,Time:1,DropItem:0,Block:activator_rail},{id:MinecartCommandBlock,Command:"setblock ~-1 ~-2 ~2 chain_command_block 5 replace {TrackOutput:0b,auto:1,Command:\"blockdata ~1 ~ ~-1 {Text4:\\\"[{\\\\\\\"clickEvent\\\\\\\":{\\\\\\\"action\\\\\\\":\\\\\\\"run_command\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"/blockdata ~-1 ~ ~2 {auto:1}\\\\\\\"},\\\\\\\"text\\\\\\\":\\\\\\\"[ON]\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"dark_green\\\\\\\"},{\\\\\\\"text\\\\\\\":\\\\\\\"    \\\\\\\"},{\\\\\\\"text\\\\\\\":\\\\\\\"[OFF]\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"dark_red\\\\\\\",\\\\\\\"bold\\\\\\\":\\\\\\\"true\\\\\\\"}]\\\"}\"}"},{id:MinecartCommandBlock,Command:setblock ~-1 ~-2 ~3 command_block 2 replace {auto:1,TrackOutput:0b,Command:blockdata ~ ~ ~ {auto:0}}},{id:MinecartCommandBlock,Command:setblock ~ ~-2 ~2 chain_command_block 5 replace {TrackOutput:0b,auto:1,Command:blockdata ~ ~ ~ {SuccessCount:1}}},{id:MinecartCommandBlock,Command:"setblock ~1 ~-2 ~2 chain_command_block 13 replace {TrackOutput:0b,auto:1,Command:\"blockdata ~-1 ~ ~-1 {Text4:\\\"[{\\\\\\\"clickEvent\\\\\\\":{\\\\\\\"action\\\\\\\":\\\\\\\"run_command\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"/blockdata ~-1 ~ ~2 {auto:1}\\\\\\\"},\\\\\\\"text\\\\\\\":\\\\\\\"[ON]\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"dark_green\\\\\\\",\\\\\\\"bold\\\\\\\":\\\\\\\"true\\\\\\\"},{\\\\\\\"text\\\\\\\":\\\\\\\"    \\\\\\\",\\\\\\\"bold\\\\\\\":\\\\\\\"false\\\\\\\"},{\\\\\\\"text\\\\\\\":\\\\\\\"[OFF]\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"dark_red\\\\\\\",\\\\\\\"bold\\\\\\\":\\\\\\\"false\\\\\\\"}]\\\"}\"}"},{id:MinecartCommandBlock,Command:setblock ~ ~1 ~ command_block 0 replace {auto:1,Command:fill ~ ~-3 ~ ~ ~ ~ air}},{id:MinecartCommandBlock,Command:kill @e[type=MinecartCommandBlock,r=0]}]}</textarea>
+				<p class="smallText">Not working? Contact me on <a href="https://www.youtube.com/c/koder">Youtube</a> or <a href="https://twitter.com/bitKoder">Twitter</a> and I'll fix it for you!</p>
+			</div>
+			
+			<h2 id="info">Information</h2>
+			<section class="info">
+			<p>
+			This is a simple command tool by <a href = "https://www.youtube.com/c/koder" target="_blank">koder</a>.<br>
+			With this tool, you can create a sign-based switch for a line of commands. It has a few advantages over the switch, however.<br>
+			One advantage is that the signs do not affect tick order at all, so they can be turned off and on without messing up the order of your commands.<br>
+			Another advantage is that only ops can toggle the commands Finally, the player can also use the sign to describe their line of commands.<br>
+			What are your thoughts on this tool? Let me know!
+			</p>
+			</section>
+			<h2 id="install">Installation</h2>
+			<section class="info">
+			<p>
+			Copy the command, then paste it into a command block 1 block in the negative z from a sign.<br>
+			Activate the command, then the sign will become a "switch" affecting the line of commands behind.
+			</p>
+			</section>
+		</main>
+	</body>
+</html>

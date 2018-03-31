@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width"/>
+		<title>Blockwaves | bitKoder</title>
+		<meta name="description" content="Halfcraft is a command block contraption that allows you to free any block from the grid, then move the blocks around the world pixel by pixel. You can find all Halfcraft commands, videos and resources on this page.">
+		<meta name="keywords" content="koder,Minecraft,command,youtube,sign,toggle,switch,tool">
+		<meta name="author" content="bitKoder">
+		<link rel="icon" href="../favicon.png">
+		<link rel="stylesheet" href="../css/style.css">
+		<script src="../js/w3-include.js"></script>
+		<script src="../js/script.js"></script>
+	</head>
+	<body class="nav-margin">
+		<header>
+			<div w3-include-html="../static-html/nav.html"></div>
+		</header>
+		<main>
+			<div class="content">
+				<h2 id="welcome">Blockwaves</h1>
+
+				<section>
+					<p>
+						Blockwaves is a concept by <a href = "https:/youtube.com/koder" target="_blank">koder</a>.<br>
+						Blockwaves allows you to create a <span class="colour">shockwave</span> when you hit the ground, flinging nearby blocks into the air.<br>
+						Blockwaves can only affect <span class="colour">one block type at a time</span>, but the command can be configured so you can choose which block type it affects.
+					</p>
+				</section>
+				<h2 id="video" class="no-top-margin no-bottom-margin">Watch the Video</h2>
+				<section class="no-padding">
+					<div class="video-frame">
+						<iframe id="video-player" src="https://www.youtube.com/embed/WI8nKR2jSvU" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</section>
+				<h2 id="install" class="no-top-margin">Installation</h2>
+					<section>
+						<span class="colour">Copy</span> the command, then <span class="colour">paste</span> it into a command block in your 1.11 minecraft world.<br>
+						Activate the command block by setting it to <span class="colour">Always Active</span> or by powering it from the side with redstone.<br>
+						The module installs, and now you can create your very own blockwaves. Enjoy!
+						<hr class="extra-margin">
+						<table class="section-halves center-align">
+							<tr>
+								<td>
+									<label for="block-type">Block Name</label><br>
+									<input type="text" class="" id="block-type" value="quartz_block" oninput="Generate()"><br>
+									<br>
+								</td>
+								<td>
+									<label for="block-data">Block Data</label><br>
+									<input type="text"  class="" id="block-data" value="0" oninput="Generate()"><br>
+									<br>
+								</td>
+							</tr>
+						</table>
+						<div class="inline-block"></div>
+						<div class="inline-block"></div>
+					</section>
+					<textarea class="command-box" id="output" spellcheck="false" readonly onclick="this.setSelectionRange(0, this.value.length)"></textarea>
+					<div w3-include-html="../static-html/command-help-contact.html"></div>
+			</div>
+
+			<!-- <div class="box-shadow">
+				<section class="info no-shadow">
+					<div class="inline-block">Block Name: <input class="" id="block-type" value="quartz_block" oninput="Generate()"></input></div>
+					<div class="inline-block">Block Data: <input class="" id="block-data" value="0" oninput="Generate()"></input></div>
+				</section>
+				<textarea class="output output-top-border" id="output" spellcheck="false" readonly onclick="this.setSelectionRange(0, this.value.length)"></textarea>
+				<p class="smallText">Not working? Contact me on <a href="https://www.youtube.com/koder">Youtube</a> or <a href="https://twitter.com/bitKoder">Twitter</a> and I'll fix it for you!</p>
+			</div>
+			
+			<h2 id="info">Information</h2>
+			<section class="info">
+			<p>
+			Blockwaves is a concept by <a href = "https://www.youtube.com/c/koder" target="_blank">koder</a>.<br>
+			Blockwaves allows you to create a shockwave when you hit the ground, flinging nearby blocks into the air.<br>
+			Blockwaves can only affect one block type, but the command can be configured so you can choose which block type it affects.<br>
+			</p>
+			</section>
+			<h2 id="install">Installation</h2>
+			<section class="info">
+			<p>
+			Copy the command, then paste it into a command block in your 1.11 minecraft world.<br>
+			Activate the command block by setting it to "Always Active" or by powering it from the side with redstone.<br>
+			The module installs, and now you can create your very own blockwaves. Enjoy!
+			</p>
+			</section> -->
+			
+			
+			
+			
+			<script type="text/javascript">
+			Generate();
+			function Generate()
+			{
+				var b = document.getElementById("block-type").value;
+				var d = document.getElementById("block-data").value;
+				document.getElementById("output").value = 
+				"summon falling_block ~ ~.55 ~ {Time:1,DropItem:0,Block:redstone_block,Passengers:[{id:falling_block,Time:1,DropItem:0,Block:activator_rail},{id:commandblock_minecart,Command:gamerule commandBlockOutput false},{id:commandblock_minecart,Command:gamerule sendCommandFeedback false},{id:commandblock_minecart,Command:gamerule logAdminCommands false},{id:commandblock_minecart,Command:scoreboard objectives add kbwTime dummy},{id:commandblock_minecart,Command:setblock ~-2 ~-2 ~1 command_block 3 replace {TrackOutput:0b,Command:scoreboard objectives remove kbwTime}},{id:commandblock_minecart,Command:setblock ~-2 ~-2 ~2 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:fill ~ ~ ~-2 ~4 ~ ~18 air}},{id:commandblock_minecart,Command:setblock ~ ~-2 ~1 repeating_command_block 3 replace {TrackOutput:0b,auto:1,Command:scoreboard players tag @a[tag=ground] remove ground}},{id:commandblock_minecart,Command:setblock ~ ~-2 ~2 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:scoreboard players tag @a add ground {OnGround:1b}}},{id:commandblock_minecart,Command:setblock ~ ~-2 ~3 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:scoreboard players tag @a remove land}},{id:commandblock_minecart,Command:setblock ~ ~-2 ~4 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:scoreboard players tag @a add land {Tags:[ground,air]}}},{id:commandblock_minecart,Command:setblock ~ ~-2 ~5 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:execute @a[tag=land] ~ ~ ~ detect ~ ~-.05 ~ " + b + " " + d + " summon leash_knot ~ ~-.05 ~ {Tags:[shockSpawn]}}},{id:commandblock_minecart,Command:setblock ~ ~-2 ~6 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:execute @e[tag=shockSpawn] ~ ~ ~ summon area_effect_cloud ~ ~ ~ {Duration:15,Particle:take,Tags:[shock,shockCenter,shockInit]}}},{id:commandblock_minecart,Command:setblock ~ ~-2 ~7 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:kill @e[tag=shockSpawn]}},{id:commandblock_minecart,Command:setblock ~ ~-2 ~8 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:scoreboard players set @e[tag=shockInit] kbwTime 0}},{id:commandblock_minecart,Command:setblock ~ ~-2 ~9 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:scoreboard players tag @a[tag=air] remove air}},{id:commandblock_minecart,Command:setblock ~ ~-2 ~10 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:scoreboard players tag @a add air {OnGround:0b}}},{id:commandblock_minecart,Command:setblock ~2 ~-2 ~1 repeating_command_block 3 replace {TrackOutput:0b,auto:1,Command:scoreboard players add @e[tag=shock] kbwTime 1}},{id:commandblock_minecart,Command:setblock ~2 ~-2 ~2 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:scoreboard players tag @e[tag=shock] add create}},{id:commandblock_minecart,Command:setblock ~2 ~-2 ~3 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:execute @e[tag=shock] ~1 ~ ~ scoreboard players tag @e[tag=create,r=0] remove create}},{id:commandblock_minecart,Command:setblock ~2 ~-2 ~4 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:execute @e[tag=create,score_kbwTime=1,score_kbwTime_min=1] ~-1 ~ ~ detect ~ ~ ~ " + b + " " + d + " summon area_effect_cloud ~ ~ ~ {Duration:15,Particle:take,Tags:[shock]}}},{id:commandblock_minecart,Command:setblock ~2 ~-2 ~5 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:scoreboard players tag @e[tag=shock] add create}},{id:commandblock_minecart,Command:setblock ~2 ~-2 ~6 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:execute @e[tag=shock] ~-1 ~ ~ scoreboard players tag @e[tag=create,r=0] remove create}},{id:commandblock_minecart,Command:setblock ~2 ~-2 ~7 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:execute @e[tag=create,score_kbwTime=1,score_kbwTime_min=1] ~1 ~ ~ detect ~ ~ ~ " + b + " " + d + " summon area_effect_cloud ~ ~ ~ {Duration:15,Particle:take,Tags:[shock]}}},{id:commandblock_minecart,Command:setblock ~2 ~-2 ~8 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:scoreboard players tag @e[tag=shock] add create}},{id:commandblock_minecart,Command:setblock ~2 ~-2 ~9 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:execute @e[tag=shock] ~ ~ ~1 scoreboard players tag @e[tag=create,r=0] remove create}},{id:commandblock_minecart,Command:setblock ~2 ~-2 ~10 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:execute @e[tag=create,score_kbwTime=1,score_kbwTime_min=1] ~ ~ ~-1 detect ~ ~ ~ " + b + " " + d + " summon area_effect_cloud ~ ~ ~ {Duration:15,Particle:take,Tags:[shock]}}},{id:commandblock_minecart,Command:setblock ~2 ~-2 ~11 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:scoreboard players tag @e[tag=shock] add create}},{id:commandblock_minecart,Command:setblock ~2 ~-2 ~12 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:execute @e[tag=shock] ~ ~ ~-1 scoreboard players tag @e[tag=create,r=0] remove create}},{id:commandblock_minecart,Command:setblock ~2 ~-2 ~13 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:execute @e[tag=create,score_kbwTime=1,score_kbwTime_min=1] ~ ~ ~1 detect ~ ~ ~ " + b + " " + d + " summon area_effect_cloud ~ ~ ~ {Duration:15,Particle:take,Tags:[shock]}}},{id:commandblock_minecart,Command:setblock ~2 ~-2 ~14 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:scoreboard players tag @e[tag=create] remove create}},{id:commandblock_minecart,Command:setblock ~2 ~-2 ~15 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:scoreboard players set @e[tag=shockCenter,score_kbwTime=2,score_kbwTime_min=2] kbwTime 3}},{id:commandblock_minecart,Command:setblock ~2 ~-2 ~16 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:execute @e[tag=shock,score_kbwTime=2,score_kbwTime_min=2] ~ ~ ~ summon falling_block ~ ~-.45 ~ {Block:" + b + ",Data:" + d + ",Motion:[0.0,0.25,0.0],tags:[waveBlock]}}},{id:commandblock_minecart,Command:setblock ~2 ~-2 ~17 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:execute @e[tag=shock,score_kbwTime=3,score_kbwTime_min=3] ~ ~ ~ summon Shulker ~ ~-.5 ~ {NoAI:1,Silent:1,Invulnerable:1,Tags:[waveBox],ActiveEffects:[{Id:14,Duration:100,ShowParticles:0b}]}}},{id:commandblock_minecart,Command:setblock ~2 ~-2 ~18 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:scoreboard players add @e[tag=waveBox] kbwTime 1}},{id:commandblock_minecart,Command:setblock ~2 ~-2 ~19 chain_command_block 3 replace {TrackOutput:0b,auto:1,Command:entitydata @e[tag=waveBox,score_kbwTime_min=15] {DeathTime:19,Health:0}}},{id:commandblock_minecart,Command:\"setblock ~-2 ~-2 ~ minecraft:wall_sign 0 replace {Text2:\\\"[{\\\\\\\"clickEvent\\\\\\\":{\\\\\\\"action\\\\\\\":\\\\\\\"run_command\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"/blockdata ~ ~ ~1 {auto:1}\\\\\\\"},\\\\\\\"text\\\\\\\":\\\\\\\"[UNINSTALL]\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"dark_red\\\\\\\",\\\\\\\"bold\\\\\\\":\\\\\\\"true\\\\\\\"}]\\\",Text1:\\\"[{\\\\\\\"text\\\\\\\":\\\\\\\"\\\\\\\"}]\\\",Text3:\\\"[{\\\\\\\"text\\\\\\\":\\\\\\\"\\\\\\\"}]\\\",Text4:\\\"[{\\\\\\\"text\\\\\\\":\\\\\\\"\\\\\\\"}]\\\"}\"},{id:commandblock_minecart,Command:\"setblock ~ ~-2 ~ minecraft:wall_sign 0 replace {Text2:\\\"[{\\\\\\\"text\\\\\\\":\\\\\\\"Blockwaves\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"black\\\\\\\",\\\\\\\"bold\\\\\\\":\\\\\\\"true\\\\\\\"}]\\\",Text3:\\\"[{\\\\\\\"text\\\\\\\":\\\\\\\"by koder\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"black\\\\\\\",\\\\\\\"bold\\\\\\\":\\\\\\\"true\\\\\\\"}]\\\",Text1:\\\"[{\\\\\\\"text\\\\\\\":\\\\\\\"\\\\\\\"}]\\\",Text4:\\\"[{\\\\\\\"text\\\\\\\":\\\\\\\"\\\\\\\"}]\\\"}\"},{id:commandblock_minecart,Command:\"setblock ~2 ~-2 ~ minecraft:wall_sign 0 replace {Text1:\\\"[{\\\\\\\"text\\\\\\\":\\\\\\\"Affects:\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"black\\\\\\\",\\\\\\\"bold\\\\\\\":\\\\\\\"true\\\\\\\"}]\\\",Text2:\\\"[{\\\\\\\"text\\\\\\\":\\\\\\\"" + b + "\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"black\\\\\\\",\\\\\\\"bold\\\\\\\":\\\\\\\"true\\\\\\\"}]\\\",Text3:\\\"[{\\\\\\\"text\\\\\\\":\\\\\\\"" + d + "\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"black\\\\\\\",\\\\\\\"bold\\\\\\\":\\\\\\\"true\\\\\\\"}]\\\",Text4:\\\"[{\\\\\\\"text\\\\\\\":\\\\\\\"\\\\\\\"}]\\\"}\"},{id:commandblock_minecart,Command:setblock ~ ~1 ~ command_block 0 replace {auto:1,Command:fill ~ ~-2 ~ ~ ~ ~ air}},{id:commandblock_minecart,Command:kill @e[type=commandblock_minecart,r=0]}]}";
+			}
+			</script>
+		</main>
+	</body>
+</html>
