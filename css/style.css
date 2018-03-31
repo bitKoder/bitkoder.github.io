@@ -253,6 +253,7 @@ nav
 	border: none;
 
 	font-size: 150%;
+	color: #DDD;
 
 	cursor: pointer;
 
@@ -260,7 +261,7 @@ nav
 }
 .nav-menu:hover
 {
-	transform: scale(1.2, 1.2);
+	color: #FFF;
 }
 nav a
 {
