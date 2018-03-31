@@ -16,7 +16,7 @@ function init()
 	var cmdSpans = document.getElementsByClassName("cmd");
 	for (var i = 0; i < cmdSpans.length; i++)
 	{
-		cmdSpans[i].addEventListener("click", function() {window.getSelection().selectAllChildren(this)})
+		cmdSpans[i].setAttribute("onclick", "window.getSelection().selectAllChildren(this)");
 	}
 
 	var pagePrevButtons = document.getElementsByClassName("prev-page");
