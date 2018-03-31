@@ -40,7 +40,20 @@
 						<span class="colour">Activate</span> the command block by setting it to <span class="colour">Always Active</span> or by powering it from the side with redstone.<br>
 						The module installs, and now you can create your very own blockwaves. Enjoy!
 						<hr class="extra-margin">
-						<div w3-include-html="../static-html/command-block-inputs.html"></div>
+						<table class="section-halves center-align">
+							<tr>
+								<td>
+									<label for="block-type">Block Name</label><br>
+									<input type="text" id="block-type" value="quartz_block" oninput="Generate()"><br>
+									<br>
+								</td>
+								<td>
+									<label for="block-data">Block Data</label><br>
+									<input type="text" id="block-data" value="0" oninput="Generate()"><br>
+									<br>
+								</td>
+							</tr>
+						</table>
 					</section>
 					<textarea class="command-box" id="output" spellcheck="false" readonly onclick="this.setSelectionRange(0, this.value.length)"></textarea>
 					<div w3-include-html="../static-html/command-help-contact.html"></div>
