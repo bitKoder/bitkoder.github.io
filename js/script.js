@@ -32,15 +32,15 @@ function randomSplash()
 
 function showNavLink(n)
 {
-	 document.getElementsByClassName("nav-link");[n].style.display = "block";
-	setTimeout(function() {  document.getElementsByClassName("nav-link");[n].classList.add("nav-link-show"); }, n * 30 + 2);
+	 document.getElementsByClassName("nav-link")[n].style.display = "block";
+	setTimeout(function() {  document.getElementsByClassName("nav-link")[n].classList.add("nav-link-show"); }, n * 30 + 2);
 }
 
 function closeNav()
 {
 	navExpanded = false;
 	document.getElementById("nav-close").style.display = "none";
-	for (var i = 0; i <  document.getElementsByClassName("nav-link");.length; i++)
+	for (var i = 0; i <  document.getElementsByClassName("nav-link").length; i++)
 	{
 		hideNavLink(i);
 	}
@@ -48,8 +48,8 @@ function closeNav()
 
 function hideNavLink(n)
 {
-	 document.getElementsByClassName("nav-link");[n].style.display = "";
-	 document.getElementsByClassName("nav-link");[n].classList.remove("nav-link-show");
+	 document.getElementsByClassName("nav-link")[n].style.display = "";
+	 document.getElementsByClassName("nav-link")[n].classList.remove("nav-link-show");
 }
 
 function window_onResize()
@@ -67,7 +67,7 @@ function navMenu_onClick()
 	{
 		document.getElementById("nav-close").style.display = "block";
 
-		for (var i = 0; i <  document.getElementsByClassName("nav-link");.length; i++)
+		for (var i = 0; i <  document.getElementsByClassName("nav-link").length; i++)
 		{
 			showNavLink(i);
 		}
