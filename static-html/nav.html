@@ -1,15 +1,8 @@
 <nav class="right-align">
 <div class="nav-mobile-collapsed"><a href="http://bitkoder.com/" class="nav-logo"><img src="http://bitkoder.com/img/koder.png" alt="koder logo"></a>
-	<button id="nav-menu" class="nav-menu">☰</button
+	<button id="nav-menu" class="nav-menu" onclick="navMenu_onClick">☰</button
 	></div><a id="nav-commands" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/commands"><span>Commands</span></a
 	><a id="nav-resourcepacks" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/resourcepacks"><span>Resource Packs</span></a
 	><a id="nav-contact" class="nav-link nav-mobile-expanded" href="http://bitkoder.com/contact"><span>Contact</span></a>
 </nav>
-<div id="nav-close"></div>
-
-<script type="text/javascript">
-	navLinks = document.getElementsByClassName("nav-link");
-	navClose = document.getElementById("nav-close");
-	document.getElementById("nav-menu").addEventListener("click", navMenu_onClick);	
-	navClose.addEventListener("click", closeNav);
-</script>
+<div id="nav-close" onclick="closeNav"></div>
