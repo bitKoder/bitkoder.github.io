@@ -13,6 +13,12 @@ function init()
 	document.getElementById("nav-menu").addEventListener("click", navMenu_onClick);	
 	navClose.addEventListener("click", closeNav)
 
+	var cmdSpans = document.getElementsByClassName("cmd");
+	for (var i = 0; i < cmdSpans.length; i++)
+	{
+		cmdSpans[i].addEventListener("click", function() {window.getSelection().selectAllChildren(this)})
+	}
+
 	var pagePrevButtons = document.getElementsByClassName("prev-page");
 	for (var i = 0; i < pagePrevButtons.length; i++)
 	{
