@@ -645,11 +645,35 @@ a.download
 		font-family: "Symbols", "Verdana";
 		font-size: 100%;
 		font-weight: bold;
-		/*color: #FFFFFF;*/
 		text-decoration: none;
 		text-align: center;
 		transform: scale(1.2,1.2);
 	}
+.download-button
+{
+	content:"Download";
+	display: block;
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+
+	border: 2px solid #CC4141;
+	border-radius: 5px;
+
+	font-size: 200%;
+	font-weight: bold;
+	color: #CC4141;
+	text-transform: uppercase;
+	text-align: center;
+
+	transition-duration: 0.2s;
+}
+.download-button:hover
+{
+	background-color: #CC4141;
+
+	color: #FFF !important;
+}
 
 .prev-page, .next-page
 {
@@ -793,6 +817,128 @@ input[type="text"]
 .expandable-hide
 {
 	display: none;
+}
+
+
+.sim-frame
+{
+	position: relative;
+	height: 500px;
+	overflow: hidden;
+	
+	background-image: url("../img/grass.png");
+	background-position: center center;
+	
+	text-align: center;
+}
+	.sim-frame button
+	{
+		position: absolute;
+		height: 100%;
+		padding: 0px 10px;
+		
+		background: rgba(0, 0, 0, 0.3);
+		border: none;
+		
+		font-family: "Segoe UI";
+		font-size: 50px;
+		color: rgba(255, 255, 255, 0.6);
+	}
+		.sim-frame button:hover
+		{
+			color: #FFFFFF;
+		}
+		.sim-frame button:active
+		{
+			font-size: 35px;
+		}
+		.sim-frame .sim-prev-step
+		{
+			width: 50px;
+			left: 0px;
+		}
+		.sim-frame .sim-next-step
+		{
+			width: 50px;
+			right: 0px;
+		}
+.sim-frame .sim-player
+{
+	position: absolute;
+	top: calc(50% - 64px);
+	left: calc(50% - 64px);
+	
+	transition-duration: 0.5s;
+}
+	.sim-frame .sim-player-shadow
+	{
+		display: inline-block;
+		width: 128px;
+		height: 128px;
+		position: absolute;
+		top: calc(50% - 52px);
+		left: calc(50% - 60px);
+		
+		background: #000000;
+		opacity: 0.3;
+		
+		transition-duration: 0.5s;
+	}
+.sim-frame .sim-aec
+{
+	width: 32px;
+	height: 64px;
+	position: absolute;
+	top: calc(50% - 48px);
+	left: calc(50% - 32px);
+	
+	border: 16px solid #22B0FF;
+	
+	transition-duration: 0.5s;
+}
+	.sim-frame .sim-aec-shadow
+	{
+		width: 32px;
+		height: 64px;
+		position: absolute;
+		top: calc(50% - 36px);
+		left: calc(50% - 28px);
+		
+		border: 16px solid #000000;
+		opacity: 0.3;
+		
+		transition-duration: 0.5s;
+	}
+.sim-frame p
+{
+	font-family: "Segoe UI";
+	font-size: 30px;
+	color: #FFFFFF;
+	text-align: center;
+	text-shadow: 0px 3px 1px rgba(0, 0, 0, 0.6);
+}
+.sim-frame .sim-rotation-score-label
+{
+	width: 100%;
+	position: absolute;
+	bottom: calc(50% + 100px);
+}
+.sim-frame .sim-command-label
+{
+	width: calc(100% - 144px);
+	max-height: 116px;
+	overflow-y: auto;
+	position: absolute;
+	top: calc(50% + 100px);
+	left: 63px;
+	padding: 5px 5px;
+	
+	background: #242428;
+	border: 4px solid #000000;
+	border-radius: 2px;
+	
+	font-family: "Consolas";
+	word-wrap: break-word;
 }
 
 

@@ -217,25 +217,10 @@
 						Input a <span class="colour">block name</span> and <span class="colour">data value</span> into the two text fields below, then click on the large text box underneath to select the generated command.<br>
 						Copy the command, then paste it into a command block in your Minecraft world. Activate that command block, and it will set up the custom extension.<br>
 						<hr class="extra-margin">
-						<table class="section-halves center-align">
-							<tr>
-								<td>
-									<label for="block-type">Block Name</label><br>
-									<input type="text" class="" id="block-type" value="bookshelf" oninput="GenerateExtCustom()"><br>
-									<br>
-								</td>
-								<td>
-									<label for="block-data">Block Data</label><br>
-									<input type="text"  class="" id="block-data" value="0" oninput="GenerateExtCustom()"><br>
-									<br>
-								</td>
-							</tr>
-						</table>
-						<div class="inline-block"></div>
-						<div class="inline-block"></div>
+						<div w3-include-html="../static-html/command-block-inputs.html"></div>
 					</section>
 					<textarea class="command-box" id="output" spellcheck="false" readonly onclick="this.setSelectionRange(0, this.value.length)"></textarea>
-					<p class="small-text">Not working? Contact me on <a href="https://www.youtube.com/koder">YouTube</a>, <a href="https://twitter.com/bitKoder">Twitter</a> or <a href="http://bitkoder.com/discord">Discord</a> and I'll fix it for you!</p>
+					<div w3-include-html="../static-html/command-help-contact.html"></div>
 				
 				<h2 id="compatibility">Compatibility</h2>
 				<section>
