@@ -1,29 +1,57 @@
 var navExpanded = false;
 
-function init()
-{
-	if (document.getElementById("splash-text")) randomSplash();
+var website = {
+	init: function() {
+		includeHTML();
+		if (document.getElementById("splash-text")) randomSplash();
 
-	window.addEventListener("resize", window_onResize);
+		window.addEventListener("resize", window_onResize);
 
-	var cmdSpans = document.getElementsByClassName("cmd");
-	for (var i = 0; i < cmdSpans.length; i++)
-	{
-		cmdSpans[i].setAttribute("onclick", "window.getSelection().selectAllChildren(this)");
-	}
+		var cmdSpans = document.getElementsByClassName("cmd");
+		for (var i = 0; i < cmdSpans.length; i++)
+		{
+			cmdSpans[i].setAttribute("onclick", "window.getSelection().selectAllChildren(this)");
+		}
 
-	var pagePrevButtons = document.getElementsByClassName("prev-page");
-	for (var i = 0; i < pagePrevButtons.length; i++)
-	{
-		pagePrevButtons[i].addEventListener("click", function() {changePage(this);});
+		var pagePrevButtons = document.getElementsByClassName("prev-page");
+		for (var i = 0; i < pagePrevButtons.length; i++)
+		{
+			pagePrevButtons[i].addEventListener("click", function() {changePage(this);});
+		}
+		var pageNextButtons = document.getElementsByClassName("next-page");
+		for (var i = 0; i < pagePrevButtons.length; i++)
+		{
+			pageNextButtons[i].addEventListener("click", function() {changePage(this);});
+		}
+		if (pagePrevButtons.length > 0 || pageNextButtons.length > 0) initPages();
 	}
-	var pageNextButtons = document.getElementsByClassName("next-page");
-	for (var i = 0; i < pagePrevButtons.length; i++)
-	{
-		pageNextButtons[i].addEventListener("click", function() {changePage(this);});
-	}
-	if (pagePrevButtons.length > 0 || pageNextButtons.length > 0) initPages();
-}
+};
+
+// function init()
+// {
+// 	console.log("test");
+// 	if (document.getElementById("splash-text")) randomSplash();
+
+// 	window.addEventListener("resize", window_onResize);
+
+// 	var cmdSpans = document.getElementsByClassName("cmd");
+// 	for (var i = 0; i < cmdSpans.length; i++)
+// 	{
+// 		cmdSpans[i].setAttribute("onclick", "window.getSelection().selectAllChildren(this)");
+// 	}
+
+// 	var pagePrevButtons = document.getElementsByClassName("prev-page");
+// 	for (var i = 0; i < pagePrevButtons.length; i++)
+// 	{
+// 		pagePrevButtons[i].addEventListener("click", function() {changePage(this);});
+// 	}
+// 	var pageNextButtons = document.getElementsByClassName("next-page");
+// 	for (var i = 0; i < pagePrevButtons.length; i++)
+// 	{
+// 		pageNextButtons[i].addEventListener("click", function() {changePage(this);});
+// 	}
+// 	if (pagePrevButtons.length > 0 || pageNextButtons.length > 0) initPages();
+// }
 
 function randomSplash()
 {
