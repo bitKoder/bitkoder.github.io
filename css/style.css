@@ -310,7 +310,7 @@ nav a:hover
 {
 	padding-right: 10px;
 }
-.nav-link-selected span
+.nav-commands #nav-commands, .nav-resourcepacks #nav-resourcepacks, .nav-contact #nav-contact
 {
 	border-color: #FFF;
 }
@@ -1105,26 +1105,14 @@ input[type="text"]
 	{
 		display: inline-block;
 		padding-right: 0px;
+
+		border-right: none;
+		border-bottom: 1px solid transparent;
 	}
 	.nav-link:hover:not(.nav-link-selected) span
 	{
 		padding-right: 0px;
 		/*transform: translateY(-5px);*/
-	}
-	.nav-link-selected span
-	{
-		position: relative;
-
-		border-right: none;
-	}
-	.nav-link-selected span::after
-	{
-		/*content: "";
-		position: absolute;
-		top: -30px;
-		right: -10px;
-		border-right: 100px solid rgba(255, 255, 255, 0.15);
-		border-bottom: 80px solid transparent;*/
 	}
 
 	.landing::after, .banner::after
