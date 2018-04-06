@@ -141,6 +141,8 @@ html, body, header, main, footer, .landing
 
 html
 {	
+	background-color: #333;
+
 	font-family: "Segoe UI";
 	font-size: 22px;
 	color: #444;
@@ -159,6 +161,7 @@ body.nav-margin
 
 footer
 {
+	position: relative;
 	padding: 20px 0px 35px 0px;
 
 	background-color: #333;
@@ -775,6 +778,10 @@ a.download
 	text-align: center;
 }
 
+label
+{
+	color: #666;
+}
 input[type="text"]
 {
     max-width: 100%;
@@ -814,6 +821,88 @@ input[type="text"]
 .expandable-hide
 {
 	display: none;
+}
+
+
+.preview-tiles td
+{
+	width: 80%;
+	margin-left: 10%;
+	padding: 10px 0px;
+
+	font-size: 80%;
+	vertical-align: top;
+}
+.preview-tiles .content
+{
+	height: 100%;
+	padding: 10px;
+
+	border-bottom: 2px solid #CCC;
+	border-radius: 3px;
+}
+.preview-tiles p
+{
+	margin: 5px 0px;
+}
+.preview-tiles a.go-to-page
+{
+	display: block;
+	text-align: right;
+	padding-right: 10px;
+}
+	.preview-tiles a.go-to-page::after
+	{
+		content: "Go to page ->";
+	}
+	.preview-tiles a.go-to-page:hover
+	{
+		font-weight: bold;
+		color: #F33;
+	}
+.preview-tiles .download-button
+{
+	display: inline-block;
+	width: auto;
+	max-width: 100%;
+	padding: 10px 30px;
+
+	font-size: 120%;
+}
+	.preview-tiles .download-button::after
+	{
+		content: "DOWNLOAD";
+	}
+
+.contact-td
+{
+	width: 80%;
+	margin-left: 10%;
+}
+.contact-td a
+{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	padding: 10px 2%;
+	box-sizing: border-box;
+
+	border: 1px solid #888;
+	border-radius: 5px;
+
+	font-family: "Segoe UI Light";
+	font-size: 150%;
+	text-align: center;
+}
+
+.contact-td a:hover
+{
+	background-color: #FFF;
+	border-color: transparent;
+	border-bottom-color: #CCC;
+	border-radius: 3px;
+
+	color: #F33;
 }
 
 
@@ -1064,6 +1153,11 @@ input[type="text"]
 		margin-right: 40px;
 	}
 
+	table:not(.unresponsive) td
+	{
+		display: table-cell;
+		width: 100vw;
+	}
 	.section-halves td
 	{
 		display: table-cell;
@@ -1107,6 +1201,16 @@ input[type="text"]
 		width: 100px;
 
 		font-size: 400%;
+	}
+
+	.preview-tiles td
+	{
+		padding: 10px 3%;
+	}
+
+	.contact-td
+	{
+		margin-left: 10%;
 	}
 }
 

@@ -2,25 +2,59 @@
 <html lang = "en">
 	<head>
 		<meta charset = "UTF-8">
-		<meta name="viewport" content="width=device-width"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width">
 		<title>Contact | bitKoder</title>
-		<link rel="icon" href="http://bitkoder.com/img/favicon.png">
+		<meta name="description" content="Contact me through YouTube, Twitter or Discord!">
+		<meta name="keywords" content="koder,Minecraft,command,youtube,contact,twitter,discord">
+		<meta name="author" content="bitKoder">
+		<link rel="icon" href="../favicon.png">
 		<link rel="stylesheet" href="../css/style.css">
+		<script src="../js/w3-include.js"></script>
 		<script src="../js/script.js"></script>
 	</head>
-	<body>
-		<script type="text/javascript">document.getElementById("nav-contact").className = "nav-selected";</script>
+	<body class="nav-margin">
+		<header>
+			<div w3-include-html="../static-html/nav.html"></div>
+		</header>
+		
 		<main>
-			<section class="info">
-				<p>
-					<a href="https://www.youtube.com/koder">YouTube</a><hr>
-					<a href="https://twitter.com/bitKoder">Twitter</a><hr>
-					<a href="https://discord.gg/0qje4rvmFgMhF1rc">Discord Chat Server</a>
-				</p>
-			</section>
+			<h2 id="welcome">Contact</h2>
+			<h3 class="center-align">You can reach me through any of these platforms:</h3>
+			<br>
+			<br>
+			<table>
+				<tr>
+					<td class="contact-td">
+						<a href="https://www.youtube.com/koder">
+							YouTube
+						</a>
+					</td>
+					<td style="width: 20vw; height: 20px;"></td>
+					<td class="contact-td">
+						<a href="https://twitter.com/bitKoder">
+							Twitter
+						</a>
+					</td>
+					<td style="width: 20vw; height: 20px;"></td>
+					<td class="contact-td">
+						<a href="https://discord.gg/0qje4rvmFgMhF1rc">
+							Discord
+						</a>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<br>
 		</main>
-		<footer>
-			<p></p>
-		</footer>
+
+		<footer></footer>
+		<div w3-include-html="../static-html/footer.html"></div>
+
+		
+		<script>
+			website.init();
+			document.getElementById("nav-contact").className = "nav-selected";
+		</script>
 	</body>
 </html>

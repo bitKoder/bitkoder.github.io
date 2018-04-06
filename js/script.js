@@ -23,35 +23,16 @@ var website = {
 		{
 			pageNextButtons[i].addEventListener("click", function() {changePage(this);});
 		}
-		if (pagePrevButtons.length > 0 || pageNextButtons.length > 0) initPages();
+		if (pagePrevButtons.length > 0 || pageNextButtons.length > 0)
+		{
+			initPages();
+			setTimeout(initPages, 1000);
+		}
+		window_onResize();
+		setTimeout(window_onResize, 1000);
 	}
 };
 
-// function init()
-// {
-// 	console.log("test");
-// 	if (document.getElementById("splash-text")) randomSplash();
-
-// 	window.addEventListener("resize", window_onResize);
-
-// 	var cmdSpans = document.getElementsByClassName("cmd");
-// 	for (var i = 0; i < cmdSpans.length; i++)
-// 	{
-// 		cmdSpans[i].setAttribute("onclick", "window.getSelection().selectAllChildren(this)");
-// 	}
-
-// 	var pagePrevButtons = document.getElementsByClassName("prev-page");
-// 	for (var i = 0; i < pagePrevButtons.length; i++)
-// 	{
-// 		pagePrevButtons[i].addEventListener("click", function() {changePage(this);});
-// 	}
-// 	var pageNextButtons = document.getElementsByClassName("next-page");
-// 	for (var i = 0; i < pagePrevButtons.length; i++)
-// 	{
-// 		pageNextButtons[i].addEventListener("click", function() {changePage(this);});
-// 	}
-// 	if (pagePrevButtons.length > 0 || pageNextButtons.length > 0) initPages();
-// }
 
 function randomSplash()
 {
@@ -85,6 +66,33 @@ function window_onResize()
 	if (window.innerWidth >= 1000)
 	{
 		closeNav();
+	}
+
+	if (document.body.classList.contains("nav-margin")) document.getElementsByTagName("MAIN")[0].style.minHeight = (window.innerHeight - 60 - document.getElementsByTagName("FOOTER")[0].clientHeight) + "px";
+
+	if (pagePrevButtons.length > 0 || pageNextButtons.length > 0) initPages();
+}
+
+// this function will resize an element (el)
+// such that the combined height of all the
+// elements in el's parent is at least as
+// much as the height of el's parent, such
+// that they 'fill' the container.
+function fitContainer(el)
+{
+	var elementToResize = el;
+	var parentContainer = el.parentNode;
+	var allElementsInParent = parentContainer.children;
+
+	//loop through all children of parentContainer (except elementToResize)
+	// and add up their heights to get their combined height
+	var combinedHeight = 0;
+	for (var i = 0; i < allElementsInParent.length; i++)
+	{
+		if (allElementsInParent[i] !== elementToResize)
+		{
+			combinedHeight += allElementsInParent[i].clientHeight;
+		}
 	}
 }
 

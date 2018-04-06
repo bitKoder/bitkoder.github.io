@@ -2,21 +2,83 @@
 <html lang = "en">
 	<head>
 		<meta charset = "UTF-8">
-		<meta name="viewport" content="width=device-width"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width">
 		<title>Commands | bitKoder</title>
-		<link rel="icon" href="http://bitkoder.com/img/favicon.png">
+		<meta name="description" content="Here you can find a list of all commands available on my website.">
+		<meta name="keywords" content="koder,Minecraft,command,youtube,list">
+		<meta name="author" content="bitKoder">
+		<link rel="icon" href="../favicon.png">
 		<link rel="stylesheet" href="../css/style.css">
+		<script src="../js/w3-include.js"></script>
 		<script src="../js/script.js"></script>
 	</head>
-	<body>
-		<script type="text/javascript">document.getElementById("nav-commands").className = "nav-selected";</script>
+	<body class="nav-margin">
+		<header>
+			<div w3-include-html="../static-html/nav.html"></div>
+		</header>
+
 		<main>
-			<section class="info">
-				<p>Content coming soon</p>
-			</section>
+			<h2 id="welcome">Commands</h2>
+			<br>
+			<br>
+			<table class="preview-tiles">
+				<tr>
+					<td>
+						<div class="content">
+							<div class="video-frame">
+								<iframe id="video-player" src="https://www.youtube.com/embed/WI8nKR2jSvU" frameborder="0" allowfullscreen></iframe>
+							</div>
+							<p><strong>Blockwaves</strong><br>
+							This command block concept creates shockwaves when you land on a block, launching nearby blocks into the air.</p>
+							<a class="go-to-page" href="blockwaves"></a>
+						</div>
+					</td>
+					<td>
+						<div class="content">
+							<div class="video-frame">
+								<iframe id="video-player" src="https://www.youtube.com/embed/Md8_LeJ5q1k" frameborder="0" allowfullscreen></iframe>
+							</div>
+							<p><strong>Falling Logs</strong><br>
+							This contraption causes log blocks to drop down like sand when a log beneath them is chopped, instead of floating in the air.</p>
+							<a class="go-to-page" href="log-gravity"></a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="content">
+							<div class="video-frame">
+								<iframe id="video-player" src="https://www.youtube.com/embed/052Or-XV4D0" frameborder="0" allowfullscreen></iframe>
+							</div>
+							<p><strong>Halfcraft</strong><br>
+							Halfcraft allows you to free any block from the grid, then move the blocks around the world pixel by pixel.</p>
+							<a class="go-to-page" href="../halfcraft"></a>
+						</div>
+					</td>
+					<td>
+						<div class="content">
+							<div class="video-frame">
+								<iframe id="video-player" src="https://www.youtube.com/embed/Yju4MEHkwJw" frameborder="0" allowfullscreen></iframe>
+							</div>
+							<p><strong>Rotation Calculator</strong><br>
+							This function calculates an entity's horizontal and vertical rotation and save them to scoreboard values.</p>
+							<a class="go-to-page" href="rotation-calculator"></a>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<br>
 		</main>
-		<footer>
-			<p></p>
-		</footer>
+
+		<footer></footer>
+		<div w3-include-html="../static-html/footer.html"></div>
+
+		
+		<script>
+			website.init();
+			document.getElementById("nav-commands").className = "nav-selected";
+		</script>
 	</body>
 </html>
