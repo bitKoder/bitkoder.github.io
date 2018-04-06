@@ -23,7 +23,7 @@ var website = {
 		{
 			pageNextButtons[i].addEventListener("click", function() {changePage(this);});
 		}
-		if (pagePrevButtons.length > 0 || pageNextButtons.length > 0)
+		if (pageNextButtons.length > 0)
 		{
 			initPages();
 			setTimeout(initPages, 1000);
@@ -70,7 +70,7 @@ function window_onResize()
 
 	if (document.body.classList.contains("nav-margin")) document.getElementsByTagName("MAIN")[0].style.minHeight = (window.innerHeight - 60 - document.getElementsByTagName("FOOTER")[0].clientHeight) + "px";
 
-	if (pagePrevButtons.length > 0 || pageNextButtons.length > 0) initPages();
+	if (document.getElementsByClassName("next-page").length > 0) initPages();
 }
 
 // this function will resize an element (el)
