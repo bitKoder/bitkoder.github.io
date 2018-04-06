@@ -30,6 +30,7 @@ var website = {
 		}
 		window_onResize();
 		setTimeout(window_onResize, 1000);
+		setTimeout(window_onResize, 2000);
 	}
 };
 
@@ -68,7 +69,7 @@ function window_onResize()
 		closeNav();
 	}
 
-	if (document.body.classList.contains("nav-margin")) document.getElementsByTagName("MAIN")[0].style.minHeight = (window.innerHeight - 60 - document.getElementsByTagName("FOOTER")[0].clientHeight) + "px";
+	if (document.getElementsByTagName("FOOTER")[0] && document.body.classList.contains("nav-margin")) document.getElementsByTagName("MAIN")[0].style.minHeight = (window.innerHeight - 60 - document.getElementsByTagName("FOOTER")[0].clientHeight) + "px";
 
 	if (document.getElementsByClassName("next-page").length > 0) initPages();
 }
