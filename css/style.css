@@ -302,7 +302,7 @@ nav a:hover
 {
 	padding-right: 6px;
 
-	border-right: 4px solid transparent;
+	border-right: 1px solid transparent;
 
 	transition-duration: 0.1s;
 }
@@ -310,7 +310,7 @@ nav a:hover
 {
 	padding-right: 10px;
 }
-.nav-commands #nav-commands, .nav-resourcepacks #nav-resourcepacks, .nav-contact #nav-contact
+.nav-commands #nav-commands span, .nav-resourcepacks #nav-resourcepacks span, .nav-contact #nav-contact span
 {
 	border-color: #FFF;
 }
