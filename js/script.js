@@ -19,7 +19,7 @@ var website = {
 			pagePrevButtons[i].addEventListener("click", function() {changePage(this);});
 		}
 		var pageNextButtons = document.getElementsByClassName("next-page");
-		for (var i = 0; i < pagePrevButtons.length; i++)
+		for (var i = 0; i < pageNextButtons.length; i++)
 		{
 			pageNextButtons[i].addEventListener("click", function() {changePage(this);});
 		}
