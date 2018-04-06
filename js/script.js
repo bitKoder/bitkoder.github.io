@@ -63,7 +63,7 @@ function hideNavLink(n)
 
 function window_onResize()
 {
-	if (window.innerWidth >= 1000)
+	if (window.innerWidth >= 1000 && document.getElementById("nav-close"))
 	{
 		closeNav();
 	}
