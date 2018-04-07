@@ -360,12 +360,12 @@ nav a:hover
 	margin: 0;
 
 	font-family: "Segoe UI Light";
-	font-size: 700%;
+	font-size: 28vw;
 	font-weight: normal;
 }
 .landing hr
 {
-	width: 200px;
+	width: 38vw;
 	margin-top: -10px;
 
 	border: none;
@@ -375,7 +375,7 @@ nav a:hover
 {
 	padding: 0px 5%;
 
-	font-size: 85%;
+	font-size: 3.5vw;
 	font-style: italic;
 
 	cursor: default;
