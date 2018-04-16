@@ -629,8 +629,6 @@ a.download
 	text-decoration: none;
 	text-align: center;
 	transform: scale(1.2,1.2);
-	
-	//transition-duration: 0.2s;
 }
 	a.download:hover
 	{
