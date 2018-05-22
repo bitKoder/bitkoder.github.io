@@ -1193,6 +1193,7 @@ input[type="text"]
 	.preview-tiles td
 	{
 		padding: 10px 3%;
+		height: 1px;
 	}
 
 	.contact-td
