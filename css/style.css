@@ -283,8 +283,10 @@ nav a:hover
 
 	background-color: #444;
 
-	font-family: "Segoe UI Light";
-	font-size: 100%;
+	font-family: "Segoe UI";
+	font-size: 75%;
+	text-transform: uppercase;
+    letter-spacing: 0.12em;
 
 	transition-property: background-color, opacity;
 	transition-duration: 0.3s;
@@ -1090,7 +1092,7 @@ input[type="text"]
 	{
 		display: inline-block;
 		height: 100%;
-		padding: 15px 10px 0px 10px;
+		padding: 20px 10px 0px 10px;
 		box-sizing: border-box;
 
 		background-color: transparent;
@@ -1212,7 +1214,7 @@ input[type="text"]
 
 	.nav-link
 	{
-		padding: 15px 20px 0px 20px;
+		padding: 20px 20px 0px 20px;
 	}
 
 	.landing::after, .banner::after
