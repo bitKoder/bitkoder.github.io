@@ -20,5 +20,6 @@ var splashes =
 	"I really am still alive I promise",
 	"Please don't tell my friends about my channel",
 	"80% Halfcraft, 20% ???",
-	"Probably helping someone install Halfcraft"
+	"Probably helping someone install Halfcraft",
+	"New videos every week"
 ];
