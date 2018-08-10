@@ -185,7 +185,7 @@ footer .social-tile svg
 }
 footer .social-tile:hover svg
 {
-	opacity: 0.9;
+	opacity: 1;
 }
 footer hr
 {
