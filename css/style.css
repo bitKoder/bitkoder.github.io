@@ -427,6 +427,13 @@ a:not(.nav-link):hover
 	color: #FAA;
 }
 
+h2.special
+{
+	font-size: 175%;
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	text-align: center;
+}
 h2#welcome
 {
 	margin: 0;
@@ -827,6 +834,70 @@ input[type="text"]
 }
 
 
+section.featured
+{
+	text-align: center;
+}
+.featured-tile
+{
+	position: relative;
+	display: table;
+	width: 100%;
+	margin: 50px 0px;
+}
+.featured-tile img
+{
+	margin-bottom: -6px;
+}
+.featured-overlay
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	display: table-cell;
+
+	background: rgba(0, 0, 0, 0.65);
+
+	text-align: center;
+	vertical-align: middle;
+	color: #FFF;
+
+	opacity: 0;
+	transition-duration: 0.2s;
+}
+	.featured-tile:hover .featured-overlay
+	{
+		opacity: 1;
+	}
+.featured-content
+{
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	padding: 0px 10%;
+	box-sizing: border-box;
+
+	color: #FFF;
+
+	transform: translateY(-50%);
+}
+.featured-tile h4
+{
+	margin: 0px 0px 5px 0px;
+
+	font-size: 100%;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+}
+.featured-tile span
+{
+	font-family: "Segoe UI Light";
+	font-size: 60%;
+}
+
+
 .preview-tiles td
 {
 	width: 80%;
@@ -871,6 +942,8 @@ input[type="text"]
 	}
 .preview-tiles .download-button
 {
+	position: relative;
+	top: 20px;
 	display: inline-block;
 	width: auto;
 	max-width: 100%;
@@ -1049,6 +1122,23 @@ input[type="text"]
 	}
 }
 */
+
+
+@media screen and (min-width: 400px)
+{
+	.featured-tile h4
+	{
+		margin: 0px 0px 15px 0px;
+
+		font-size: 150%;
+	}
+	.featured-tile span
+	{
+		font-size: 90%;
+	}
+}
+
+
 @media screen and (min-width: 700px)
 {
 	.landing h1
@@ -1199,6 +1289,18 @@ input[type="text"]
 		width: 100px;
 
 		font-size: 400%;
+	}
+
+	.featured-tile
+	{
+		display: inline-block;
+		width: calc(50% - 15px);
+		margin: 30px 0px;
+	}
+
+	.featured-tile:nth-of-type(odd)
+	{
+		margin: 30px 30px 30px 0px;
 	}
 
 	.preview-tiles td
