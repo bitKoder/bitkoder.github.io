@@ -439,7 +439,7 @@ h2#welcome
 	color: #CC4141;
 	text-align: center;
 }
-h2:not(#welcome)
+.content h2:not(#welcome)
 {
 	position: relative;
 	min-height: 100px;
@@ -454,7 +454,7 @@ h2:not(#welcome)
 	font-weight: normal;
 	color: #FFF;
 }
-	h2:not(#welcome):before, h2:not(#welcome):after
+	.content h2:not(#welcome):before, .content h2:not(#welcome):after
 	{
 		content: "";
 		position: absolute;
@@ -467,21 +467,21 @@ h2:not(#welcome)
 		border-top-width: 0px;
 		border-bottom-width: 20px;
 	}
-	h2:not(#welcome):before
+	.content h2:not(#welcome):before
 	{
 		border-right-color: #933A3A;
 		left: -40px;
 	}
-	h2:not(#welcome):after
+	.content h2:not(#welcome):after
 	{
 		border-left-color: #933A3A;
 		right: -40px;
 	}
-	h2:not(#welcome).no-top-margin
+	.content h2:not(#welcome).no-top-margin
 	{
 		margin-top: 0;
 	}
-	h2:not(#welcome).no-bottom-margin
+	.content h2:not(#welcome).no-bottom-margin
 	{
 		margin-bottom: 0;
 	}
@@ -1135,13 +1135,13 @@ input[type="text"]
 		font-size: 700%;
 	}
 
-	h2:not(#welcome)
+	.content h2:not(#welcome)
 	{
 		width: calc(100% + 80px);
 		margin: 30px 0px 20px -40px;
 		padding: 25px 0px 25px calc(2% + 40px);
 	}
-	h2:not(#welcome):before, h2:not(#welcome):after
+	.content h2:not(#welcome):before, .content h2:not(#welcome):after
 	{
 		display: inline-block;
 	}
