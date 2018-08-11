@@ -829,8 +829,8 @@ section.featured
 	vertical-align: middle;
 	color: #FFF;
 
-	opacity: 0;
-	transition-duration: 0.2s;
+	opacity: 1;
+	clip: rect(0, auto, auto, 0);
 }
 	.featured-tile:hover .featured-overlay
 	{
@@ -838,9 +838,9 @@ section.featured
 	}
 .featured-content
 {
-	position: absolute;
+	position: fixed;
 	top: 50%;
-	width: 100%;
+	width: 95%;
 	padding: 0px 10%;
 	box-sizing: border-box;
 
@@ -1260,10 +1260,19 @@ section.featured
 		width: calc(50% - 15px);
 		margin: 30px 0px;
 	}
-
 	.featured-tile:nth-of-type(odd)
 	{
 		margin: 30px 30px 30px 0px;
+	}
+	.featured-overlay
+	{
+		opacity: 0;
+		transition-duration: 0.2s;
+	}
+	.featured-content
+	{
+		position: absolute;
+		width: 100%;
 	}
 
 	.preview-tiles td

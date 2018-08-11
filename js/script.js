@@ -8,6 +8,7 @@ var website = {
 		if (document.getElementById("splash-text")) randomSplash();
 
 		window.addEventListener("resize", window_onResize);
+		window.addEventListener("scroll", window_onScroll);
 
 		var cmdSpans = document.getElementsByClassName("cmd");
 		for (var i = 0; i < cmdSpans.length; i++)
@@ -85,6 +86,20 @@ function window_onResize()
 	if (document.getElementsByTagName("FOOTER")[0] && document.body.classList.contains("nav-margin")) document.getElementsByTagName("MAIN")[0].style.minHeight = (window.innerHeight - 60 - document.getElementsByTagName("FOOTER")[0].clientHeight) + "px";
 
 	if (document.getElementsByClassName("next-page").length > 0) initPages();
+}
+
+// logic to perform when the user scrolls
+function window_onScroll()
+{
+	var featuredOverlays = document.getElementsByClassName("featured-overlay");
+	for (var i = 0; i < featuredOverlays.length; i++)
+	{
+		var rect = featuredOverlays[i].getBoundingClientRect();
+		var dist = window.innerHeight / 2 - rect.top;
+		var opacity = Math.sin(dist / (rect.height / Math.PI));
+		if (opacity < 0) opacity = 0;
+		featuredOverlays[i].style.opacity = "" + (opacity);
+	}
 }
 
 // this function will resize an element (el) such that the combined height of all the elements in
