@@ -1,15 +1,4 @@
-/*
-@font-face
-{
-	font-family: "Square";
-	src: url("../font/SquareNormal.ttf");
-}
-@font-face
-{
-	font-family: "Square Light";
-	src: url("../font/SquareLight.ttf");
-}
-*/
+/* initialising fonts*/
 @font-face
 {
 	font-family: "Symbols";
@@ -17,79 +6,43 @@
 }
 @font-face
 {
-	font-family: "Verdana";
-	src: url("../font/verdana.ttf");
+	font-family: "Lato";
+	src: url("../font/Lato-Regular.ttf");
 }
 	@font-face
 	{
-		font-family: "Verdana";
-		src: url("../font/verdanab.ttf");
-		font-weight: bold;
-	}
-	@font-face
-	{
-		font-family: "Verdana";
-		src: url("../font/verdanai.ttf");
-		font-style: italic;
-	}
-	@font-face
-	{
-		font-family: "Verdana";
-		src: url("../font/verdanaz.ttf");
-		font-weight: bold;
+		font-family: "Lato";
+		src: url("../font/Lato-Italic.ttf");
 		font-style: italic;
 	}
 @font-face
 {
-	font-family: "Myriad Pro";
-	src: url("../font/MyriadPro-Regular.otf");
+	font-family: "Source Code Pro";
+	src: url("../font/SourceCodePro-Regular.ttf");
+}
+@font-face
+{
+	font-family: "Open Sans";
+	src: url("../font/OpenSans-Regular.ttf");
 }
 	@font-face
 	{
-		font-family: "Myriad Pro";
-		src: url("../font/MyriadPro-Bold.otf");
+		font-family: "Open Sans";
+		src: url("../font/OpenSans-Bold.ttf");
 		font-weight: bold;
 	}
-@font-face
-{
-	font-family: "Consolas";
-	src: url("../font/consola.ttf");
-}
-@font-face
-{
-	font-family: "Segoe UI";
-	src: url("../font/segoeui.ttf");
-}
 	@font-face
 	{
-		font-family: "Segoe UI";
-		src: url("../font/seguii.ttf");
+		font-family: "Open Sans";
+		src: url("../font/OpenSans-Italic.ttf");
 		font-style: italic;
 	}
-@font-face
-{
-	font-family: "Segoe UI Light";
-	src: url("../font/segoeuil.ttf");
-}
 	@font-face
 	{
-		font-family: "Segoe UI Light";
-		src: url("../font/seguili.ttf");
-		font-style: italic;
+		font-family: "Open Sans";
+		src: url("../font/OpenSans-Light.ttf");
+		font-weight: 200;
 	}
-/*
-@font-face
-{
-	font-family: "Consolas";
-	src: url("../font/consola.ttf");
-}
-	@font-face
-	{
-		font-family: "Consolas";
-		src: url("../font/consolab.ttf");
-		font-weight: bold;
-	}
-*/
 
 
 
@@ -98,11 +51,13 @@ html, body, header, main, footer, .landing
 	margin: 0;
 	padding: 0;
 }
+/* remove chrome's blue outline on focused elements */
 :focus
 {
 	outline: none;
 }
 
+/* miscellaneous classes*/
 .right-align
 {
 	text-align: right;
@@ -143,7 +98,7 @@ html
 {	
 	background-color: #333;
 
-	font-family: "Segoe UI";
+	font-family: "Open Sans";
 	font-size: 22px;
 	color: #444;
 }
@@ -159,6 +114,7 @@ body.nav-margin
 	margin-top: 60px;
 }
 
+/* footer (social links, copyright) */
 footer
 {
 	position: relative;
@@ -193,8 +149,9 @@ footer hr
 }
 footer .copyright
 {
-	font-family: "Segoe UI Light";
+	font-family: "Open Sans";
 	font-size: 18px;
+	font-weight: 200;
 }
 
 h1, h2
@@ -202,6 +159,7 @@ h1, h2
 	cursor: default;
 }
 
+/* navigation */
 nav
 {
 	position: fixed;
@@ -279,7 +237,7 @@ nav a:hover
 
 	background-color: #444;
 
-	font-family: "Segoe UI";
+	font-family: "Open Sans";
 	font-size: 75%;
 	text-transform: uppercase;
     letter-spacing: 0.12em;
@@ -323,6 +281,7 @@ nav a:hover
 	height: 100vh;
 }
 
+/* landings - images with text overlaid that cover the entire screen at the top of the page */
 .landing
 {
 	position: relative;
@@ -357,9 +316,9 @@ nav a:hover
 {
 	margin: 0;
 
-	font-family: "Segoe UI Light";
+	font-family: "Open Sans";
 	font-size: 28vw;
-	font-weight: normal;
+	font-weight: 200;
 }
 .landing hr
 {
@@ -379,6 +338,7 @@ nav a:hover
 	cursor: default;
 }
 
+/* banners displayed at the top of some pages - not to be confused with the landing on the home page which covers the entire screen*/
 .banner
 {
 	position: relative;
@@ -399,9 +359,9 @@ nav a:hover
 {
 	margin: 0;
 
-	font-family: "Segoe UI Light";
+	font-family: "Open Sans";
 	font-size: 12vw;
-	font-weight: normal;
+	font-weight: 200;
 	text-transform: uppercase;
 }
 
@@ -435,7 +395,7 @@ h2#welcome
 	margin: 0;
 	padding: 100px 5% 0px 5%;
 
-	font-family: "Verdana";
+	font-family: "Lato";
 	font-size: 175%;
 	font-weight: normal;
 	font-style: italic;
@@ -452,7 +412,7 @@ h2#welcome
 
 	background-color: #CC4141;
 
-	font-family: "Myriad Pro";
+	font-family: "Lato";
 	font-size: 225%;
 	font-weight: normal;
 	color: #FFF;
@@ -506,7 +466,7 @@ span.cmd
 	background: #303038;
 	border-radius: 4px;
 	
-	font-family: "Segoe UI Light";
+	font-family: "Source Code Pro";
 	color: #DDD;
 	word-wrap: break-word;
 	word-break: break-all;
@@ -538,6 +498,7 @@ img
 	max-width: 100%;
 }
 
+/* tables */
 table, tbody, tr, td
 {
 	margin: 0;
@@ -564,6 +525,7 @@ table.unresponsive td
 	display: table-cell;
 }
 
+/* two-column layouts */
 .section-halves td
 {
 	vertical-align: top;
@@ -595,6 +557,7 @@ table.unresponsive td
 	padding: 10px 5%;
 }
 
+/* three-column layouts */
 .section-thirds td
 {
 	border: none;
@@ -620,6 +583,7 @@ table.unresponsive td
 	font-weight: normal;
 }
 
+/* download buttons and symbols */
 a.download
 {
 	display: inline-block;
@@ -628,7 +592,7 @@ a.download
 	padding: 0px 1%;
 	float: right;
 	
-	font-family: "Symbols", "Verdana";
+	font-family: "Symbols", "Open Sans";
 	font-size: 100%;
 	color: #DDD;
 	text-decoration: none;
@@ -649,7 +613,7 @@ a.download
 	{
 		display: inline;
 		
-		font-family: "Symbols", "Verdana";
+		font-family: "Symbols", "Open Sans";
 		font-size: 100%;
 		font-weight: bold;
 		text-decoration: none;
@@ -685,12 +649,14 @@ a.download
 	color: #FFF !important;
 }
 
+/* pagination */
 .prev-page, .next-page
 {
 	width: 50px;
 
-	font-family: "Segoe UI Light";
+	font-family: "Open Sans";
 	font-size: 200%;
+	font-weight: 200;
 	text-align: center;
 	vertical-align: center;
 
@@ -749,6 +715,7 @@ a.download
 	background-color: #F88;
 }
 
+/* textareas that contain commands */
 .command-box, .command-box-small
 {
 	width: 100%;
@@ -756,7 +723,7 @@ a.download
 	overflow-x: hidden;
 	resize: vertical;
 
-	font-family: "Consolas";
+	font-family: "Source Code Pro";
 	font-size: 75%;
 	color: #888888;
 	word-wrap: break-word;
@@ -794,10 +761,11 @@ input[type="text"]
 	padding: 5px 10px;
 	box-sizing: border-box;
 
-	font-family: "Segoe UI";
+	font-family: "Open Sans";
 	font-size: 100%;
 }
 
+/* layout handling for youtube video embeds - namely ensuring they scale properly */
 .video-frame
 {
 	display: inline-block;
@@ -830,6 +798,7 @@ input[type="text"]
 }
 
 
+/* the 'featured' section on the homepage */
 section.featured
 {
 	text-align: center;
@@ -889,11 +858,13 @@ section.featured
 }
 .featured-tile span
 {
-	font-family: "Segoe UI Light";
+	font-family: "Open Sans";
 	font-size: 60%;
+	font-weight: 200;
 }
 
 
+/* the tiles (or cards) found on the 'commands' and 'resource packs' pages */
 .preview-tiles td
 {
 	width: 80%;
@@ -953,6 +924,7 @@ section.featured
 		content: "DOWNLOAD";
 	}
 
+/* 'buttons' used on the 'contact' page */
 .contact-td
 {
 	width: 80%;
@@ -969,8 +941,9 @@ section.featured
 	border: 1px solid #888;
 	border-radius: 5px;
 
-	font-family: "Segoe UI Light";
+	font-family: "Open Sans";
 	font-size: 120%;
+	font-weight: 200;
 	text-transform: uppercase;
 	letter-spacing: 0.075em;
 	text-align: center;
@@ -987,6 +960,7 @@ section.featured
 }
 
 
+/* simulator used on some pages for showing how the commands work */
 .sim-frame
 {
 	position: relative;
@@ -1007,7 +981,7 @@ section.featured
 		background: rgba(0, 0, 0, 0.3);
 		border: none;
 		
-		font-family: "Segoe UI";
+		font-family: "Open Sans";
 		font-size: 50px;
 		color: rgba(255, 255, 255, 0.6);
 	}
@@ -1078,7 +1052,7 @@ section.featured
 	}
 .sim-frame p
 {
-	font-family: "Segoe UI";
+	font-family: "Open Sans";
 	font-size: 25px;
 	color: #FFFFFF;
 	text-align: center;
@@ -1104,23 +1078,14 @@ section.featured
 	border: 4px solid #000000;
 	border-radius: 2px;
 	
-	font-family: "Consolas";
+	font-family: "Source Code Pro";
 	word-wrap: break-word;
 }
 
 
 
-/*
-@media screen and (max-width: 1049px)
-{
-	.mobile-padding
-	{
-		padding-left: 5%;
-		padding-right: 5%;
-	}
-}
-*/
 
+/* responsive design - layout handling for larger screens */
 
 @media screen and (min-width: 400px)
 {

@@ -1,6 +1,8 @@
-var navExpanded = false;
+var navExpanded = false; // whether the navigation bar is expanded - mobile view
 
+// website properties and functions
 var website = {
+	// 'init' - initialises the website (include html, set up 'command' spans and pagination controls, add window resize event etc.)
 	init: function() {
 		includeHTML();
 		if (document.getElementById("splash-text")) randomSplash();
@@ -40,33 +42,39 @@ var website = {
 };
 
 
+// display a random splash message on the home page
 function randomSplash()
 {
 	document.getElementById("splash-text").innerHTML = splashes[Math.floor(Math.random() * splashes.length)];
 }
 
+// fade in an individual navigation link - these fade in one at a time when the nav is expanded in mobile view
 function showNavLink(n)
 {
 	 document.getElementsByClassName("nav-link")[n].style.display = "block";
 	setTimeout(function() {  document.getElementsByClassName("nav-link")[n].classList.add("nav-link-show"); }, n * 30 + 2);
 }
 
+// close (collapse) the navigation bar
 function closeNav()
 {
 	navExpanded = false;
 	document.getElementById("nav-close").style.display = "none";
+	//hide each link in the navigation bar
 	for (var i = 0; i <  document.getElementsByClassName("nav-link").length; i++)
 	{
 		hideNavLink(i);
 	}
 }
 
+// instantly hide an individual navigation link - all links hide simultaneously when collapsing the navigation bar
 function hideNavLink(n)
 {
 	 document.getElementsByClassName("nav-link")[n].style.display = "";
 	 document.getElementsByClassName("nav-link")[n].classList.remove("nav-link-show");
 }
 
+// logic to perform when the window is resized
 function window_onResize()
 {
 	if (window.innerWidth >= 1000 && document.getElementById("nav-close"))
@@ -79,19 +87,15 @@ function window_onResize()
 	if (document.getElementsByClassName("next-page").length > 0) initPages();
 }
 
-// this function will resize an element (el)
-// such that the combined height of all the
-// elements in el's parent is at least as
-// much as the height of el's parent, such
-// that they 'fill' the container.
+// this function will resize an element (el) such that the combined height of all the elements in
+// el's parent is at least as much as the height of el's parent, such that they 'fill' the container.
 function fitContainer(el)
 {
 	var elementToResize = el;
 	var parentContainer = el.parentNode;
 	var allElementsInParent = parentContainer.children;
 
-	//loop through all children of parentContainer (except elementToResize)
-	// and add up their heights to get their combined height
+	//loop through all children of parentContainer (except elementToResize) and add up their heights to get their combined height
 	var combinedHeight = 0;
 	for (var i = 0; i < allElementsInParent.length; i++)
 	{
@@ -102,6 +106,7 @@ function fitContainer(el)
 	}
 }
 
+// expands the navigation bar when the hamburger button is clicked
 function navMenu_onClick()
 {
 	navExpanded = !navExpanded;
@@ -109,6 +114,7 @@ function navMenu_onClick()
 	{
 		document.getElementById("nav-close").style.display = "block";
 
+		// fade in each navigation link
 		for (var i = 0; i <  document.getElementsByClassName("nav-link").length; i++)
 		{
 			showNavLink(i);
@@ -117,6 +123,7 @@ function navMenu_onClick()
 	else closeNav();
 }
 
+// changes a page for pagination
 function changePage(elem)
 {
 	var index = 0;
@@ -129,7 +136,7 @@ function changePage(elem)
 			break;
 		}
 	}
-	if (elem.classList.contains("prev-page"))
+	if (elem.classList.contains("prev-page")) // if the button clicked was the 'previous page' button
 	{
 		if (index <= 0) return;
 
@@ -138,11 +145,12 @@ function changePage(elem)
 		parent.children[1].children[index - 1].classList.remove("page-left");
 		parent.children[1].children[index - 1].classList.add("page-middle");
 
+		// set height of the page container to match the page's height and run page's custom initialisation if present
 		parent.children[1].style.height = parent.children[1].children[index - 1].clientHeight + "px";
 		parent.children[1].children[index - 1].children[0].click();
 
 	}
-	else if (elem.classList.contains("next-page"))
+	else if (elem.classList.contains("next-page")) // if the button clicked was the 'next page' button
 	{
 		if (index >= parent.children[1].children.length - 1) return;
 
@@ -151,12 +159,14 @@ function changePage(elem)
 		parent.children[1].children[index + 1].classList.remove("page-right");
 		parent.children[1].children[index + 1].classList.add("page-middle");
 
+		// set height of the page container to match the page's height and run page's custom initialisation if present
 		parent.children[1].style.height = parent.children[1].children[index + 1].clientHeight + "px";
 		parent.children[1].children[index + 1].children[0].click();
 	}
 }
 
 
+// set up individual pages for pagination
 function initPages()
 {
 	var pageContainers = document.getElementsByClassName("page-content");
@@ -166,6 +176,7 @@ function initPages()
 		{
 			if (pageContainers[i].children[j].classList.contains("page-middle"))
 			{
+				// set height of the page container to match the page's height
 				pageContainers[i].style.height = pageContainers[i].children[j].clientHeight + "px";
 				break;
 			}
