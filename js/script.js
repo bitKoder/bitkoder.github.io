@@ -12,6 +12,11 @@ var website = {
 		{
 			cmdSpans[i].setAttribute("onclick", "window.getSelection().selectAllChildren(this)");
 		}
+		cmdSpans = document.getElementsByClassName("sim-command-label");
+		for (var i = 0; i < cmdSpans.length; i++)
+		{
+			cmdSpans[i].setAttribute("onclick", "window.getSelection().selectAllChildren(this)");
+		}
 
 		var pagePrevButtons = document.getElementsByClassName("prev-page");
 		for (var i = 0; i < pagePrevButtons.length; i++)
