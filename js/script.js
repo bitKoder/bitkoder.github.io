@@ -1,3 +1,4 @@
+var prevWindowWidth = 0;
 var navExpanded = false; // whether the navigation bar is expanded - mobile view
 
 // website properties and functions
@@ -78,19 +79,43 @@ function hideNavLink(n)
 // logic to perform when the window is resized
 function window_onResize()
 {
-	if (window.innerWidth >= 1000 && document.getElementById("nav-close"))
+	if (window.innerWidth >= 1000 && prevWindowWidth < 1000)
 	{
-		closeNav();
+		if (document.getElementById("nav-close"))
+		{
+			closeNav();
+		}
+
+		var featuredOverlays = document.getElementsByClassName("featured-overlay")
+		if (featuredOverlays[0])
+		{	
+			for (var i = 0; i < featuredOverlays.length; i++)
+			{
+				featuredOverlays[i].style.opacity = "";
+			}
+		}
+	}
+	if (window.innerWidth < 1000 && prevWindowWidth >= 1000)
+	{
+		var featuredOverlays = document.getElementsByClassName("featured-overlay")
+		if (featuredOverlays[0])
+		{	
+			window_onScroll();
+		}
 	}
 
 	if (document.getElementsByTagName("FOOTER")[0] && document.body.classList.contains("nav-margin")) document.getElementsByTagName("MAIN")[0].style.minHeight = (window.innerHeight - 60 - document.getElementsByTagName("FOOTER")[0].clientHeight) + "px";
 
 	if (document.getElementsByClassName("next-page").length > 0) initPages();
+
+	prevWindowWidth = window.innerWidth;
 }
 
 // logic to perform when the user scrolls
 function window_onScroll()
 {
+	if (window.innerWidth >= 1000) return;
+
 	var featuredOverlays = document.getElementsByClassName("featured-overlay");
 	for (var i = 0; i < featuredOverlays.length; i++)
 	{
