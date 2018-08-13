@@ -6,7 +6,7 @@ var website = {
 	// 'init' - initialises the website (include html, set up 'command' spans and pagination controls, add window resize event etc.)
 	init: function() {
 		includeHTML();
-		if (document.getElementById("splash-text")) randomSplash();
+		// if (document.getElementById("splash-text")) randomSplash();
 
 		window.addEventListener("resize", window_onResize);
 		window.addEventListener("scroll", window_onScroll);
