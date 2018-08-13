@@ -57,6 +57,12 @@ function showNavLink(n)
 	setTimeout(function() {  document.getElementsByClassName("nav-link")[n].classList.add("nav-link-show"); }, n * 30 + 2);
 }
 
+// toggles the visibility of the scrollbar - this function is only accessible through the browser console and only works on some browsers
+function toggleScrollbar()
+{
+	document.body.classList.toggle("hide-scrollbar");
+}
+
 // close (collapse) the navigation bar
 function closeNav()
 {
