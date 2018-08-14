@@ -118,6 +118,11 @@ body.nav-margin
 	margin-top: 60px;
 }
 
+main
+{
+	display: block;
+}
+
 /* footer (social links, copyright) */
 footer
 {
