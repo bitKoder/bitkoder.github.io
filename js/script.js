@@ -127,8 +127,9 @@ function window_onScroll()
 	{
 		var rect = featuredOverlays[i].getBoundingClientRect();
 		var dist = window.innerHeight / 2 - rect.top;
-		var opacity = Math.sin(dist / (rect.height / Math.PI));
+		var opacity = Math.sin(dist / (rect.height / Math.PI)) * 1.5;
 		if (opacity < 0) opacity = 0;
+		if (opacity > 1) opacity = 1;
 		featuredOverlays[i].style.opacity = "" + (opacity);
 	}
 }

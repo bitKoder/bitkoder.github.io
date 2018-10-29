@@ -851,9 +851,9 @@ section.featured
 	}
 .featured-content
 {
-	position: fixed;
+	position: absolute;
 	top: 50%;
-	width: 95%;
+	width: 100%;
 	padding: 0px 10%;
 	box-sizing: border-box;
 
@@ -1281,11 +1281,6 @@ section.featured
 	{
 		opacity: 0;
 		transition-duration: 0.2s;
-	}
-	.featured-content
-	{
-		position: absolute;
-		width: 100%;
 	}
 
 	.preview-tiles td
