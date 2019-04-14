@@ -39,5 +39,8 @@
 		</svg>
 	</a>
 	<hr>
-	<span class="copyright">© 2018 | bitKoder</span>
+	<span class="copyright">© <span class="cr-year">this year</span> | bitKoder</span>
+	<script>
+		document.getElementsByClassName("cr-year")[0].innerHTML = new Date().getFullYear();
+	</script>
 </footer>
