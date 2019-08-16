@@ -40,6 +40,8 @@ var website = {
 		window_onResize();
 		setTimeout(window_onResize, 1000);
 		setTimeout(window_onResize, 2000);
+
+		window.addEventListener("load", function() {document.getElementsByClassName("copyright-year")[0].innerHTML = "" + new Date().getFullYear();});
 	}
 };
 
