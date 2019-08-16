@@ -41,6 +41,6 @@
 	<hr>
 	<span class="copyright">© <span class="copyright-year">this year</span> · bitKoder</span>
 	<script>
-		document.getElementsByClassName("copyright-year")[0].innerHTML = "" + new Date().getFullYear();
+		window.addEventListener("load", function() {document.getElementsByClassName("copyright-year")[0].innerHTML = "" + new Date().getFullYear()});
 	</script>
 </footer>
