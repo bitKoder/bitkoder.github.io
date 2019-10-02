@@ -116,7 +116,6 @@ function checkSlideButtons(slide) {
 // logic to perform when the page finishes loading
 function window_onLoad() {
 	popupContainer = document.getElementById("popup-container");
-	document.getElementById("copyright-year").innerHTML = "" + new Date().getFullYear();
 	setTimeout (closeNav, 200);
 
 	if (document.getElementById("help-supported-versions-list") && document.body.getAttribute("supportedversions")) {
