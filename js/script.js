@@ -155,7 +155,6 @@ function window_onLoad() {
 function postLoad() {
 	document.getElementById("copyright-year").innerHTML = "" + new Date().getFullYear();
 }
-}
 
 
 // toggles the visibility of the scrollbar - this function is only accessible through the browser console and only works on some browsers
