@@ -115,10 +115,6 @@ function checkSlideButtons(slide) {
 function window_onLoad() {
 	popupContainer = document.getElementById("popup-container");
 
-	if (document.getElementById("help-supported-versions-list") && document.body.getAttribute("supportedversions")) {
-		document.getElementById("help-supported-versions-list").innerText = document.body.getAttribute("supportedversions");
-	}
-
 	var idLinks = document.querySelectorAll("a[href^='#']");
 	for (var i = 0; i < idLinks.length; i++) {
 		idLinks[i].addEventListener("click", function(e) { 
@@ -154,6 +150,10 @@ function window_onLoad() {
 // runs after html is included
 function postLoad() {
 	document.getElementById("copyright-year").innerHTML = "" + new Date().getFullYear();
+
+	if (document.getElementById("help-supported-versions-list") && document.body.getAttribute("supportedversions")) {
+		document.getElementById("help-supported-versions-list").innerText = document.body.getAttribute("supportedversions");
+	}
 }
 
 

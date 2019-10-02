@@ -1,0 +1,35 @@
+<div id="help-popup" class="popup">
+	<button class="close-popup" onclick="fadePopupOut();"><svg><polyline points='3 3 17 17'/><polyline points='3 17 17 3'/></svg></button>
+	<div id="slide-help-version" class="popup-slide popup-slide-current">
+		<div class="popup-content">
+			<h3>What version of Minecraft are you using?</h3>
+			<input id="help-version" type="text" oninput="if (this.value) document.getElementById('help-version-next').style.removeProperty('visibility'); else document.getElementById('help-version-next').style.visibility = 'hidden';"/><br><br>
+			<img src="../img/gif/version-check-1-14-4.gif"/>
+			<p>This creation only works in these versions of Minecraft: <span id="help-supported-versions=list" class="red-text">1.14</span>.</p>
+			<a id="help-version-next" class="button red-fill full-width" style="visibility: hidden;" onclick="helpFormValues.version = document.getElementById('help-version').value; slideTo(document.getElementById('slide-help-mods'));">Next</a>
+		</div>
+	</div>
+	<div id="slide-help-mods" class="popup-slide popup-slide-right" prevslide="help-version">
+		<div class="popup-content">
+			<h3>Are you using mods or plugins?</h3>
+			<a class="button red-fill full-width" onclick="helpFormValues.mods = 'no'; slideTo(document.getElementById('slide-help-multiplayer'));">Vanilla</a><br><br>
+			<a class="button red-fill full-width" onclick="helpFormValues.mods = 'yes'; slideTo(document.getElementById('slide-help-multiplayer'));">Mods/Plugins</a><br><br>
+			<img src="../img/gif/mod-check-vanilla.gif"/>
+			<p>This creation only works in <span class="red-text">vanilla, unmodded Minecraft</span>.</p>
+		</div>
+	</div>
+	<div id="slide-help-multiplayer" class="popup-slide popup-slide-right" prevslide="help-mods">
+		<div class="popup-content">
+			<h3>Are you in singleplayer or multiplayer?</h3>
+			<a class="button red-fill full-width" onclick="helpFormValues.multiplayer = 'no'; parseEmailLink(); slideTo(document.getElementById('slide-help-email'));">Singleplayer</a><br><br>
+			<a class="button red-fill full-width" onclick="helpFormValues.multiplayer = 'yes'; parseEmailLink(); slideTo(document.getElementById('slide-help-email'));">Multiplayer</a><br><br>
+		</div>
+	</div>
+	<div id="slide-help-email" class="popup-slide popup-slide-right" prevslide="help-multiplayer">
+		<div class="popup-content">
+			<h3>Send me an email with these details</h3>
+			<a id="help-email-link" class="button red-fill full-width" href="">Email me</a><br><br>
+			<p>You can also add more information about the problem in the email. <span class="red-text">The more you can tell me about the problem, the quicker I can solve it!</span></p>
+		</div>
+	</div>
+</div>
