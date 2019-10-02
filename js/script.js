@@ -116,7 +116,6 @@ function checkSlideButtons(slide) {
 // logic to perform when the page finishes loading
 function window_onLoad() {
 	popupContainer = document.getElementById("popup-container");
-	setTimeout (closeNav, 200);
 
 	if (document.getElementById("help-supported-versions-list") && document.body.getAttribute("supportedversions")) {
 		document.getElementById("help-supported-versions-list").innerText = document.body.getAttribute("supportedversions");
