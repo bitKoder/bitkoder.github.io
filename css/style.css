@@ -1075,6 +1075,7 @@ p.section-preview-text {
 	width: 50%;
 	height: 250px;
 	padding: 0px 20px;
+	overflow-y: hidden;
 
 	font-size: 18px;
 	color: #FFF;
@@ -1094,6 +1095,7 @@ p.section-preview-text {
 	right: 0px;
 	z-index: 1;
 
+	transform: skewY(30deg);
 	transition: background-color 0.2s;
 }
 .contact-panel * {
