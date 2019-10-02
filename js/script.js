@@ -1,6 +1,4 @@
 var prevWindowWidth = 0;
-var nav;
-var navExpanded = false; // whether the navigation bar is expanded - mobile view
 var popupContainer;
 
 
@@ -166,7 +164,7 @@ function toggleNav() {
 
 // collapses the navigation bar
 function closeNav() {
-	nav.classList.remove("nav-new-expanded");
+	document.getElementsByClassName("nav-new")[0].classList.remove("nav-new-expanded");
 }
 
 // toggles focus on a 'featured' item - used on the home page
