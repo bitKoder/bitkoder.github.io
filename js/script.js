@@ -115,7 +115,6 @@ function checkSlideButtons(slide) {
 
 // logic to perform when the page finishes loading
 function window_onLoad() {
-	nav = document.getElementsByClassName("nav-new")[0];
 	popupContainer = document.getElementById("popup-container");
 	document.getElementById("copyright-year").innerHTML = "" + new Date().getFullYear();
 	setTimeout (closeNav, 200);
