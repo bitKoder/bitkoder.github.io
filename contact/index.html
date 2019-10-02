@@ -1,70 +1,86 @@
-<!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 	<head>
-		<meta charset = "UTF-8">
+		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width">
-		<title>Contact | bitKoder</title>
-		<meta name="description" content="Contact me through YouTube, Twitter or Discord!">
-		<meta name="keywords" content="koder,Minecraft,command,youtube,contact,twitter,discord">
+		<title>Contact · bitKoder</title>
+		<meta name="description" content="Get in touch through YouTube, Twitter, Discord or email.">
+		<meta name="keywords" content="koder,Minecraft,command,youtube,contact,twitter,discord,email">
 		<meta name="author" content="bitKoder">
-		<link rel="icon" href="../favicon.png">
-		<link rel="stylesheet" href="../css/style.css">
-		<script src="../js/w3-include.js"></script>
-		<script src="../js/script.js"></script>
+		<link rel="icon" href="/favicon.png">
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<!-- <script src="/js/w3-include.js"></script> -->
+		<script src="/js/script.js"></script>
 	</head>
-	<body class="nav-margin nav-contact">
+	<body class="nav-contact">
 		<header>
-			<div w3-include-html="../static-html/nav.html"></div>
+			<div class="nav-new">
+				<a href="/" style="display: inline-block"><img src="/img/nav-logo.jpg" class="nav-new-logo"></a>
+				<nav class="nav-new-links">
+					<span><a href="/">Home</a></span><span><a href="/commands">Commands</a></span><span><a href="/resource-packs">Resource Packs</a></span><span><a href="/contact">Contact</a></span>
+				</nav>
+				<button class="nav-new-toggle" onclick="toggleNav();"><svg height="50" width="50"><polyline points="20,15 30,25 20,35"></polyline>&lt;</svg></button>
+			</div>
 		</header>
 		
-		<main>
-			<h2 id="welcome">Contact</h2>
-			<h3 class="center-align">You can reach me through any of these platforms:</h3>
-			<br>
-			<br>
-			<table>
-				<tr>
-					<td class="contact-td">
-						<a href="https://www.youtube.com/koder" target="_blank">
-							YouTube
-						</a>
-					</td>
-					<td style="width: 20vw; height: 20px;"></td>
-					<td class="contact-td">
-						<a href="https://twitter.com/bitKoder" target="_blank">
-							Twitter
-						</a>
-					</td>
-					<td style="width: 20vw; height: 20px;"></td>
-					<td class="contact-td">
-						<a href="https://discord.gg/0qje4rvmFgMhF1rc" target="_blank">
-							Discord
-						</a>
-					</td>
-				</tr>
-				<tr style="height: 20px;"></tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td class="contact-td">
-						<a href="mailto:bitkoder.yt@gmail.com" target="_blank">
-							Email
-						</a>
-					</td>
-					<td></td>
-					<td></td>
-				</tr>
-			</table>
-			<br>
-			<br>
+		<main class="center-align">
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 73 109" style="width: 70px; margin-top: 120px; margin-bottom: 20px;">
+				<path d="M100,21H51A12,12,0,0,0,39,33v85a12,12,0,0,0,12,12h49a12,12,0,0,0,12-12V33A12,12,0,0,0,100,21ZM75.5,125.5a4,4,0,1,1,4-4A4,4,0,0,1,75.5,125.5ZM107,106a7,7,0,0,1-7,7H51a7,7,0,0,1-7-7V33a7,7,0,0,1,7-7h49a7,7,0,0,1,7,7Z" transform="translate(-39 -21)" style="fill:#333"/>
+			</svg>
+			<h1>Contact</h1>
+			<hr class="heading-line center-align">
+			<p class="subtitle center-align">You can reach me through any of these platforms:</p>
 		</main>
-
-		<div w3-include-html="../static-html/footer.html"></div>
-
-		
-		<script>
-			website.init();
-		</script>
+		<div class="flex-row-responsive contact-row">
+			<a href="https://youtube.com/koder" class="contact-panel" style="background-color: #e62117;">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 50" style="enable-background:new 0 0 60 50;" xml:space="preserve">
+					<g>
+						<path style="fill:#FFFFFF;" d="M58.7,10.6C58.1,8,56,5.9,53.4,5.3C48.8,4,30,4,30,4S11.2,4,6.6,5.3C4,5.9,1.9,8,1.3,10.6
+							C0,15.2,0,25,0,25s0,9.8,1.3,14.4C1.9,42,4,44.1,6.6,44.7C11.2,46,30,46,30,46s18.8,0,23.4-1.3c2.6-0.7,4.6-2.7,5.3-5.3
+							C60,34.8,60,25,60,25S60,15.2,58.7,10.6z M24,34V16l15.6,9L24,34z"></path>
+					</g>
+				</svg>
+				<h3>YouTube</h3><span>For those regular uploads</span>
+			</a>
+			<a href="https://twitter.com/bitKoder" class="contact-panel" style="background-color: #1da1f2;">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 50" style="enable-background:new 0 0 60 50;" xml:space="preserve">
+					<g>
+						<path style="fill:#FFFFFF;" d="M18.8,49.4c22.6,0,35-18.8,35-35c0-0.5,0-1.1,0-1.6c2.4-1.7,4.5-3.9,6.1-6.4
+							c-2.2,1-4.6,1.6-7.1,1.9c2.5-1.5,4.5-3.9,5.4-6.8c-2.4,1.4-5,2.4-7.8,3c-2.3-2.4-5.5-3.9-9-3.9c-6.8,0-12.3,5.5-12.3,12.3
+							c0,1,0.1,1.9,0.3,2.8C19.3,15.2,10.2,10.3,4.2,2.9C3.1,4.7,2.5,6.8,2.5,9.1c0,4.3,2.2,8,5.5,10.3c-2-0.1-3.9-0.6-5.6-1.5
+							c0,0,0,0.1,0,0.2c0,6,4.2,10.9,9.9,12.1c-1,0.3-2.1,0.4-3.2,0.4c-0.8,0-1.6-0.1-2.3-0.2c1.6,4.9,6.1,8.5,11.5,8.5
+							c-4.2,3.3-9.5,5.3-15.3,5.3c-1,0-2,0-2.9-0.2C5.4,47.4,11.9,49.4,18.8,49.4"></path>
+					</g>
+				</svg>
+				<h3>Twitter</h3><span>To hear me complain about Twitter</span>
+			</a>
+			<a href="https://discord.gg/0qje4rvmFgMhF1rc" class="contact-panel" style="background-color: #2C2F33;">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 50" style="enable-background:new 0 0 60 50;" xml:space="preserve">
+					<g>
+						<path style="fill:#FFFFFF;" d="M52.6,8.8c-7.4-5.5-14.4-5.4-14.4-5.4l-0.7,0.8c8.7,2.7,12.8,6.5,12.8,6.5
+							c-5.3-2.9-10.6-4.4-15.5-4.9c-3.7-0.4-7.2-0.3-10.4,0.1c-0.3,0-0.6,0.1-0.9,0.1c-1.8,0.2-6.2,0.8-11.7,3.2c-1.9,0.9-3,1.5-3,1.5
+							S13.1,6.7,22.3,4l-0.5-0.6c0,0-7-0.2-14.4,5.4c0,0-7.4,13.4-7.4,29.9c0,0,4.3,7.4,15.7,7.8c0,0,1.9-2.3,3.4-4.3
+							c-6.4-1.9-8.9-5.9-9-6.1c0.1,0,0.6,0.4,1.4,0.9c0.1,0.1,0.1,0.1,0.2,0.2c0.2,0.1,0.3,0.2,0.5,0.3c1.3,0.7,2.6,1.3,3.7,1.7
+							c2.1,0.8,4.6,1.6,7.6,2.2c3.9,0.7,8.4,1,13.3,0.1c2.4-0.4,4.9-1.1,7.4-2.2c1.8-0.7,3.8-1.6,5.9-3c0,0-2.6,4.2-9.3,6.1
+							c1.5,2,3.4,4.2,3.4,4.2C55.6,46.2,60,38.8,60,38.8C60,22.2,52.6,8.8,52.6,8.8z M20.4,34c-2.9,0-5.2-2.6-5.2-5.7s2.3-5.7,5.2-5.7
+							c2.9,0,5.3,2.6,5.2,5.7C25.6,31.4,23.3,34,20.4,34z M39.1,34c-2.9,0-5.2-2.6-5.2-5.7s2.3-5.7,5.2-5.7c2.9,0,5.2,2.6,5.2,5.7
+							S42.1,34,39.1,34z"></path>
+					</g>
+				</svg>
+				<h3>Discord</h3><span>Easily one of my social platforms</span>
+			</a>
+			<a href="mailto:bitkoder.yt@gmail.com" class="contact-panel" style="background-color: #9358d7;">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 70">
+					<path d="M100,5V21.65L50,35,0,21.65V5A5,5,0,0,1,5,0H95A5,5,0,0,1,100,5Z" style="fill:#fff"/>
+					<path d="M50,41.23l50-13.36V65a5,5,0,0,1-5,5H5a5,5,0,0,1-5-5V27.85Z" style="fill:#fff"/>
+				</svg>
+				<h3>Email</h3><span>Cause I'm a 90's kid</span>
+			</a>
+		</div>
+		<div>
+			<footer style="padding-bottom: 20px;">
+				<span class="copyright">© <span id="copyright-year">this year</span> · bitKoder</span>
+			</footer>
+		</div>
 	</body>
 </html>

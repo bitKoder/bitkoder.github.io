@@ -1,5 +1,8 @@
 var prevWindowWidth = 0;
+var nav;
 var navExpanded = false; // whether the navigation bar is expanded - mobile view
+var popupContainer;
+
 
 // website properties and functions
 var website = {
@@ -10,81 +13,185 @@ var website = {
 
 		window.addEventListener("resize", window_onResize);
 		window.addEventListener("scroll", window_onScroll);
-
-		var cmdSpans = document.getElementsByClassName("cmd");
-		for (var i = 0; i < cmdSpans.length; i++)
-		{
-			cmdSpans[i].setAttribute("onclick", "window.getSelection().selectAllChildren(this)");
-		}
-		cmdSpans = document.getElementsByClassName("sim-command-label");
-		for (var i = 0; i < cmdSpans.length; i++)
-		{
-			cmdSpans[i].setAttribute("onclick", "window.getSelection().selectAllChildren(this)");
-		}
-
-		var pagePrevButtons = document.getElementsByClassName("prev-page");
-		for (var i = 0; i < pagePrevButtons.length; i++)
-		{
-			pagePrevButtons[i].addEventListener("click", function() {changePage(this);});
-		}
-		var pageNextButtons = document.getElementsByClassName("next-page");
-		for (var i = 0; i < pageNextButtons.length; i++)
-		{
-			pageNextButtons[i].addEventListener("click", function() {changePage(this);});
-		}
-		if (pageNextButtons.length > 0)
-		{
-			initPages();
-			setTimeout(initPages, 1000);
-		}
 		window_onResize();
 		setTimeout(window_onResize, 1000);
 		setTimeout(window_onResize, 2000);
-
-		window.addEventListener("load", function() {document.getElementsByClassName("copyright-year")[0].innerHTML = "" + new Date().getFullYear();});
 	}
 };
 
+var helpFormValues = {
+	version: "",
+	mods: "false",
+	multiplayer: "false"
+};
 
-// display a random splash message on the home page
-function randomSplash()
-{
-	document.getElementById("splash-text").innerHTML = splashes[Math.floor(Math.random() * splashes.length)];
+window.addEventListener("load", window_onLoad);
+document.addEventListener("keyup", function(e) {
+	if (e.key === "Escape") {
+		if (popupContainer.classList.contains("popup-container-visible")) {
+			fadePopupOut();
+		}
+	}
+});
+
+function playVideo(el) {
+	document.getElementById("main-video").src += "&autoplay=1";
+	el.style.opacity = "0";
+	setTimeout(function() {el.style.display = "none";}, 300);
 }
 
-// fade in an individual navigation link - these fade in one at a time when the nav is expanded in mobile view
-function showNavLink(n)
-{
-	 document.getElementsByClassName("nav-link")[n].style.display = "block";
-	setTimeout(function() {  document.getElementsByClassName("nav-link")[n].classList.add("nav-link-show"); }, n * 30 + 2);
+function hideSectionCover(el) {
+	el.parentElement.parentElement.style.removeProperty("height");
+	el.parentElement.style.opacity = "0";
+	setTimeout(function() {el.parentElement.style.display = "none";}, 300);
 }
 
-// toggles the visibility of the scrollbar - this function is only accessible through the browser console and only works on some browsers
-function toggleScrollbar()
-{
-	document.body.classList.toggle("hide-scrollbar");
+function parseEmailLink() {
+	document.getElementById("help-email-link").href = "mailto:bitkoder.yt@gmail.com?subject=Website Help Request: " + document.body.getAttribute("packname") + "&body=Minecraft version: " + helpFormValues.version + "%0D%0AModded: " + helpFormValues.mods + "%0D%0AMultiplayer: " + helpFormValues.multiplayer + "%0D%0A%0D%0A&";
 }
 
-// close (collapse) the navigation bar
-function closeNav()
-{
-	navExpanded = false;
-	document.getElementById("nav-close").style.display = "none";
-	//hide each link in the navigation bar
-	for (var i = 0; i <  document.getElementsByClassName("nav-link").length; i++)
-	{
-		hideNavLink(i);
+function fadePopupIn(popup) {
+	popup.classList.add("popup-visible");
+	popupContainer.style.visibility = "visible";
+	setTimeout(function() { popupContainer.classList.add("popup-container-visible"); }, 20);
+
+	var currentSlide = popup.getElementsByClassName("popup-slide-current")[0];
+	checkSlideButtons(currentSlide);
+}
+
+function fadePopupOut() {
+	if (!document.getElementById("popup-container").classList.contains("popup-container-visible")) return;
+	
+	popupContainer.classList.remove("popup-container-visible");
+	setTimeout(function(){ popupContainer.style.removeProperty("visibility"); document.getElementsByClassName("popup-visible")[0].classList.remove("popup-visible"); }, 300);
+}
+
+function slideTo(nextSlide) {
+	var currentSlide = nextSlide.parentElement.getElementsByClassName("popup-slide-current")[0];
+	if (nextSlide.classList.contains("popup-slide-right")) {
+		nextSlide.classList.remove("popup-slide-right");
+		currentSlide.classList.add("popup-slide-left");
+	}
+	else if (nextSlide.classList.contains("popup-slide-left")) {
+		nextSlide.classList.remove("popup-slide-left");
+		currentSlide.classList.add("popup-slide-right");
+	}
+	nextSlide.classList.add("popup-slide-current");
+	currentSlide.classList.remove("popup-slide-current");
+
+	checkSlideButtons(nextSlide);
+}
+
+function previousSlide() {
+	var currentSlide = document.getElementsByClassName("popup-visible")[0].getElementsByClassName("popup-slide-current")[0];
+	if (currentSlide.getAttribute("prevslide")) {
+		slideTo(document.getElementById("slide-" + currentSlide.getAttribute("prevslide")));
 	}
 }
 
-// instantly hide an individual navigation link - all links hide simultaneously when collapsing the navigation bar
-function hideNavLink(n)
-{
-	 document.getElementsByClassName("nav-link")[n].style.display = "";
-	 document.getElementsByClassName("nav-link")[n].classList.remove("nav-link-show");
+function nextSlide() {
+	var currentSlide = document.getElementsByClassName("popup-visible")[0].getElementsByClassName("popup-slide-current")[0];
+	if (currentSlide.getAttribute("nextslide")) {
+		slideTo(document.getElementById("slide-" + currentSlide.getAttribute("nextslide")));
+	}
 }
 
-// logic to perform when the window is resized
+function checkSlideButtons(slide) {
+	document.getElementsByClassName("popup-slide-button")[0].style.visibility = "hidden";
+	document.getElementsByClassName("popup-slide-button")[1].style.visibility = "hidden";
+	if (slide.getAttribute("prevslide") || slide.getAttribute("nextslide")) {
+		document.getElementById("popup-slide-controls").classList.remove("popup-slide-controls-hidden");
+		if (slide.getAttribute("prevslide")) {
+			document.getElementsByClassName("popup-slide-button")[0].style.removeProperty("visibility");
+		}
+		if (slide.getAttribute("nextslide")) {
+			document.getElementsByClassName("popup-slide-button")[1].style.removeProperty("visibility");
+		}
+	}
+	else {
+		document.getElementById("popup-slide-controls").classList.add("popup-slide-controls-hidden");
+	}
+}
+
+// logic to perform when the page finishes loading
+function window_onLoad() {
+	nav = document.getElementsByClassName("nav-new")[0];
+	popupContainer = document.getElementById("popup-container");
+	document.getElementById("copyright-year").innerHTML = "" + new Date().getFullYear();
+	setTimeout (closeNav, 200);
+
+	if (document.getElementById("help-supported-versions-list") && document.body.getAttribute("supportedversions")) {
+		document.getElementById("help-supported-versions-list").innerText = document.body.getAttribute("supportedversions");
+	}
+
+	var idLinks = document.querySelectorAll("a[href^='#']");
+	for (var i = 0; i < idLinks.length; i++) {
+		idLinks[i].addEventListener("click", function(e) { 
+			var el = e.target;
+			if (el.tagName == "SPAN") el = e.target.parentElement;
+			var offset = 0;
+			if (document.getElementById(el.getAttribute("href").slice(1)).classList.contains("home-banner")) offset += 50;
+			window.scrollTo({
+				top: document.getElementById(el.getAttribute("href").slice(1)).getBoundingClientRect().top + window.scrollY + offset, behavior: 'smooth'
+			});
+			e.preventDefault();
+			e.stopPropagation();
+		})
+	}
+
+	var buttons = document.getElementsByClassName("button");
+	for (var i = 0; i < buttons.length; i++) {
+		if (!buttons[i].classList.contains("backward-arrow")) buttons[i].innerHTML = "<span>" + buttons[i].innerHTML + "</span> <svg viewBox='0 0 15.46 26.35'><polyline points='2 24.35 13.46 13.18 2 2'/></svg>";
+		else buttons[i].innerHTML = "<svg viewBox='0 0 -15.46 26.35'><polyline points='-2 24.35 -13.46 13.18 -2 2'/></svg> <span>" + buttons[i].innerHTML + "</span>";
+	}
+
+	var cmdSpans = document.getElementsByClassName("cmd");
+	for (var i = 0; i < cmdSpans.length; i ++) {
+		cmdSpans[i].addEventListener("click", function(e) { window.getSelection().selectAllChildren(e.target); });
+	}
+
+	var cmdBoxes = document.getElementsByClassName("cmd-box");
+	for (var i = 0; i < cmdBoxes.length; i ++) {
+		cmdBoxes[i].addEventListener("click", function(e) { e.target.setSelectionRange(0, e.target.value.length); });
+	}
+}
+
+
+// toggles the visibility of the scrollbar - this function is only accessible through the browser console and only works on some browsers
+function toggleScrollbar() {
+	document.body.classList.toggle("hide-scrollbar");
+}
+
+// expands or collapses the navigation bar
+function toggleNav() {
+	document.getElementsByClassName("nav-new")[0].classList.toggle("nav-new-expanded");
+}
+
+// collapses the navigation bar
+function closeNav() {
+	nav.classList.remove("nav-new-expanded");
+}
+
+// toggles focus on a 'featured' item - used on the home page
+function toggleFeaturedItem(el) {
+	if (el.classList.contains("featured-item-active")) {
+		el.classList.remove("featured-item-active");
+		setTimeout(function() {el.children[0].style.display = "none";}, 300)
+	}
+	else {
+		var activeItem = el.parentElement.getElementsByClassName("featured-item-active")[0];
+		if (activeItem) {
+			activeItem.classList.remove("featured-item-active");
+			setTimeout(function() {activeItem.children[0].style.display = "none";}, 300)
+		}
+		el.children[0].style.removeProperty("display");
+		setTimeout(function() {el.classList.add("featured-item-active");}, 1);
+
+	}
+}
+
+// logic to perform when the window is resized (not used)
+/*
 function window_onResize()
 {
 	if (window.innerWidth >= 1000 && prevWindowWidth < 1000)
@@ -118,8 +225,10 @@ function window_onResize()
 
 	prevWindowWidth = window.innerWidth;
 }
+*/
 
-// logic to perform when the user scrolls
+// logic to perform when the user scrolls (not used)
+/*
 function window_onScroll()
 {
 	if (window.innerWidth >= 1000) return;
@@ -134,101 +243,4 @@ function window_onScroll()
 		if (opacity > 1) opacity = 1;
 		featuredOverlays[i].style.opacity = "" + (opacity);
 	}
-}
-
-// this function will resize an element (el) such that the combined height of all the elements in
-// el's parent is at least as much as the height of el's parent, such that they 'fill' the container.
-function fitContainer(el)
-{
-	var elementToResize = el;
-	var parentContainer = el.parentNode;
-	var allElementsInParent = parentContainer.children;
-
-	//loop through all children of parentContainer (except elementToResize) and add up their heights to get their combined height
-	var combinedHeight = 0;
-	for (var i = 0; i < allElementsInParent.length; i++)
-	{
-		if (allElementsInParent[i] !== elementToResize)
-		{
-			combinedHeight += allElementsInParent[i].clientHeight;
-		}
-	}
-}
-
-// expands the navigation bar when the hamburger button is clicked
-function navMenu_onClick()
-{
-	navExpanded = !navExpanded;
-	if (navExpanded)
-	{
-		document.getElementById("nav-close").style.display = "block";
-
-		// fade in each navigation link
-		for (var i = 0; i <  document.getElementsByClassName("nav-link").length; i++)
-		{
-			showNavLink(i);
-		}
-	}
-	else closeNav();
-}
-
-// changes a page for pagination
-function changePage(elem)
-{
-	var index = 0;
-	var parent = elem.parentElement;
-	for (var i = 0; i < parent.children[1].children.length; i++)
-	{
-		if (parent.children[1].children[i].classList.contains("page-middle"))
-		{
-			index = i;
-			break;
-		}
-	}
-	if (elem.classList.contains("prev-page")) // if the button clicked was the 'previous page' button
-	{
-		if (index <= 0) return;
-
-		parent.children[1].children[index].classList.remove("page-middle");
-		parent.children[1].children[index].classList.add("page-right");
-		parent.children[1].children[index - 1].classList.remove("page-left");
-		parent.children[1].children[index - 1].classList.add("page-middle");
-
-		// set height of the page container to match the page's height and run page's custom initialisation if present
-		parent.children[1].style.height = parent.children[1].children[index - 1].clientHeight + "px";
-		parent.children[1].children[index - 1].children[0].click();
-
-	}
-	else if (elem.classList.contains("next-page")) // if the button clicked was the 'next page' button
-	{
-		if (index >= parent.children[1].children.length - 1) return;
-
-		parent.children[1].children[index].classList.remove("page-middle");
-		parent.children[1].children[index].classList.add("page-left");
-		parent.children[1].children[index + 1].classList.remove("page-right");
-		parent.children[1].children[index + 1].classList.add("page-middle");
-
-		// set height of the page container to match the page's height and run page's custom initialisation if present
-		parent.children[1].style.height = parent.children[1].children[index + 1].clientHeight + "px";
-		parent.children[1].children[index + 1].children[0].click();
-	}
-}
-
-
-// set up individual pages for pagination
-function initPages()
-{
-	var pageContainers = document.getElementsByClassName("page-content");
-	for (var i = 0; i < pageContainers.length; i++)
-	{
-		for (var j = 0; j < pageContainers[i].children.length; i++)
-		{
-			if (pageContainers[i].children[j].classList.contains("page-middle"))
-			{
-				// set height of the page container to match the page's height
-				pageContainers[i].style.height = pageContainers[i].children[j].clientHeight + "px";
-				break;
-			}
-		}
-	}
-}
+*/

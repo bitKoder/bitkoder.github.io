@@ -1,66 +1,158 @@
-<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width">
-		<title>Home | bitKoder</title>
-		<meta name="description" content="The official website of koder - Minecraft command extraordinaire!">
-		<meta name="keywords" content="koder,Minecraft,command,youtube,website">
+		<title>Home · bitKoder</title>
+		<meta name="description" content="Home of koder's Minecraft data packs, resource packs and other content.">
+		<meta name="keywords" content="koder,youtube,Minecraft,command,block,function,data,resource,pack">
 		<meta name="author" content="bitKoder">
-		<link rel="icon" href="favicon.png">
-		<link rel="stylesheet" href="css/style.css">
-		<script src="js/w3-include.js"></script>
-		<script src="js/splashes.js"></script>
-		<script src="js/script.js"></script>
+		<link rel="icon" href="/favicon.png">
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<!-- <script src="/js/w3-include.js"></script> -->
+		<script src="/js/script.js"></script>
 	</head>
-	<body>
+	<body class="nav-home">
 		<header>
-			<div w3-include-html="../static-html/nav.html"></div>
-			<div class="landing">
-				<h1>koder</h1>
-				<hr>
-				<p id="splash-text">Commands - Concepts - Tutorials</p>
+			<div class="nav-new">
+				<a href="/" style="display: inline-block"><img src="/img/nav-logo.jpg" class="nav-new-logo"></a>
+				<nav class="nav-new-links">
+					<span><a href="/">Home</a></span><span><a href="/commands">Commands</a></span><span><a href="/resource-packs">Resource Packs</a></span><span><a href="/contact">Contact</a></span>
+				</nav>
+				<button class="nav-new-toggle" onclick="toggleNav();"><svg height="50" width="50"><polyline points="20,15 30,25 20,35"></polyline>&lt;</svg></button>
 			</div>
 		</header>
-		
-		<main style="padding: 0px 2.5%;">
-			<h2 id="welcome">What's up, guys?</h2>
-			<section class="info page-padding">
-				<p>My name is koder, and I create technical contraptions in Minecraft using commands, a sort of programming language within the game. I also like to show the creations I make on <a href="https://youtube.com/koder">my YouTube channel</a>.<br>
-					<br>
-				The main purpose of this website is as a hub where you can find all my commands, maps and whatever else I create, and use them for yourself.</p>
-			</section>
-			<br>
-			<h2 id="featured" class="special">Featured</h2>
-			<section class="no-padding featured">
-				<div class="featured-tile">
-					<img src="img/thumb/halfcraft.jpg">
-					<a class="featured-overlay" href="halfcraft">
-						<div class="featured-content">
-							<h4>Halfcraft</h4>
-							<span>Working slabs, stairs and custom shapes with any block</span>
-						</div>
-					</a>
-				</div
-				><div class="featured-tile">
-					<img src="img/thumb/blockwaves.jpg">
-					<a class="featured-overlay" href="commands/blockwaves">
-						<div class="featured-content">
-							<h4>Blockwaves</h4>
-							<span>Create shockwaves when you hit the ground</span>
-						</div>
-					</a>
-				</div>
-				<br><br><br>
-			</section>
-		</main>
-		
-		<div w3-include-html="../static-html/footer.html"></div>
-	
 
-		<script>
-			website.init();
-		</script>
+		<div class="home-banner first-banner red-img-bg white-text">
+			<div class="banner-content" style="text-align: left;">
+				<h2 class="main-heading">I make <span class="semibold">data packs, resource packs and other things</span> in Minecraft.</h2>
+				<a href="#featured" class="button button-big">Check them out</a>
+			</div>
+			<div class="banner-image leftover-width">
+				
+			</div>
+		</div>
+		<div id="commands" class="home-banner">
+			<div class="banner-image">
+				<svg class="commands-icon" viewBox="0 0 426.57 492.56">
+					<polygon points="411.57 360.76 411.57 131.8 213.28 17.32 15 131.8 15 360.76 213.28 475.24 411.57 360.76"/>
+					<circle cx="146.19" cy="305.37" r="27.17"/>
+					<circle cx="213.28" cy="305.37" r="27.17"/>
+					<circle cx="280.37" cy="305.37" r="27.17"/>
+					<circle cx="146.19" cy="238.28" r="27.17"/>
+					<circle cx="213.28" cy="238.28" r="27.17"/>
+					<circle cx="280.37" cy="238.28" r="27.17"/>
+					<circle cx="213.28" cy="171.19" r="27.17"/>
+				</svg>
+			</div>
+			<div class="banner-content">
+				<h1>Commands</h1>
+				<hr class="heading-line">
+				<p class="section-preview-text">Concepts and contraptions to enhance or expand the Minecraft experience, complete with tutorials on how to use them and explanations of how they work.</p>
+				<a class="button red-fill">View Commands</a>
+			</div>
+		</div>
+		<div id="resource-packs" class="home-banner banner-reverse grey-fill">
+			<div class="banner-image">
+				<svg viewBox="0 0 404.22 378.3"><rect x="15" y="15" width="374.22" height="348.3" style="fill:none;stroke:#FFF;stroke-miterlimit:10;stroke-width:30px"/>
+					<rect x="85.11" y="81.74" width="35.36" height="35.36" style="fill: #FFF;"/>
+					<rect x="135.71" y="81.74" width="35.36" height="35.36" style="fill: #FFF;"/>
+					<rect x="186.31" y="81.74" width="35.36" height="35.36" style="fill: #FFF;"/>
+					<rect x="85.11" y="132.34" width="35.36" height="35.36" style="fill: #FFF;"/>
+					<rect x="135.71" y="132.34" width="35.36" height="35.36" style="fill: #FFF;"/>
+					<rect x="186.31" y="132.34" width="35.36" height="35.36" style="fill: #FFF;"/>
+					<rect x="250.98" y="121.1" width="57.83" height="57.83" style="fill: #FFF;"/>
+					<rect x="85.11" y="182.94" width="35.36" height="35.36" style="fill: #FFF;"/>
+					<rect x="135.71" y="182.94" width="35.36" height="35.36" style="fill: #FFF;"/>
+					<rect x="186.31" y="182.94" width="35.36" height="35.36" style="fill: #FFF;"/>
+					<rect x="85.11" y="259.08" width="35.36" height="35.36" style="fill: #FFF;"/>
+					<rect x="135.71" y="259.08" width="35.36" height="35.36" style="fill: #FFF;"/>
+					<rect x="186.31" y="259.08" width="35.36" height="35.36" style="fill: #FFF;"/>
+					<rect x="236.92" y="259.08" width="35.36" height="35.36" style="fill: #FFF;"/>
+					<rect x="287.52" y="259.08" width="35.36" height="35.36" style="fill: #FFF;"/>
+				</svg>
+			</div>
+			<div class="banner-content">
+				<h1>Resource Packs</h1>
+				<hr class="heading-line">
+				<p class="section-preview-text">Redesigned block textures and models, environmental effects, item appearances and UI elements. Each pack includes a video showing it in action.</p>
+				<a class="button red-fill">View Packs</a>
+			</div>
+		</div>
+		<div id="featured" class="home-banner">
+			<div class="banner-content-full">
+				<h1 class="center-align">Featured</h1>
+				<hr class="heading-line center-align">
+				<p class="center-align">Click on a thumbnail for details</p>
+				<div class="featured-container">
+					<div class="featured-item" style="background-image: url('img/thumb/halfcraft.jpg')" onclick="toggleFeaturedItem(this);">
+						<div class="featured-item-content red-fill" style="display: none;">
+							<h2>Halfcraft</h2>
+							<p>Make working slabs, stairs and custom shapes with any block</p>
+							<a class="button">Find Out More</a>
+						</div>
+					</div>
+					<div class="featured-item" style="background-image: url('img/thumb/blockwaves.jpg')" onclick="toggleFeaturedItem(this);">
+						<div class="featured-item-content red-fill" style="display: none;">
+							<h2>Blockwaves</h2>
+							<p>Create shockwaves when you hit the ground</p>
+							<a class="button">Find Out More</a>
+						</div>
+					</div>
+					<div class="featured-item" style="background-image: url('img/thumb/basic-command-blocks.jpg')" onclick="toggleFeaturedItem(this);">
+						<div class="featured-item-content red-fill" style="display: none;">
+							<h2>Basic CBs</h2>
+							<p>Simplified command block textures</p>
+							<a class="button">Find Out More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<footer>
+				<a class="social-tile" href="https://www.youtube.com/koder" target="_blank" title="YouTube">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						 viewBox="0 0 60 50" style="enable-background:new 0 0 60 50;" xml:space="preserve">
+					<g>
+						<path style="fill:#FFFFFF;" d="M58.7,10.6C58.1,8,56,5.9,53.4,5.3C48.8,4,30,4,30,4S11.2,4,6.6,5.3C4,5.9,1.9,8,1.3,10.6
+							C0,15.2,0,25,0,25s0,9.8,1.3,14.4C1.9,42,4,44.1,6.6,44.7C11.2,46,30,46,30,46s18.8,0,23.4-1.3c2.6-0.7,4.6-2.7,5.3-5.3
+							C60,34.8,60,25,60,25S60,15.2,58.7,10.6z M24,34V16l15.6,9L24,34z"/>
+					</g>
+					</svg>
+				</a>
+				<a class="social-tile" href="https://twitter.com/bitKoder" target="_blank" title="Twitter">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						 viewBox="0 0 60 50" style="enable-background:new 0 0 60 50;" xml:space="preserve">
+					<g id="Logo__x2014__FIXED">
+						<g>
+							<path style="fill:#FFFFFF;" d="M18.8,49.4c22.6,0,35-18.8,35-35c0-0.5,0-1.1,0-1.6c2.4-1.7,4.5-3.9,6.1-6.4
+								c-2.2,1-4.6,1.6-7.1,1.9c2.5-1.5,4.5-3.9,5.4-6.8c-2.4,1.4-5,2.4-7.8,3c-2.3-2.4-5.5-3.9-9-3.9c-6.8,0-12.3,5.5-12.3,12.3
+								c0,1,0.1,1.9,0.3,2.8C19.3,15.2,10.2,10.3,4.2,2.9C3.1,4.7,2.5,6.8,2.5,9.1c0,4.3,2.2,8,5.5,10.3c-2-0.1-3.9-0.6-5.6-1.5
+								c0,0,0,0.1,0,0.2c0,6,4.2,10.9,9.9,12.1c-1,0.3-2.1,0.4-3.2,0.4c-0.8,0-1.6-0.1-2.3-0.2c1.6,4.9,6.1,8.5,11.5,8.5
+								c-4.2,3.3-9.5,5.3-15.3,5.3c-1,0-2,0-2.9-0.2C5.4,47.4,11.9,49.4,18.8,49.4"/>
+						</g>
+					</g>
+					</svg>
+				</a>
+				<a class="social-tile" href="http://bitkoder.com/discord" target="_blank"github title="Discord">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						 viewBox="0 0 60 50" style="enable-background:new 0 0 60 50;" xml:space="preserve">
+					<g>
+						<path style="fill:#FFFFFF;" d="M52.6,8.8c-7.4-5.5-14.4-5.4-14.4-5.4l-0.7,0.8c8.7,2.7,12.8,6.5,12.8,6.5
+							c-5.3-2.9-10.6-4.4-15.5-4.9c-3.7-0.4-7.2-0.3-10.4,0.1c-0.3,0-0.6,0.1-0.9,0.1c-1.8,0.2-6.2,0.8-11.7,3.2c-1.9,0.9-3,1.5-3,1.5
+							S13.1,6.7,22.3,4l-0.5-0.6c0,0-7-0.2-14.4,5.4c0,0-7.4,13.4-7.4,29.9c0,0,4.3,7.4,15.7,7.8c0,0,1.9-2.3,3.4-4.3
+							c-6.4-1.9-8.9-5.9-9-6.1c0.1,0,0.6,0.4,1.4,0.9c0.1,0.1,0.1,0.1,0.2,0.2c0.2,0.1,0.3,0.2,0.5,0.3c1.3,0.7,2.6,1.3,3.7,1.7
+							c2.1,0.8,4.6,1.6,7.6,2.2c3.9,0.7,8.4,1,13.3,0.1c2.4-0.4,4.9-1.1,7.4-2.2c1.8-0.7,3.8-1.6,5.9-3c0,0-2.6,4.2-9.3,6.1
+							c1.5,2,3.4,4.2,3.4,4.2C55.6,46.2,60,38.8,60,38.8C60,22.2,52.6,8.8,52.6,8.8z M20.4,34c-2.9,0-5.2-2.6-5.2-5.7s2.3-5.7,5.2-5.7
+							c2.9,0,5.3,2.6,5.2,5.7C25.6,31.4,23.3,34,20.4,34z M39.1,34c-2.9,0-5.2-2.6-5.2-5.7s2.3-5.7,5.2-5.7c2.9,0,5.2,2.6,5.2,5.7
+							S42.1,34,39.1,34z"/>
+					</g>
+					</svg>
+				</a>
+				<hr>
+				<span class="copyright">© <span id="copyright-year">this year</span> · bitKoder</span>
+			</footer>
+		</div>
 	</body>
 </html>
