@@ -12,7 +12,7 @@ function includeHTML(cb) {
           if (this.status == 200) {elmnt.outerHTML = this.responseText;}
           if (this.status == 404) {elmnt.outerHTML = "Page not found.";}
           elmnt.removeAttribute("w3-include-html");
-          w3.includeHTML(cb);
+          includeHTML(cb);
         }
       }      
       xhttp.open("GET", file, true);
