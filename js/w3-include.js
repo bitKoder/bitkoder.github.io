@@ -1,5 +1,5 @@
 // include function from w3schools - https://www.w3schools.com/howto/howto_html_include.asp
-includeHTML = function(cb) {
+function includeHTML(cb) {
   var z, i, elmnt, file, xhttp;
   z = document.getElementsByTagName("*");
   for (i = 0; i < z.length; i++) {
