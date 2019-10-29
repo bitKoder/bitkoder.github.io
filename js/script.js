@@ -125,6 +125,7 @@ function window_onLoad() {
 			window.scrollTo({
 				top: document.getElementById(el.getAttribute("href").slice(1)).getBoundingClientRect().top + window.scrollY + offset, behavior: 'smooth'
 			});
+			window.history.pushState("", "", window.location.pathname + el.getAttribute("href"));
 			e.preventDefault();
 			e.stopPropagation();
 		})
