@@ -1,0 +1,321 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width">
+		<title>Caleb Faulks</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="caleb,faulks">
+		<meta name="author" content="Caleb Faulks">
+		<!-- <link rel="icon" href="/favicon.png">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="js/script.js"></script> -->
+		<style>
+			@font-face
+			{
+				font-family: "Open Sans";
+				src: url("/font/OpenSans-Regular.ttf");
+			}
+				@font-face
+				{
+					font-family: "Open Sans";
+					src: url("/font/OpenSans-Bold.ttf");
+					font-weight: bold;
+				}
+			@font-face
+			{
+				font-family: "Montserrat";
+				src: url("/font/Montserrat-Regular.ttf");
+			}
+				@font-face
+				{
+					font-family: "Montserrat";
+					src: url("/font/Montserrat-Bold.ttf");
+					font-weight: bold;
+				}
+				@font-face
+				{
+					font-family: "Montserrat";
+					src: url("/font/Montserrat-Bold.ttf");
+					font-weight: bold;
+				}
+				@font-face
+				{
+					font-family: "Montserrat";
+					src: url("/font/Montserrat-ExtraBold.ttf");
+					font-weight: 800;
+				}
+
+			html, body {
+				margin: 0;
+				padding: 0;
+			}
+			html {
+				font-family: "Open Sans";
+			}
+			h1, h2, h3 {
+				font-family: "Montserrat";
+				font-weight: 800;
+				text-transform: uppercase;
+			}
+			h1 {
+			    font-size: 22px;
+			    letter-spacing: 0.2em;
+			    color: #222;
+			}
+			h2 {
+				margin: 0 0 30px 0;
+			    font-size: 22px;
+			    letter-spacing: 0.2em;
+			    color: #222;
+			}
+			h3 {
+				font-weight: normal;
+			    color: #222;
+			}
+			h3 .subtitle {
+				display: block;
+				font-size: 0.7em;
+				text-transform: none;
+			}
+
+			.menu-wrapper {
+				visibility: hidden;
+			    position: fixed;
+			    top: 0;
+			    left: 0;
+			    right: 0;
+			    bottom: 0;
+			    z-index: 20;
+			    padding: 3.5%;
+			    display: flex;
+			    flex-direction: column;
+			    justify-content: center;
+			    align-items: center;
+			    background: #FFF;
+			    opacity: 0;
+
+			    transition: visibility 0.4s step-end, opacity 0.4s;
+			}
+			.menu-wrapper.menu-shown {
+				visibility: visible;
+				opacity: 1;
+				transition: visibility 0.4s step-start, opacity 0.4s;
+			}
+
+			.identity-wrapper {
+			    display: flex;
+			    flex-direction: column;
+			    align-items: center;
+			    padding-bottom: 20px;
+			}
+			.identity-portrait {
+				width: 200px;
+				border-radius: 1000px;
+			}
+
+			nav {
+			    display: flex;
+			    flex-direction: column;
+			    align-items: center;
+			}
+			.nav-link {
+				padding: 15px 0px;
+				font-family: 'Montserrat';
+				text-decoration: none;
+				color: #444;
+				letter-spacing: 0.3em;
+			}
+
+			.show-menu {
+				visibility: hidden;
+			    position: fixed;
+			    top: 0;
+			    left: 0;
+			    z-index: 20;
+			    padding: 5%;
+			    background: #FFF;
+			    opacity: 0;
+
+			    transition: visibility 0.4s step-end, opacity 0.4s;
+			}
+			.show-menu.menu-hidden {
+				visibility: visible;
+				opacity: 1;
+				transition: visibility 0.4s step-start, opacity 0.4s;
+			}
+			.show-menu polyline {
+				fill: none;
+				stroke: #444;
+				stroke-width: 4;
+				stroke-linecap: round;
+				stroke-linejoin: round;
+			}
+
+			.page {
+				display: none;
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    right: 0;
+			    z-index: 0;
+			    background: #fff;
+			    padding: calc(10% + 30px) 5% 5% 5%;
+			}
+			.page.page-active {
+				z-index: 10;
+				display: block;
+			}
+
+			section:not(:last-child) {
+				margin-bottom: 50px;
+			}
+
+			@media (min-width: 1024px) {
+				.page {
+					max-width: 800px;
+					margin: 0px auto;
+				}
+			}
+		</style>
+		<script></script>
+	</head>
+	<body>
+		<div class="menu-wrapper menu-shown">
+			<div class="identity-wrapper">
+				<img class="identity-portrait" src="caleb-faulks.jpg">
+				<h1 class="identity-name">Caleb Faulks</h1>
+			</div>
+			<nav>
+				<a class="nav-link" href="#experience">Experience</a>
+				<a class="nav-link" href="#education">Education</a>
+				<a class="nav-link" href="#skills">Skills</a>
+				<a class="nav-link" href="#character">Character</a>
+				<a class="nav-link" href="#interests">Interests</a>
+				<a class="nav-link" href="#contact">Contact</a>
+			</nav>
+		</div>
+		<a class="show-menu" href="#"><svg height="30" width="30"><polyline points="10,9 3,15 10,21"></polyline><polyline points="3,15 23,15"></polyline>&lt;</svg></a>
+		<div id="experience" class="page">
+			<h2>Experience</h2>
+			<section>
+				<h3><strong>Digital Designer</strong> at 2 Creative Media
+					<span class="subtitle">February 2018 to December 2019 (2 years)</span></h3>
+				<p>
+					The tasks I executed on a regular basis included designing, writing content for, building (through either coding or using an interface), updating, migrating and maintaining websites, as well as creating email newsletters and social media posts, writing scripts for radio ads, producing images and videos for TV/cinema ads and YouTube videos, working with client databases, going to meetings with clients as well as promotional events, troubleshooting technology issues with clients, understanding the client’s customers and their behaviours to brainstorm eﬀective digital solutions and more.
+				</p>
+				<p>
+					I also became proﬁcient in the use of Microsoft Office suite and the Adobe Creative Cloud apps as well as web development platforms including Adobe Business Catalyst, Synergy 8 and Squarespace.
+				</p>
+				<p>
+					My work at 2 Creative Media began as a traineeship, where I worked part-time while also studying a Cert IV in Screen and Media online through TAFE. Through this I not only gained valuable knowledge and experience by learning on the job and studying through TAFE, but I also developed an insight into TAFE’s system of education and how it works. After I completed my Cert IV I continued to work at 2 Creative Media as a fully qualiﬁed digital designer.
+				</p>
+				<p>
+					The job was very UX-centred. My boss was extremely focused on designing websites that weren’t only easy on the eyes, but easy on the user as well – directing them along a streamlined journey of information and incentive that would lead to them taking action like calling the client, purchasing a product or service or registering for an event (which was then captured by a script for remarketing purposes).
+				</p>
+				<p>
+					I also learned to work in a team, involve clients in the development process, managing my work diary and ensuring work deadlines are met, following up with clients and coworkers and reviewing work processes to maximise quality and eﬃciency.
+				</p>
+			</section>
+			<section>
+				<h3><strong>Web Developer</strong> at Redback Solutions
+					<span class="subtitle">January 2020 to April 2020 (3 months)</span></h3>
+				<p>
+					I continued my work in web design & development at Redback Solutions in Newcastle from the start of this year, working fulltime up until COVID at which point the business could no longer afford all its employees. I built further upon my existing skills and learned to adapt them to a larger, more professional and fast-paced team setting.
+				</p>
+				<p>
+					I also learned to use WordPress – setting up a website, creating, editing and adapting themes, installing and using plugins including Advanced Custom Fields, using caching tools to optimise load speed and setting up a website for eCommerce.
+				</p>
+			</section>
+		</div>
+		<div id="education" class="page">
+			<h2>Education</h2>
+			<section>
+				<h3><strong>Cert IV</strong> in Screen and Media
+					<span class="subtitle">TAFE Hunter · Completed June 2019</span></h3>
+			</section>
+			<section>
+				<h3><strong>Web Design for Everybody</strong> on Coursera
+					<span class="subtitle">University of Michigan · Completed November 2016</span></h3>
+			</section>
+			<section>
+				<h3><strong>Web Developer Bootcamp</strong> on Udemy
+					<span class="subtitle">Colt Steele · Currently Studying</span></h3>
+			</section>
+		</div>
+		<div id="skills" class="page">
+			<h2>Skills</h2>
+			<ul>
+				<li>HTML/CSS/JavaScript</li>
+				<li>Bootstrap/jQuery</li>
+				<li>React/Node.js</li>
+				<li>Java/C#</li>
+				<li>Graphic Design</li>
+				<li>Image/Video Production</li>
+				<li>Communication</li>
+				<li>Working in Teams</li>
+			</ul>
+		</div>
+		<div id="character" class="page">
+			<h2>Character</h2>
+			<ul>
+				<li>Friendly</li>
+				<li>Easy to talk to</li>
+				<li>Quick learner</li>
+				<li>Sensible and polite</li>
+				<li>Hard-working</li>
+				<li>Conscientious</li>
+				<li>Reliable and respectful</li>
+				<li>Confident</li>
+			</ul>
+		</div>
+		<div id="interests" class="page">
+			<h2>Interests</h2>
+			<ul>
+				<li>Technology</li>
+				<li>Video Games</li>
+				<li>Social Dynamics</li>
+				<li>Functional Design</li>
+				<li>Art</li>
+				<li>Music</li>
+				<li>Theatre</li>
+				<li>Story Writing</li>
+			</ul>
+		</div>
+		<div id="contact" class="page page-active">
+			<h2>Contact</h2>
+			<ul>
+				<li>2 Rae St, Birmingham Gardens, NSW 2287</li>
+				<li>0476 052 538</li>
+				<li>caleb.faulks@live.com.au</li>
+			</ul>
+		</div>
+
+		<script>
+			var menuWrapper = document.getElementsByClassName("menu-wrapper")[0];
+			var showMenu = document.getElementsByClassName("show-menu")[0];
+			var navLinks = document.getElementsByClassName("nav-link");
+			for (var i = 0; i < navLinks.length; i++) {
+				navLinks[i].addEventListener("click", function(e) { 
+					var el = e.target;
+					document.getElementsByClassName("page-active")[0].classList.remove("page-active");
+					document.getElementById(el.getAttribute("href").slice(1)).classList.add("page-active");
+					menuWrapper.classList.remove("menu-shown");
+					showMenu.classList.add("menu-hidden");
+
+					window.history.pushState("", "", window.location.pathname + el.getAttribute("href"));
+					e.preventDefault();
+					e.stopPropagation();
+				})
+			}
+			showMenu.addEventListener("click", function(e) {
+				var el = e.target;
+				menuWrapper.classList.add("menu-shown");
+				showMenu.classList.remove("menu-hidden");
+
+				e.preventDefault();
+				e.stopPropagation();
+			})
+		</script>
+	</body>
+</html>
