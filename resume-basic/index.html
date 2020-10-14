@@ -171,6 +171,29 @@
 				margin-bottom: 50px;
 			}
 
+			ul {
+			    list-style: none;
+			}
+
+			li {
+			    padding: 20px 0;
+			    position: relative;
+			}
+
+			li:before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: -40px;
+				display: inline-block;
+				width: 0.4em;
+				height: 0.4em;
+				margin-top: -0.2em;
+				border: 1px solid;
+
+				transform: rotate(45deg);
+			}
+
 			@media (min-width: 1024px) {
 				.page {
 					max-width: 800px;
