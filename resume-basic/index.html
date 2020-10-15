@@ -49,6 +49,7 @@
 			html, body {
 				margin: 0;
 				padding: 0;
+				overflow-y: hidden;
 			}
 			html {
 				font-family: "Open Sans";
@@ -92,6 +93,8 @@
 			    flex-direction: column;
 			    justify-content: center;
 			    align-items: center;
+			    overflow-y: auto;
+
 			    background: #FFF;
 			    opacity: 0;
 
@@ -144,6 +147,13 @@
 				opacity: 1;
 				transition: visibility 0.4s step-start, opacity 0.4s;
 			}
+			.show-menu svg {
+				transition: opacity 0.3s, transform 0.3s;
+			}
+			.show-menu:hover svg {
+				opacity: 0.7;
+				transform: translateX(-10px);
+			}
 			.show-menu polyline {
 				fill: none;
 				stroke: #444;
@@ -156,11 +166,13 @@
 				display: none;
 			    position: absolute;
 			    top: 0;
+			    bottom: 0;
 			    left: 0;
 			    right: 0;
 			    z-index: 0;
-			    background: #fff;
 			    padding: calc(10% + 30px) 5% 5% 5%;
+			    overflow-y: auto;
+			    background: #fff;
 			}
 			.page.page-active {
 				z-index: 10;
@@ -195,9 +207,13 @@
 			}
 
 			@media (min-width: 1024px) {
+				.show-menu {
+					bottom: 0;
+					padding-right: calc(45% - 430px);
+				}
 				.page {
-					max-width: 800px;
 					margin: 0px auto;
+					padding: 5% calc(50% - 400px);
 				}
 			}
 		</style>
