@@ -1,26 +1,201 @@
-<!DOCTYPE html>
-<html lang = "en" style="opacity: 0; transition-duration: 0.5s">
+<html lang="en">
 	<head>
-		<meta charset = "UTF-8">
-		<meta http-equiv="refresh" content="1; url=https://xd.adobe.com/view/ddc835c4-596f-4e01-996e-b32da5f6ca5f-889b/">
-		<meta name="viewport" content="width=device-width"/>
-		<title>Caleb's Resume</title>
-		<link rel="icon" href="../favicon.png">
-		<link rel="stylesheet" href="../css/style.css">
-		<script src="../js/script.js"></script>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width">
+		<title>Resume · Caleb Faulks</title>
+		<meta name="description" content="Web, Design, Video">
+		<meta name="keywords" content="caleb,faulks">
+		<meta name="author" content="Caleb Faulks">
+		<!-- <link rel="icon" href="/favicon.png">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="js/script.js"></script> -->
+		<style>
+			/*
+			
+			app-bg:		#161616
+			app-text:	#FFFFFF
+
+			app-orange:	#FFB431
+			app-red:	#FF4848
+			app-pink:	#FF44B4
+			app-purple:	#5D36FF
+			app-cyan:	#48B6FF
+			app-lime:	#44FF63
+			
+			*/
+
+			@font-face
+			{
+				font-family: "Open Sans";
+				src: url("/font/OpenSans-Regular.ttf");
+			}
+				@font-face
+				{
+					font-family: "Open Sans";
+					src: url("/font/OpenSans-Bold.ttf");
+					font-weight: bold;
+				}
+			@font-face
+			{
+				font-family: "Montserrat";
+				src: url("/font/Montserrat-Regular.ttf");
+			}
+				@font-face
+				{
+					font-family: "Montserrat";
+					src: url("/font/Montserrat-Bold.ttf");
+					font-weight: bold;
+				}
+				@font-face
+				{
+					font-family: "Montserrat";
+					src: url("/font/Montserrat-Bold.ttf");
+					font-weight: 700;
+				}
+				@font-face
+				{
+					font-family: "Montserrat";
+					src: url("/font/Montserrat-ExtraBold.ttf");
+					font-weight: 800;
+				}
+
+			html, body {
+				margin: 0;
+				padding: 0;
+				overflow-y: hidden;
+			}
+			html {
+				background-color: #161616; /* app-bg */
+
+				font-family: "Montserrat";
+				color: #FFFFFF; /* app-text */
+			}
+
+			.page {
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow-y: auto;
+			}
+
+			.nav-link {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				display: inline-flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 60px;
+				height: 60px;
+				margin: -30px 0 0 -30px;
+				border-radius: 1000px;
+
+				font-size: 12px;
+				font-weight: 700;
+				color: #FFFFFF; /* app-text */
+				text-decoration: none;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+
+				transition: transform 0.6s ease, opacity 0.3s;
+			}
+			.nav-link-hidden {
+				opacity: 0;
+			}
+
+			.nav-link svg {
+				margin-bottom: 4px;
+				stroke-width: 4px;
+			}
+			.nav-link svg circle {
+				stroke-width: 4.5px;
+			}
+
+			svg.orange-line polyline, svg.orange-line polygon, svg.orange-line circle {
+				fill: none;
+				stroke: #FFB431; /* app-orange */
+			}
+			svg.red-line polyline, svg.red-line polygon, svg.red-line circle {
+				fill: none;
+				stroke: #FF4848; /* app-red */
+			}
+			svg.pink-line polyline, svg.pink-line polygon, svg.pink-line circle {
+				fill: none;
+				stroke: #FF44B4; /* app-pink */
+			}
+			svg.purple-line polyline, svg.purple-line polygon, svg.purple-line circle {
+				fill: none;
+				stroke: #5D36FF; /* app-purple */
+			}
+			svg.cyan-line polyline, svg.cyan-line polygon, svg.cyan-line circle {
+				fill: none;
+				stroke: #48B6FF; /* app-cyan */
+			}
+			svg.lime-line polyline, svg.lime-line polygon, svg.lime-line circle {
+				fill: none;
+				stroke: #44FF63; /* app-lime */
+			}
+		</style>
+		<script></script>
 	</head>
 	<body>
-		<script type="text/javascript">
-  			window.location.href = "https://xd.adobe.com/view/ddc835c4-596f-4e01-996e-b32da5f6ca5f-889b/";
-			setTimeout(function(){ document.style.opacity = "1"; }, 1000);
+		<div class="menu-wrapper page">
+			<div class="page-content">
+				<nav class="circle-nav">
+					<a class="nav-link circle-nav-link nav-link-hidden" href="#web"><svg class="orange-line" width="30" height="30"><polygon points="15,3 27,15 15,27 3,15" /></svg><span>Web</span></a>
+					<a class="nav-link circle-nav-link nav-link-hidden" href="#design"><svg class="red-line" width="30" height="30"><polygon points="15,6 27,26 3,26" /></svg><span>Design</span></a>
+					<a class="nav-link circle-nav-link nav-link-hidden" href="#video"><svg class="pink-line" width="30" height="30"><circle cx="15" cy="15" r="12" /></svg><span>Video</span></a>
+					<a class="nav-link circle-nav-link nav-link-hidden" href="#work"><svg class="purple-line" width="30" height="30"><polygon points="15,3 27,15 15,27 3,15" /></svg><span>Work</span></a>
+					<a class="nav-link circle-nav-link nav-link-hidden" href="#skills"><svg class="cyan-line" width="30" height="30"><polygon points="15,6 27,26 3,26" /></svg><span>Skills</span></a>
+					<a class="nav-link circle-nav-link nav-link-hidden" href="#contact"><svg class="lime-line" width="30" height="30"><circle cx="15" cy="15" r="12" /></svg><span>Contact</span></a>
+					<a class="nav-link center-nav-link nav-link-hidden" href="#me"><svg width="30" height="30"></svg><span>Me</span></a>
+				</nav>
+			</div>
+		</div>
+
+		<script>
+			var circleNavLinks = document.getElementsByClassName("circle-nav-link");
+			var centerNavLink = document.getElementsByClassName("center-nav-link")[0];
+			var circleSize = 140;
+			var degreesInterval = 30;
+
+			for (var i = 0; i < circleNavLinks.length; i++) {
+				var c = circleNavLinks[i];
+				c.degrees = i * degreesInterval + Math.floor(i / 3) * (180 - degreesInterval * 3);
+				c.style.transform = "rotate(" + c.degrees + "deg) translateY(-" + circleSize + "px) rotate(" + (c.degrees * -1) + "deg)";
+
+				c.addEventListener("click", function(e) { 
+					var el = e.target;
+					if (!el.classList.contains("circle-nav-link")) el = el.parentElement;
+					if (!el.classList.contains("circle-nav-link")) el = el.parentElement;
+					var d = el.degrees;
+					for (var i = 0; i < circleNavLinks.length; i++) {
+						var c = circleNavLinks[i];
+						c.degrees -= d;
+						console.log(c.degrees + ", " + d);
+						c.style.transform = "rotate(" + c.degrees + "deg) translateY(-" + circleSize + "px) rotate(" + (c.degrees * -1) + "deg)";
+					}
+
+					//window.history.pushState("", "", window.location.pathname + el.getAttribute("href"));
+					e.preventDefault();
+					e.stopPropagation();
+				})
+			}
+
+			setTimeout(function(){ circleNavLinks[0].classList.remove("nav-link-hidden"); }, 500);
+			setTimeout(function(){ circleNavLinks[1].classList.remove("nav-link-hidden"); }, 600);
+			setTimeout(function(){ circleNavLinks[2].classList.remove("nav-link-hidden"); }, 700);
+			setTimeout(function(){ circleNavLinks[3].classList.remove("nav-link-hidden"); }, 900);
+			setTimeout(function(){ circleNavLinks[4].classList.remove("nav-link-hidden"); }, 1000);
+			setTimeout(function(){ circleNavLinks[5].classList.remove("nav-link-hidden"); }, 1100);
+			setTimeout(function(){ centerNavLink.classList.remove("nav-link-hidden"); }, 1300);
 		</script>
-		<main>
-			<section class="info">
-				<p>If you are not redirected automatically, follow the <a href="https://xd.adobe.com/view/ddc835c4-596f-4e01-996e-b32da5f6ca5f-889b/">link to Caleb's resume</a></p>
-			</section>
-		</main>
-		<footer>
-			<p></p>
-		</footer>
 	</body>
 </html>
