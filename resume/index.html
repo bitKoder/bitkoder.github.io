@@ -210,13 +210,17 @@
 				})
 			}
 
-			setTimeout(function(){ circleNavLinks[0].classList.remove("nav-link-hidden"); }, 500);
-			setTimeout(function(){ circleNavLinks[1].classList.remove("nav-link-hidden"); }, 600);
-			setTimeout(function(){ circleNavLinks[2].classList.remove("nav-link-hidden"); }, 700);
-			setTimeout(function(){ circleNavLinks[3].classList.remove("nav-link-hidden"); }, 900);
-			setTimeout(function(){ circleNavLinks[4].classList.remove("nav-link-hidden"); }, 1000);
-			setTimeout(function(){ circleNavLinks[5].classList.remove("nav-link-hidden"); }, 1100);
-			setTimeout(function(){ centerNavLink.classList.remove("nav-link-hidden"); }, 1300);
+			window.addEventListener("load", windowLoad);
+
+			function windowLoad() {
+				setTimeout(function(){ circleNavLinks[0].classList.remove("nav-link-hidden"); }, 500);
+				setTimeout(function(){ circleNavLinks[1].classList.remove("nav-link-hidden"); }, 650);
+				setTimeout(function(){ circleNavLinks[2].classList.remove("nav-link-hidden"); }, 800);
+				setTimeout(function(){ circleNavLinks[3].classList.remove("nav-link-hidden"); }, 950);
+				setTimeout(function(){ circleNavLinks[4].classList.remove("nav-link-hidden"); }, 1100);
+				setTimeout(function(){ circleNavLinks[5].classList.remove("nav-link-hidden"); }, 1250);
+				setTimeout(function(){ centerNavLink.classList.remove("nav-link-hidden"); }, 1400);
+			}
 		</script>
 	</body>
 </html>
