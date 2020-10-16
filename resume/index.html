@@ -84,6 +84,24 @@
 				overflow-y: auto;
 			}
 
+			.circle-nav {
+				position: relative;
+			}
+			.circle-nav::before {
+				content: "";
+
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				display: inline-block;
+				width: 278px;
+				height: 278px;
+				margin: -140px 0 0 -140px;
+
+				border: 2px solid #333333;
+				border-radius: 1000px;
+			}
+
 			.nav-link {
 				position: absolute;
 				top: 50%;
@@ -94,7 +112,7 @@
 				align-items: center;
 				width: 60px;
 				height: 60px;
-				margin: -30px 0 0 -30px;
+				margin: -20px 0 0 -30px;
 				border-radius: 1000px;
 
 				font-size: 12px;
@@ -186,7 +204,7 @@
 						c.style.transform = "rotate(" + c.degrees + "deg) translateY(-" + circleSize + "px) rotate(" + (c.degrees * -1) + "deg)";
 					}
 
-					//window.history.pushState("", "", window.location.pathname + el.getElementsByTagName("a")[0].getAttribute("href"));
+					window.history.pushState("", "", window.location.pathname + el.getElementsByTagName("a")[0].getAttribute("href"));
 					e.preventDefault();
 					e.stopPropagation();
 				})
