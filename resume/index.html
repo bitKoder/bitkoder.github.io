@@ -22,6 +22,9 @@
 			app-purple:	#5D36FF
 			app-cyan:	#48B6FF
 			app-lime:	#44FF63
+
+			app-yellow: #F0FF1D
+			app-purple: #A448FF
 			
 			*/
 
@@ -59,6 +62,12 @@
 					src: url("/font/Montserrat-ExtraBold.ttf");
 					font-weight: 800;
 				}
+				@font-face
+				{
+					font-family: "Montserrat";
+					src: url("/font/Montserrat-Black.ttf");
+					font-weight: 900;
+				}
 
 			html, body {
 				margin: 0;
@@ -80,7 +89,6 @@
 				right: 0;
 				display: flex;
 				justify-content: center;
-				align-items: center;
 				overflow-y: auto;
 
 				transition: transform 0.3s, opacity 0.3s, visibility 0.3s step-start;
@@ -101,6 +109,7 @@
 			}
 
 			.menu-wrapper {
+				align-items: center;
 				transition: transform 0.3s, opacity 0.3s, visibility 0.3s step-start;
 			}
 			.menu-wrapper.page-zoom-in {
@@ -143,7 +152,7 @@
 				margin: -20px 0 0 -30px;
 				border-radius: 1000px;
 
-				font-size: 12px;
+				font-size: 0.75em;
 				font-weight: 700;
 				color: #FFFFFF; /* app-text */
 				text-decoration: none;
@@ -188,6 +197,136 @@
 				fill: none;
 				stroke: #44FF63; /* app-lime */
 			}
+
+			.fill-orange	{ background-color: #FFB431; /* app-orange */ }
+			.fill-red		{ background-color: #FF4848; /* app-red */ }
+			.fill-pink		{ background-color: #FF44B4; /* app-pink */ }
+			.fill-purple	{ background-color: #5D36FF; /* app-purple */ }
+			.fill-cyan		{ background-color: #48B6FF; /* app-cyan */ }
+			.fill-lime		{ background-color: #44FF63; /* app-lime */ }
+
+			.page:not(.menu-wrapper) {
+				padding: 5%;
+			}
+
+			.page:not(.menu-wrapper) .page-content {
+				position: relative;
+				min-width: 100%;
+    			min-height: 100%;
+			}
+
+			.breadcrumbs {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				display: flex;
+				justify-content: left;
+				align-items: center;
+
+				font-size: 0.8em;
+				font-weight: 800;
+				color: #FFFFFF; /* app-text */
+				text-decoration: none;
+				text-transform: uppercase;
+				letter-spacing: 0.2em;
+			}
+
+			.breadcrumbs .dot {
+				display: inline-block;
+				width: 1em;
+				height: 1em;
+				margin-right: 0.5em;
+				border-radius: 1em;
+			}
+
+			.breadcrumbs-title {
+
+			}
+
+			h2 {
+				font-size: 1em;
+				font-weight: 400;
+				text-transform: uppercase;
+				letter-spacing: 0.2em;
+			}
+			h2 strong {
+				font-weight: 900;
+			}
+			h2.section-heading {
+				margin-top: 40px;
+				margin-bottom: 30px;
+			}
+
+			h3 {
+				font-size: 0.75em;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.2em;
+			}
+			h3.subsection-heading {
+				text-align: right;
+				margin-bottom: 10px;
+			}
+			h3.subsection-heading:not(:first-of-type) {
+				margin-top: 30px;
+			}
+			h3.subsection-heading::after {
+				content: "";
+
+				display: block;
+				height: 4px;
+				margin-top: 5px;
+				border-radius: 1000px;
+				background-color: #FFFFFF; /* app-text */
+			}
+			h3.subsection-heading.yellow-line::after {
+				background-color: #F0FF1D; /* app-yellow */
+			}
+			h3.subsection-heading.purple-line::after {
+				background-color: #A448FF; /* app-purple */
+			}
+
+			.columns {
+				display: flex;
+				flex-direction: row;
+			}
+			.columns .column {
+				flex-basis: 1px;
+				flex-grow: 1;
+			}
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+
+				font-size: 12px;
+				letter-spacing: 0.1em;
+			}
+
+			.previews-subsection {
+				margin-top: 46%;
+			}
+
+			.website-preview {
+				margin: -27% 0;
+				transform: skewY(-18deg);
+			}
+			.website-preview:nth-of-type(even) {
+				transform: skewY(18deg);
+			}
+			.website-image {
+				padding-bottom: 60%;
+				background-color: #444;
+			}
+			.website-details {
+				clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+				padding-bottom: 65%;
+				background-color: #222;
+			}
+			.website-preview:nth-of-type(even) .website-details {
+				clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+			}
 		</style>
 		<script></script>
 	</head>
@@ -211,36 +350,117 @@
 
 		<div id="web" class="page page-zoom-out">
 			<div class="page-content">
-				oioioi
+				<a class="breadcrumbs" href="#menu">
+					<span class="dot fill-orange"></span>
+					<span class="breadcrumbs-title">Web</span>
+				</a>
+				<h2 class="section-heading">
+					<strong>Easy on the eyes</strong><br>
+					and easy on the user.
+				</h2>
+				<h3 class="subsection-heading yellow-line">Expertise</h3>
+				<div class="subsection-content columns">
+					<div class="column">
+						<ul>
+							<li>HTML</li>
+							<li>CSS</li>
+							<li>JS</li>
+							<li>SASS</li>
+						</ul>
+					</div>
+					<div class="column">
+						<ul>
+							<li>Boostrap</li>
+							<li>jQuery</li>
+							<li>PHP</li>
+							<li>React</li>
+						</ul>
+					</div>
+					<div class="column">
+						<ul>
+							<li>Oncord</li>
+							<li>Squarespace</li>
+							<li>Wordpress</li>
+							<li>Shopify</li>
+						</ul>
+					</div>
+				</div>
+				<h3 class="subsection-heading purple-line">Portfolio</h3>
+				<div class="subsection-content previews-subsection">
+					<div class="website-preview">
+						<div class="website-image">
+							
+						</div>
+						<div class="website-details">
+							
+						</div>
+					</div>
+					<div class="website-preview">
+						<div class="website-image">
+							
+						</div>
+						<div class="website-details">
+							
+						</div>
+					</div>
+					<div class="website-preview">
+						<div class="website-image">
+							
+						</div>
+						<div class="website-details">
+							
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
 		<div id="design" class="page page-zoom-out">
 			<div class="page-content">
+				<a class="breadcrumbs" href="#menu">
+					<span class="dot fill-red"></span>
+					<span class="breadcrumbs-title">Design</span>
+				</a>
 				
 			</div>
 		</div>
 
 		<div id="video" class="page page-zoom-out">
 			<div class="page-content">
+				<a class="breadcrumbs" href="#menu">
+					<span class="dot fill-pink"></span>
+					<span class="breadcrumbs-title">Video</span>
+				</a>
 				
 			</div>
 		</div>
 
 		<div id="work" class="page page-zoom-out">
 			<div class="page-content">
+				<a class="breadcrumbs" href="#menu">
+					<span class="dot fill-purple"></span>
+					<span class="breadcrumbs-title">Work</span>
+				</a>
 				
 			</div>
 		</div>
 
 		<div id="skills" class="page page-zoom-out">
 			<div class="page-content">
+				<a class="breadcrumbs" href="#menu">
+					<span class="dot fill-cyan"></span>
+					<span class="breadcrumbs-title">Skills</span>
+				</a>
 				
 			</div>
 		</div>
 
 		<div id="contact" class="page page-zoom-out">
 			<div class="page-content">
+				<a class="breadcrumbs" href="#menu">
+					<span class="dot fill-lime"></span>
+					<span class="breadcrumbs-title">Contact</span>
+				</a>
 				
 			</div>
 		</div>
@@ -258,6 +478,8 @@
 			var circleSize = 140;
 			var degreesInterval = 30;
 			var pageId = "menu";
+
+			var breadcrumbLinks = document.getElementsByClassName("breadcrumbs");
 
 			for (var i = 0; i < circleNavLinks.length; i++) {
 				var c = circleNavLinks[i];
@@ -279,12 +501,23 @@
 					pageId = el.getAttribute("href").slice(1);
 					var delay = d == 0 ? 0 : 700;
 					setTimeout(function(){ menuWrapper.classList.add("page-zoom-in"); }, delay);
-					setTimeout(function(){ document.getElementById(pageId).classList.remove("page-zoom-out") }, delay + 200);
+					setTimeout(function(){ document.getElementById(pageId).classList.remove("page-zoom-out"); }, delay + 200);
 					setTimeout(function(){ resetNav(); }, delay + 300);
 
 					window.history.pushState("", "", window.location.pathname + el.getAttribute("href"));
 					e.preventDefault();
 					e.stopPropagation();
+				})
+			}
+
+			for (var i = 0; i < breadcrumbLinks.length; i++) {
+				var b = breadcrumbLinks[i];
+				b.addEventListener("click", function(e) { 
+					var el = e.target;
+					if (!el.classList.contains("breadcrumbs")) el = el.parentElement;
+					document.getElementById(pageId).classList.add("page-zoom-out");
+					pageId = el.getAttribute("href").slice(1);
+					setTimeout(function(){ document.getElementById(pageId).classList.remove("page-zoom-in"); }, 200);
 				})
 			}
 
